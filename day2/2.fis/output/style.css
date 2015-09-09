@@ -1,0 +1,71 @@
+
+.alibaba{width: 77px;
+    height: 19px;background-repeat: no-repeat;}
+.baidu{width: 60px;
+    height: 20px;background-repeat: no-repeat;}
+.banner{width: 1920px;
+    height: 516px;background-repeat: no-repeat;}
+.blue-p-ellipse{width: 50px;
+    height: 50px;background-repeat: no-repeat;}
+.heart{width: 14px;
+    height: 11px;background-repeat: no-repeat;}
+.hot{width: 30px;
+    height: 42px;background-repeat: no-repeat;}
+
+.international-awards{width: 79px;
+    height: 22px;background-repeat: no-repeat;}
+.lehtml{width: 85px;
+    height: 24px;background-repeat: no-repeat;}
+.logo{width: 120px;
+    height: 40px;background-repeat: no-repeat;}
+.qr-code{width: 122px;
+    height: 182px;background-repeat: no-repeat;}
+.red-phone{width: 22px;
+    height: 22px;background-repeat: no-repeat;}
+.red-s-ellipse{width: 20px;
+    height: 20px;background-repeat: no-repeat;}
+.red-s-mid-ellipse{width: 50px;
+    height: 50px;background-repeat: no-repeat;}
+
+.red-tencent-footer{width: 20px;
+    height: 22px;background-repeat: no-repeat;}
+
+.tencent{width: 75px;
+    height: 26px;background-repeat: no-repeat;}
+.uicn{width: 43px;
+    height: 32px;background-repeat: no-repeat;}
+.yellow-g-ellipse{width: 50px;
+    height: 50px;background-repeat: no-repeat;}
+.youku-recommend{width: 79px;
+    height: 29px;background-repeat: no-repeat;}
+/*
+.hot{
+    background: url(./img/hot.png?__sprite);
+    width: 30px;
+    height: 42px;
+}
+.hot{
+    background: url(./img/hot.png?__sprite);
+    width: 30px;
+    height: 42px;
+}
+.hot{
+    background: url(./img/hot.png?__sprite);
+    width: 30px;
+    height: 42px;
+}
+.hot{
+    background: url(./img/hot.png?__sprite);
+    width: 30px;
+    height: 42px;
+}
+*/
+
+
+
+
+
+
+
+
+.alibaba{background-position:-1843px 0px}.baidu{background-position:-1860px -22px}.banner{background-position:0px -45px}.blue-p-ellipse{background-position:-1870px -564px}.heart{background-position:-1906px -617px}.hot{background-position:-1890px -631px}.international-awards{background-position:-1841px -676px}.lehtml{background-position:-1835px -701px}.logo{background-position:-1800px -728px}.qr-code{background-position:-1798px -771px}.red-phone{background-position:-1898px -956px}.red-s-ellipse{background-position:-1900px -981px}.red-s-mid-ellipse{background-position:-1870px -1004px}.red-tencent-footer{background-position:-1900px -1057px}.tencent{background-position:-1845px -1082px}.uicn{background-position:-1877px -1111px}.yellow-g-ellipse{background-position:-1870px -1146px}.youku-recommend{background-position:-1841px -1199px}.alibaba,.baidu,.banner,.blue-p-ellipse,.heart,.hot,.international-awards,.lehtml,.logo,.qr-code,.red-phone,.red-s-ellipse,.red-s-mid-ellipse,.red-tencent-footer,.tencent,.uicn,.yellow-g-ellipse,.youku-recommend{background-image: url(/style_z.png)}

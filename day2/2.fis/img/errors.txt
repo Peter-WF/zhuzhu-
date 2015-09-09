@@ -1,0 +1,4 @@
+[Wed Sep 09 2015 13:23:52 GMT+0800 (中国标准时间)] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Wed Sep 09 2015 13:23:52 GMT+0800 (中国标准时间)] layer "+ 副本": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Wed Sep 09 2015 13:23:52 GMT+0800 (中国标准时间)] layer "+ 副本 2": Expected Either a default asset specification or a layer asset specification but "+" found.
+[Wed Sep 09 2015 13:23:52 GMT+0800 (中国标准时间)] layer "版权信息 天蓬网（TIANPENG.COM）会员所上传展示的“原创作品” 版权归原作者所有，任何商业用途均须联系作者。若未经授": Expected end of input but "\uFF09" found.
