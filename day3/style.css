@@ -43,10 +43,11 @@
     z-index: 10;
 }
 
-.third{
+.third {
     width: 200px;
     height: 200px;
 }
+
 .third div {
     background-color: black;
     color: white;
@@ -183,15 +184,17 @@ h2 {
     width: 300px;
     display: table-cell;
     vertical-align: middle;
-    -webkit-transition: background-color,color .6s ease;
-    -moz-transition: background-color,color .6s ease;
-    -ms-transition: background-color,color .6s ease;
-    -o-transition: background-color,color .6s ease;
-    transition: background-color,color .6s ease;
+    -webkit-transition: background-color .6s ease, color .6s ease;
+    -moz-transition: background-color .6s ease, color .6s ease;
+    -ms-transition: background-color .6s ease, color .6s ease;
+    -o-transition: background-color .6s ease, color .6s ease;
+    transition: background-color .6s ease, color .6s ease;
 }
+
 .content {
     text-align: center;
 }
+
 .circle-div:hover .mask {
     background-color: rgba(0, 0, 0, 0.5);
     color: rgba(255, 255, 255, 1);
@@ -200,7 +203,7 @@ h2 {
 .circle-div:hover .circle-border {
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
-    -ms-transform:  rotate(180deg);
+    -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
