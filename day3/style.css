@@ -1,0 +1,208 @@
+/*定义基本块*/
+.first-box {
+    width: 200px;
+    height: 40px;
+    color: white;
+    background-color: black;
+}
+
+.second-box {
+    height: 200px;
+    width: 40px;
+    color: white;
+    background-color: black;
+}
+
+.first {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.first::after {
+    content: url("second-box.png");
+    position: absolute;
+    top: -81px;
+    left: 80px;
+}
+
+.second {
+    width: 200px;
+    margin-top: 80px;
+}
+
+.second .second-div:first-of-type {
+
+}
+
+.second .second-div:last-of-type {
+    margin-top: -120px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.third{
+    width: 200px;
+    height: 200px;
+}
+.third div {
+    background-color: black;
+    color: white;
+}
+
+.third-div:nth-of-type(1) {
+    margin-right: auto;
+    margin-left: auto;
+    width: 40px;
+    height: 80px;
+}
+
+.third-div:nth-of-type(2) {
+    height: 40px;
+    width: 200px;
+}
+
+.third-div:nth-of-type(3) {
+    width: 40px;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.four {
+    height: 200px;
+    width: 200px;
+    /*    margin-top: 80px;
+        margin-bottom: 80px;*/
+}
+
+.four .four-div {
+    color: white;
+    background-color: black;
+}
+
+.four .four-div:nth-of-type(1) {
+    height: 80px;
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.four .four-div:nth-of-type(2) {
+    height: 40px;
+    width: 80px;
+    float: left;
+}
+
+.four .four-div:nth-of-type(3) {
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+.four .four-div:nth-of-type(4) {
+    height: 40px;
+    width: 80px;
+    float: left;
+}
+
+.four .four-div:nth-of-type(5) {
+    height: 80px;
+    width: 40px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*清除浮动*/
+.clearfix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+    zoom: 1; /* for ie6 & ie7 */
+    *overflow: hidden;
+}
+
+h2 {
+    margin: 0;
+}
+
+.circle-div {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 12px solid rgb(65, 66, 69);
+    height: 300px;
+    width: 300px;
+    background-image: url("img.jpg");
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.circle-border {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: 12px solid rgb(255, 103, 2);
+    border-left-color: rgb(65, 66, 69);
+    border-top-color: rgb(65, 66, 69);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    z-index: 100;
+    margin: -12px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mask {
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0);
+    height: 300px;
+    width: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    -webkit-transition: background-color,color .6s ease;
+    -moz-transition: background-color,color .6s ease;
+    -ms-transition: background-color,color .6s ease;
+    -o-transition: background-color,color .6s ease;
+    transition: background-color,color .6s ease;
+}
+.content {
+    text-align: center;
+}
+.circle-div:hover .mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
+
+.circle-div:hover .circle-border {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform:  rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
