@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>img load</title>
+    <style>
+        .divImg {background:url(cssImg1.png);}
+        .divImg {background:url(cssImg2.png);}
+        .divNullImg {background:url(cssNullImg.png);}
+        .divImgNone {display:none;}
+        .divImgNone {background:url(cssNoneImg1.png);}
+        .divImgNone div {background:url(cssNoneImg2.png);}
+        #divNone {background:url(cssNoneImg3.png);}
+        .divHoverImg:hover {background:url(cssHoverImg1.png);}
+    </style>
+</head>
+<body>
+
+<img src="img.png" />
+<img src="cssImg2.png" />
+<img src="ImgNone.png" style="display:none;" />
+
+<!--隐藏的元素及其包含的背景图不会加载(样式隐藏元素的当前背景会加载)。-->
+<div id="divNone" style="display:none; background:url(divNoneBack1.png);">
+    <!-- 隐藏的img或img在隐藏的元素内也会加载。-->
+    <img src="divNoneImg1.png" />
+    <!-- 没有匹配的样式中，包含的背景不会显示。但是会加载-->
+    <div style="background:url(divNoneBack2.png);"></div>
+</div>
+<input type="button" value="显示隐藏" onclick="document.getElementById('divNone').style.display = 'block';" />
+
+<div class="divImg">
+    img
+</div>
+
+<div class="divImgNone">
+    <img src="divNoneImg2.png" />
+    img none
+    <div></div>
+    <div style="background:url(divNoneBack3.png);"></div>
+</div>
+<!--hover的背景图不会加载，当hover时才加载。-->
+<div class="divHoverImg">
+    test Hover
+</div>
+
+<!-- 使用JS给隐藏的元素设置背景图时，会加载背景图。 -->
+<script>
+    var img = new Image();
+    img.src = 'jsImg.png';
+    document.getElementById('divNone').style.backgroundImage = 'url(jsNoneImg.png)';
+</script>
+
+</body>
+</html>
