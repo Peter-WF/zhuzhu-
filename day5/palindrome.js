@@ -1,10 +1,11 @@
+
 ;//用于防止之前文件结尾没有加;导致报错
 (function () {
     function getAllPalindrome(num) {
         if (num < 0) {
-            return "请输入大于0的整数";
-        } else if (Object.prototype.toString.call(11) != "[object Number]") {
-            return "请正确输入整数";
+            return {"palindromeString": "请输入大于0的整数" };
+        } else if (Object.prototype.toString.call(num) != "[object Number]") {
+            return {"palindromeString": "请输入大于0的整数" };
         }
         num = parseInt(num, 10);//这里最好设置上多少进止数,避免因为规范不同导致差异
         var palindromeList = [];
