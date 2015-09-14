@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div style="margin: auto; width: 333px;">
+    <div>
+        <label>请输入整数 <input type="text" value="" id="j-input-test-num"/></label>
+        <button onclick="getAllPalindrome1()">确定</button>
+    </div>
+    <label>返回该整数内的所有 回文数:
+        <textarea id="j-show-test-num" style="width: 333px;max-width:333px;height: 155px;margin-top: 10px;">
+        </textarea>
+    </label>
+</div>
+<script>
+    function getAllPalindrome1() {
+        var testNumber = document.getElementById("j-input-test-num").value;
+        document.getElementById("j-show-test-num").innerHTML = window.getAllPalindrome(testNumber).palindromeString;
+    }
+</script>
+<script type="text/javascript" src="palindrome.js"></script>
+</body>
+</html>
