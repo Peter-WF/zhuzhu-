@@ -1,0 +1,279 @@
+/*包含行内元素css(用于清除由于空格产生的间隔)*/
+.inlineBlock-Father {
+    font-size: 0 !important;
+    letter-spacing: 0px !important; /*根据不同字体字号或许需要做一定的调整*/
+    word-spacing: 0px !important;
+}
+/*行内元素css*/
+.inlineBlock-Son {
+    display: inline-block !important;
+    *display: inline !important;
+    *zoom: 1 !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+}
+/*伪装成可点击*/
+.button-Son:hover {
+    cursor: pointer;
+}
+/*将它内部的标签伪装成可点击*/
+.button-Father *:hover {
+    cursor: pointer;
+}
+
+/*鼠标移动产生立体效果*/
+.boxShadow-div:hover {
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 10px;
+}
+/*弧度边框*/
+.borderRadius-div {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.round {
+    border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */
+    -moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */
+    -webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */
+    border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角 */
+}
+
+/*圆形*/
+.circle {
+    border-radius: 50%;
+    width: 77px;
+    height: 77px;
+}
+/*清除浮动*/
+.clearfix:after {
+    display: table;
+    content: "";
+    width: 0;
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+    zoom: 1; /* for ie6 & ie7 */
+    *overflow: hidden;
+}
+/*图片旋转*/
+.rotate180deg {
+    /*scale缩放*/
+    -webkit-transform: rotateZ(180deg); /*webkit谷歌*/
+    -moz-transform: rotateZ(180deg); /*mozilla内核*/
+    -o-transform: rotateZ(180deg); /*opera内核识别码*/
+    -ms-transform: rotateZ(180deg); /*ie内核识别码*/
+    transform: rotateZ(180deg);
+}
+/*body {
+	background-image: url(http://s4.sinaimg.cn/orignal/7842060ag7647e795a303);
+	background-repeat: repeat-x;
+	background-position: center top;
+	background-attachment: fixed;
+}*/
+
+/*html5输入选择器 required valid invalid*/
+
+input:valid {
+    border: 1px solid rgba(0, 128, 0, 0.3); /*合法的,要可以被require覆盖*/
+}
+
+/*正确时的css*/
+input:required {
+    border: 1px solid blue; /*不论用户输入与否 只要有required属性就会被选择器识别*/
+}
+
+input:invalid {
+    border: 1px solid red; /*不合法的一定要放在最后面加入,以免被覆盖*/
+}
+
+.pic_box:after {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    content: "center";
+    vertical-align: middle;
+    overflow: hidden;
+}
+/*遮罩层*/
+.maskWF {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.2;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 997;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*下拉菜单dropdown-menuWF*/
+.dropdown-menuWF {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 300;
+    display: none;
+    float: left;
+    /*min-width: 160px;*/
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+
+/*2015年8月19日00:24:14 王斐*/
+/*设置懒加载:当浏览器禁用js时显示<noscript>里的图片*/
+/*<img class="lazy" data-original="img/example.jpg"  width="640" heigh="480">
+<noscript><img src="img/example.jpg" width="640" heigh="480"></noscript>*/
+
+/*.lazy {
+    display: none;
+}*/
+
+/*$("img.lazy").show().lazyload();*/
+
+
+/*一、大小不固定，多行文字的垂直居中*/
+/*① 单行文本居中*/
+.wf_align_box_1 {
+    height: 10px;
+    line-height: 10px;
+}
+/*② 多行文字*/
+.wf_align_box_2 {
+    display: table-cell;
+    height: 300px;
+    vertical-align: middle;
+}
+
+.wf_align_box_2 .wf_align_word {
+    display: inline-block;
+}
+/*二、大小不固定，图片的垂直居中*/
+/*① 透明gif图片+背景定位*/
+.wf_align_box_3 img {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+/*例如<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);">*/
+/*原理:设置img的src 并将宽度高度拉伸至最大 在设置要显示的图片为bg-img, 再利用background-position: center; 实现居中*/
+
+/*② display:table-cell和文字大小控制居中*/
+.wf_align_box_4 li {
+    float: left;
+    margin-right: 13px;
+}
+
+.wf_align_box_4 li div {
+    display: table-cell;
+    width: 144px;
+    height: 144px;
+    border: 1px solid #beceeb;
+    font-size: 118px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wf_align_box_4 li div img {
+    vertical-align: middle;
+}
+/*例子*/
+/*<ul class="wf_align_box_3 fix">
+    <li>
+    	<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);" />
+    </li>
+</ul>*/
+
+/*③ display:inline-block和文字大小控制居中*/
+.wf_align_box_5 a {
+    display: inline-block;
+    width: 1.2em;
+    font-size: 128px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wf_align_box_5 a img {
+    vertical-align: middle;
+    padding: 2px;
+    border: 1px solid #beceeb;
+}
+
+/*④ 使用空白图片实现垂直对齐*/
+/*好吧，我知道说大话会被人笑的，但是我还是非常自信地推荐下面这种我想出来的图片垂直居中对齐的方法。非常简单，非常易懂，出错率低，上手方便，兼容性上佳！*/
+
+.wf_align_box_6 li {
+    height: 128px;
+    width: 150px;
+    padding: 13px 0;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid #beceeb;
+    text-align: center;
+    font-size: 0;
+}
+
+.wf_align_box_6 li .alpha_img {
+    height: 100%;
+    width: 1px;
+    vertical-align: middle;
+}
+
+.wf_align_box_6 li .show_img {
+    vertical-align: middle;
+}
+
+/*例子*/
+/*<ul class="wf_align_box_6 fix">
+    <li>
+        <img class="show_img" src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" />
+        <img class="alpha_img" src="../image/pixel.gif" />
+    </li>
+</ul>*/
+/*原理*/
+/*一句话，将要显示的图片与一张透明的高度100%，宽度1像素的透明图片vertical-align:middle对齐。
+其核心原理其实与第二种利用font-size大小实现IE下图片垂直居中是一致的。将font-size设置得很大，目的是撑开IE下默认文字空间的高度，其性质类似于空格，然后通过vertical-align:middle属性让图片与这个高高的空白空格空间垂直居中对齐；而这里将这个看不见的文字空间实例成一张透明的gif图片，高度可以轻松设置为外部标签的高度，然后通过vertical-align:middle对齐，就实现效果了，在各个浏览器下都是一样的表现，不需要担心什么兼容性的问题。而且代码很简单，很易懂，想出错都难！*/
+
+
+/**消息提示组件的样式**/
+.operatMessage {
+    text-align: center;
+    background: #5cb85c;
+    position: absolute;
+    bottom: 40px;
+    z-index: 10;
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 6px 1px #5cb85c;
+    box-shadow: 0px 0px 6px 1px #5cb85c;
+    display: none;
+    margin:auto;
+    width:200px;
+    /* filter:alpha(opacity=50);
+       -moz-opacity:0.5;
+       -khtml-opacity: 0.5;
+       opacity: 0.5; */
+}

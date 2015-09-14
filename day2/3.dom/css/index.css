@@ -1,0 +1,427 @@
+@charset "utf-8";
+body {
+    overflow-x: hidden;
+    font-family: "微软雅黑";
+}
+
+.ui-header-nav-opr:hover {
+    color: rgb(232, 65, 60);
+}
+
+.header {
+    height: 26px;
+    background-color: rgb(54, 49, 49);
+    color: rgb(204, 204, 204);
+    position: relative;
+}
+
+.header .zbj-grid {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.header .zbj-grid .ui-header-greet {
+    margin-left: 43px;
+}
+
+.header .zbj-grid .ui-header-greet .ui-header-greet-opr {
+    font-size: 12px;
+}
+
+.ui-header-nav {
+    margin-right: 45px;
+}
+
+.ui-header-nav-opr {
+    font-size: 13px;
+    margin-left: 40px;
+}
+
+.ban-ner {
+    background: url("../img/ban-ner.png") center top no-repeat;
+    /*background-size: 100% 100%;*/
+    background-size: cover;
+    min-width: 1190px;
+    height: 480px;
+    width: 100%;
+    padding-top: 30px;;
+    position: relative;
+}
+
+.ban-ner .menu-top {
+    padding-left: 60px;;
+}
+
+.ban-ner .menu-top .menu-top-ul {
+    margin-left: 10px;
+    display: inline-block;
+    /* height: 40px; */
+    line-height: 40px;
+}
+
+.ban-ner .menu-top .menu-top-ul .menu-top-li {
+    margin-left: 40px;
+    color: rgb(160, 160, 160);
+    font-size: 13px;
+    display: block;
+}
+
+.function-div {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    text-align: center;
+}
+
+.function-div .function-box {
+    width: 147px;
+    height: 12px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(232, 65, 60);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.function-div .function-box.onload-box {
+    width: 110px;
+    margin-top: 3px;
+    float: right;
+}
+
+.banner-center {
+    height: 232px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    position: relative;
+    text-align: center;
+}
+
+.banner-center .big-h {
+    font-size: 40px;
+    color: white;
+    display: block;
+}
+
+.banner-center .big-h2 {
+    margin-top: 18px;
+    color: rgb(188, 188, 190);
+    margin-bottom: 36px;
+    font-size: 14px;
+    display: block;
+}
+
+.banner-center .center-btn {
+    border: 2px solid rgb(232, 65, 60);
+    width: 182px;
+    line-height: 40px;
+    font-size: 14px;
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-center .trading-push {
+    margin-top: 60px;
+    font-size: 12px;
+    color: white;
+}
+
+.banner-center .trading-push .emphasis {
+    color: rgb(232, 65, 60);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+/*上方容器*/
+.top-container {
+    background-color: rgb(250, 250, 250);
+    padding-top: 40px;
+    padding-bottom: 35px;
+}
+
+.top-container .top-focus {
+    margin-bottom: 30px;
+}
+
+.top-container .menu {
+    height: 300px;
+    width: 390px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.top-container .menu .type-menu {
+    width: 195px;
+    height: 300px;
+    background-color: rgb(59, 54, 54);
+}
+
+.top-container .menu .type-menu .type-menu-title {
+    display: block;
+    width: 77px;
+    height: 41px;
+    margin-top: 30px;
+    margin-left: 31px;
+    margin-bottom: 59px;
+}
+
+.top-container .menu .type-menu .type-item {
+    display: block;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 18px;
+    margin-left: 70px;
+}
+
+.top-container .menu .hot-selling-menu {
+    width: 195px;
+    height: 300px;
+    background-color: rgb(54, 49, 49);
+}
+
+.top-container .menu .hot-selling-menu .hot-selling-menu-title {
+    display: block;
+    width: 78px;
+    height: 39px;
+    margin-top: 30px;
+    margin-left: 31px;
+    margin-bottom: 59px;
+}
+
+.top-container .menu .hot-selling-menu .hot-img {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.top-container .menu .hot-selling-menu .hot-selling-item {
+    display: block;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 18px;
+    margin-left: 70px;
+}
+
+.top-container .slider {
+    height: 300px;
+    width: 790px;
+}
+
+.top-container .top-designers {
+    width: 1170px;
+}
+
+.top-container .top-designers .col-md-4 {
+    background: white;
+    height: 108px;
+    position: relative;
+}
+
+.top-container .top-designers .col-md-4 .designer-pic {
+    position: absolute;
+    top: 29px;
+    left: 20px;
+}
+
+.top-container .top-designers .col-md-4 .designer-title {
+    margin-top: 28px;
+    text-align: right;
+    padding-right: 20px;
+    color: rgb(74, 74, 74);
+    font-size: 16px;
+}
+
+.top-container .top-designers .col-md-4 .designer-content {
+    margin-top: 20px;
+    text-align: right;
+    padding-right: 20px;
+    color: rgb(176, 176, 176);
+    font-size: 12px;
+}
+
+.top-container .top-designers-from .row {
+    margin-top: 40px;
+    position: relative;
+}
+
+.top-container .top-designers-from .row .top-designers-from-title {
+    text-align: left;
+    font-size: 24px;
+    line-height: 34px;
+    color: rgb(74, 74, 74);
+    display: block;
+}
+
+.top-container .top-designers-from .row .col-md-1 {
+    float: left;
+    width: 12.5%;
+    height: 34px;
+    font-size: 34px;
+    position: relative;
+    /*text-align: center;*/
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.top-container .top-designers-from .row .more-from {
+    position: absolute;
+    right: 5px;
+    font-size: 24px;
+    color: rgb(140, 140, 140);
+}
+
+/*设计师容器*/
+.designer-container {
+    background-color: rgb(238, 238, 238);
+    padding-top: 43px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.designer-container .designer-container-row {
+    width: 1170px;
+    position: relative;
+}
+
+.designer-container .row .designer-container-title {
+    font-size: 24px;
+    color: rgb(74, 74, 74);
+    margin-bottom: 42px;
+}
+
+.designer-container .more-box {
+    width: 80px;
+    height: 25px;
+    position: absolute;
+    right: 0px;
+    line-height: 25px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+.designer-container .more-box.red-box {
+    background-color: rgb(232, 65, 60);
+    top: -28px;
+}
+
+.designer-container .more-box.gray-box {
+    top: -1px;
+
+    background-color: rgb(140, 140, 140);
+}
+
+.designer-container .single-designer-box {
+    background-color: white;
+    height: 240px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 28px;
+}
+
+.single-designer-box .designer-box-top {
+    position: relative;
+}
+
+.single-designer-box .designer-box-top .circle {
+
+    background-position: top; /*为何无效*/
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    margin-right: 19px;
+}
+
+.single-designer-box .designer-box-top .circle .blue-box {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    background-color: rgb(82, 190, 246);
+    opacity: 0.902;
+    width: 70px;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+}
+
+.single-designer-box .designer-box-top .circle .red-box {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    background-color: rgb(232, 65, 60);
+    opacity: 0.902;
+    width: 70px;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+}
+
+.single-designer-box .designer-box-top .s-sm {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.single-designer-box .designer-box-top .designer-name {
+    font-size: 13.663px;
+    font-family: "Microsoft YaHei";
+    color: rgb(127, 136, 155);
+    line-height: 2.635;
+    text-align: left;
+    -moz-transform: matrix(0.95109170305677, 0, 0, 0.95145631067961, 0, 0);
+    -webkit-transform: matrix(0.95109170305677, 0, 0, 0.95145631067961, 0, 0);
+    -ms-transform: matrix(0.95109170305677, 0, 0, 0.95145631067961, 0, 0);
+}
+
+.single-designer-box .designer-box-top .designer-from {
+
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    color: rgb(140, 140, 140);
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.single-designer-box .designer-box-top .designer-number {
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    color: rgb(140, 140, 140);
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+/*单个设计师作品展示*/
+.single-designer-box .designer-box-bottom {
+    margin-top: 30px;
+}
+.single-designer-box .designer-work-list{
+    font-size: 0px;
+}
+.single-designer-box .designer-work-list .designer-work:nth-of-type(n+2){
+margin-left: 6px;
+}
+.single-designer-box .designer-work-list .designer-work .designer-work-pic {
+    width: 112px;
+    height: 82px;
+}
+
+/*作品容器*/
+.designs-container {
+    background-color: rgb(250, 250, 250);
+    padding-top: 40px;
+    padding-bottom: 71px;
+}
