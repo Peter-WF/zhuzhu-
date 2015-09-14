@@ -1,7 +1,7 @@
 @charset "utf-8";
 body {
     overflow-x: hidden;
-    font-family: "微软雅黑";
+    font-family: "Microsoft YaHei";
 }
 
 .ui-header-nav-opr:hover {
@@ -75,15 +75,16 @@ body {
 
 .function-div .function-box {
     width: 147px;
-    height: 12px;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    height: 14px;
+    padding-top: 12px;
+    padding-bottom: 14px;
     padding-left: 15px;
     padding-right: 15px;
     color: white;
     font-weight: bold;
     background-color: rgb(232, 65, 60);
     font-size: 13px;
+    line-height: 1.231;
     cursor: pointer;
 }
 
@@ -92,7 +93,11 @@ body {
     margin-top: 3px;
     float: right;
 }
-
+.onload-box .onload-img{
+    margin-right: 8px;
+    position: relative;
+    top: 2px;
+}
 .banner-center {
     height: 232px;
     margin-left: auto;
@@ -215,22 +220,28 @@ body {
 }
 
 .top-container .top-designers {
-    width: 1170px;
+    /*zoom: 1;*/
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
-.top-container .top-designers .col-md-4 {
+.top-container .top-designers .top-designers-item {
     background: white;
     height: 108px;
+    width: 390px;
+    float: left;
     position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.top-container .top-designers .col-md-4 .designer-pic {
+.top-container .top-designers .top-designers-item .designer-pic {
     position: absolute;
     top: 29px;
     left: 20px;
 }
 
-.top-container .top-designers .col-md-4 .designer-title {
+.top-container .top-designers .top-designers-item .designer-title {
     margin-top: 28px;
     text-align: right;
     padding-right: 20px;
@@ -238,7 +249,7 @@ body {
     font-size: 16px;
 }
 
-.top-container .top-designers .col-md-4 .designer-content {
+.top-container .top-designers .top-designers-item .designer-content {
     margin-top: 20px;
     text-align: right;
     padding-right: 20px;
@@ -257,19 +268,21 @@ body {
     line-height: 34px;
     color: rgb(74, 74, 74);
     display: block;
+    width: 100px;
 }
 
-.top-container .top-designers-from .row .col-md-1 {
+.top-container .top-designers-from .row .top-designers-from-item {
     float: left;
-    width: 12.5%;
     height: 34px;
     font-size: 34px;
     position: relative;
+    margin-right: 74px;
     /*text-align: center;*/
     display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+
+    /*-webkit-box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+    /*box-sizing: border-box;*/
 }
 
 .top-container .top-designers-from .row .more-from {
@@ -283,22 +296,28 @@ body {
 .designer-container {
     background-color: rgb(238, 238, 238);
     padding-top: 43px;
-    padding-bottom: 40px;
+    padding-bottom: 12px;
     position: relative;
 }
 
 .designer-container .designer-container-row {
-    width: 1170px;
     position: relative;
+    /*zoom: 1;*/
 }
 
-.designer-container .row .designer-container-title {
+.designer-container .designer-container-row .designer-container-title {
     font-size: 24px;
     color: rgb(74, 74, 74);
     margin-bottom: 42px;
+    font-weight: normal;
 }
 
-.designer-container .more-box {
+.designer-container .designer-container-row .designer-list {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.more-box {
     width: 80px;
     height: 25px;
     position: absolute;
@@ -308,6 +327,7 @@ body {
     color: white;
     text-align: center;
     display: block;
+    cursor: pointer;
 }
 
 .designer-container .more-box.red-box {
@@ -317,18 +337,25 @@ body {
 
 .designer-container .more-box.gray-box {
     top: -1px;
-
     background-color: rgb(140, 140, 140);
 }
 
 .designer-container .single-designer-box {
     background-color: white;
-    height: 240px;
+    width: 350px;
+    height: 182px;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 30px;
     padding-bottom: 28px;
+    float: left;
+
+    /*-webkit-box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+    /*box-sizing: border-box;*/
 }
 
 .single-designer-box .designer-box-top {
@@ -408,12 +435,19 @@ body {
 .single-designer-box .designer-box-bottom {
     margin-top: 30px;
 }
-.single-designer-box .designer-work-list{
+
+.single-designer-box .designer-work-list {
     font-size: 0px;
+    margin: 0 -3.5px;
 }
-.single-designer-box .designer-work-list .designer-work:nth-of-type(n+2){
-margin-left: 6px;
+
+.single-designer-box .designer-work-list .designer-work {
+    margin-left: 3.5px;
+    margin-right: 3.5px;
+    display: block;
+    float: left;
 }
+
 .single-designer-box .designer-work-list .designer-work .designer-work-pic {
     width: 112px;
     height: 82px;
@@ -423,5 +457,286 @@ margin-left: 6px;
 .designs-container {
     background-color: rgb(250, 250, 250);
     padding-top: 40px;
-    padding-bottom: 71px;
+    padding-bottom: 40px;
+}
+
+.designs-container .designs-container-row {
+    /*margin-bottom: 40px;*/
+    position: relative;
+    zoom: 1;
+}
+
+.designs-container .designs-container-title {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 43px;
+    margin-right: 42px;
+    font-weight: normal;
+    float: left;
+    color: rgb(74, 74, 74);
+    line-height: 1.2;
+}
+
+.designs-container .nav-list {
+    display: block;
+    float: left;
+}
+
+.nav-list .nav {
+    display: inline-block;
+    color: rgb(124, 124, 124);
+    font-size: 13px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    padding-left: 13px;
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+.nav-list .nav:hover {
+    color: white;
+    background-color: rgb(54, 49, 49);
+}
+
+.designs-container-row .gray-box {
+    background-color: rgb(140, 140, 140);
+}
+
+.designs-pic-list {
+    clear: both;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.designs-pic-list .design-item {
+    width: 270px;
+    height: 310px;
+    float: left;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 30px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.design-item .design-item-pic {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.design-item .design-item-pic .mask-box {
+    position: absolute;
+    margin-top: -30px;
+    height: 30px;
+    width: 270px;
+    text-align: left;
+    line-height: 30px;
+    color: white;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+.design-item:hover .design-item-pic .mask-box {
+    margin-top: 0px;
+    background-color: rgb(51, 51, 51);
+    opacity: 0.902;
+}
+
+.design-item .design-item-pic .design-item-pic-img {
+    width: 270px;
+    height: 196px;
+    border: 0;
+    display: block;
+    vertical-align: top;
+}
+
+.design-item .top-line,
+.design-item .mid-line,
+.design-item .bottom-line {
+    padding-left: 9px;
+    padding-right: 9px;
+    position: relative;
+}
+
+.design-item .top-line {
+    margin-bottom: 20px;
+}
+
+.design-item .top-line .head-circle {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+}
+
+.design-item .top-line .name-design-item {
+    display: inline-block;
+}
+
+.design-item .mid-line {
+    margin-bottom: 9px;
+    padding-right: 12px;
+    font-size: 12px;
+    color: rgb(140, 140, 140);
+}
+
+.design-item .bottom-line {
+    font-size: 12px;
+    color: rgb(192, 192, 192);
+}
+
+.features-container {
+    height: 196px;
+    padding-top: 68px;
+}
+
+.features-list {
+    margin-left: -51px;
+    margin-right: -51px;
+}
+
+.features-list .features-item {
+    width: 221px;
+    margin-left: 51px;
+    margin-right: 51px;
+    position: relative;
+}
+
+.features-item .features-title {
+    color: rgb(51, 51, 51);
+    font-size: 18px;
+    margin-left: 10px;
+    position: absolute;
+    top: 18px;
+}
+
+.features-item .features-content {
+    margin-top: 30px;
+    color: rgb(140, 140, 140);
+    font-size: 13px;
+    line-height: 1.769;
+}
+
+.footer {
+    height: 290px;
+    padding-top: 60px;
+    background-color: rgb(59, 54, 54);
+}
+
+.footer-row {
+    position: relative;
+}
+
+.Qr-code {
+    position: absolute;
+    top: -9px;
+    left: 0px;
+}
+
+.footer .item-about, .footer .item-help, .footer .item-friendlink {
+    float: left;
+    margin-left: 110px;
+}
+
+.item-about .about-title,
+.item-help .help-title,
+.item-friendlink .friendlink-title,
+.item-copyright .copyright-title {
+    font-size: 13px;
+    color: rgb(232, 65, 60);
+    margin-bottom: 25px;
+}
+
+.item-about .about-content,
+.item-help .help-content,
+.item-friendlink .friendlink-content,
+.item-copyright .copyright-content {
+    font-size: 12px;
+    color: rgb(170, 170, 170);
+    margin-bottom: 10px;
+}
+
+.item-phone .phone-time, .item-qq .qq-time {
+    font-size: 10px;
+    color: rgb(140, 140, 140);
+    /*line-height: 2.6;*/
+    margin-left: -12px;
+    -webkit-transform: scale(0.833);
+    -moz-transform: scale(0.833);
+    -ms-transform: scale(0.833);
+    -o-transform: scale(0.833);
+    transform: scale(0.833);
+
+}
+
+.footer .divider-img {
+    position: absolute;
+    margin-left: 120px;
+}
+
+.footer .item-about {
+    margin-left: 255px
+}
+
+.footer .item-copyright {
+    width: 325px;
+    float: right;
+
+}
+
+.item-copyright .copyright-title {
+    margin-bottom: 10px;
+}
+
+.item-copyright .copyright-content {
+    line-height: 2;
+    margin-bottom: 32px;
+}
+
+.footer .item-phone {
+    width: 141px;
+    float: left;
+}
+
+.item-phone .phone-content {
+    font-size: 20px;
+    color: rgb(238, 238, 238);
+    font-weight: bold;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.footer .item-qq {
+    width: 134px;
+    float: left;
+    margin-left: 48px;
+}
+
+.item-qq .qq-content {
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+    color: rgb(238, 238, 238);
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.footer .copyright {
+    margin-top: 59px;
+    text-align: center;
+    position: relative;
+    font-size: 12px;
+    color: rgb(140,140,140);
+}
+
+.copyright .copyright-cross-divider-img {
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    margin-left: -380px;
 }

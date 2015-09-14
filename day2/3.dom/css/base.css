@@ -26,7 +26,7 @@ img{
 
 .clearfix {
     *zoom: 1;
-    zoom: 1; /* for ie6 & ie7 */
+    /*zoom: 1;*/ /* for ie6 & ie7 */
     *overflow: hidden;
 }
 
@@ -68,5 +68,6 @@ ul{
     display: block;
 }
 li{
-    display: inline-block;
+    display: block;
+    float: left;
 }
