@@ -4,14 +4,10 @@ body {
     font-family: "Microsoft YaHei";
 }
 
-.ui-header-nav-opr:hover {
-    color: rgb(232, 65, 60);
-}
 
 .header {
     height: 26px;
     background-color: rgb(54, 49, 49);
-    color: rgb(204, 204, 204);
     position: relative;
 }
 
@@ -26,21 +22,30 @@ body {
 
 .header .zbj-grid .ui-header-greet .ui-header-greet-opr {
     font-size: 12px;
+    color: rgb(204, 204, 204);
 }
 
 .ui-header-nav {
     margin-right: 45px;
+
 }
 
 .ui-header-nav-opr {
     font-size: 13px;
     margin-left: 40px;
+    color: rgb(204, 204, 204);
+}
+.ui-header-nav-opr:hover {
+    color: rgb(232, 65, 60);
 }
 
 .ban-ner {
     background: url("../img/ban-ner.png") center top no-repeat;
     /*background-size: 100% 100%;*/
     background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+            src='../img/ban-ner.png',
+            sizingMethod='scale');
     min-width: 1190px;
     height: 480px;
     width: 100%;
@@ -51,10 +56,12 @@ body {
 .ban-ner .menu-top {
     padding-left: 60px;;
 }
-
+.ban-ner .menu-top .logo-img{
+    position: absolute;
+}
 .ban-ner .menu-top .menu-top-ul {
-    margin-left: 10px;
-    display: inline-block;
+    margin-left: 130px;
+    display: block;
     /* height: 40px; */
     line-height: 40px;
 }
@@ -70,7 +77,7 @@ body {
     position: absolute;
     top: 30px;
     right: 60px;
-    text-align: center;
+    text-align: right;
 }
 
 .function-div .function-box {
@@ -86,6 +93,7 @@ body {
     font-size: 13px;
     line-height: 1.231;
     cursor: pointer;
+    text-align:center;
 }
 
 .function-div .function-box.onload-box {
@@ -321,16 +329,21 @@ body {
     width: 80px;
     height: 25px;
     position: absolute;
+    float: right;
     right: 0px;
+    top: 0px;
     line-height: 25px;
     font-size: 10px;
     color: white;
     text-align: center;
     display: block;
     cursor: pointer;
+    background-color: rgb(140, 140, 140);
 }
-
-.designer-container .more-box.red-box {
+.more-box:hover {
+    background-color: rgb(232, 65, 60);
+}
+/*.designer-container .more-box.red-box {
     background-color: rgb(232, 65, 60);
     top: -28px;
 }
@@ -338,7 +351,7 @@ body {
 .designer-container .more-box.gray-box {
     top: -1px;
     background-color: rgb(140, 140, 140);
-}
+}*/
 
 .designer-container .single-designer-box {
     background-color: white;
@@ -483,7 +496,8 @@ body {
 }
 
 .nav-list .nav {
-    display: inline-block;
+    /*display: inline-block;*/
+    float: left;
     color: rgb(124, 124, 124);
     font-size: 13px;
     height: 25px;
@@ -499,9 +513,11 @@ body {
     background-color: rgb(54, 49, 49);
 }
 
+/*
 .designs-container-row .gray-box {
     background-color: rgb(140, 140, 140);
 }
+*/
 
 .designs-pic-list {
     clear: both;
