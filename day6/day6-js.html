@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="testClass" id="testId"></div>
+</body>
+<script type="text/javascript" src="utils.js" charset="UTF-8">
+</script>
+<!--<script type="text/javascript" src="testUtil.js" charset="UTF-8">-->
+<!--</script>-->
+<script type="text/javascript">
+    (function () {
+        util = new utils({});
+/*        util.loadScript("testUtil.js", function () {
+            alert("huidiao")
+        });*/
+        tempstu=new Student()
+    })();
+    function Person(name){
+        this.name=name;
+    }
+    Person.prototype={
+        getName:function(){
+            return this.name;
+        }
+    }
+    function Student(grade){
+        this.grade=grade;
+    }
+//    Student.prototype=new Person("wf");
+    Student.prototype.getGrade=function(){
+        return this.grade;
+    };
+</script>
+</html>
