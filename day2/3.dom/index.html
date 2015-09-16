@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/cssreset.css"/>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sliderWF.css">
 </head>
 <body>
 <div class="header">
@@ -29,7 +30,7 @@
                 <a class="ui-header-greet-opr" href="#" target="_blank">欢迎访问天蓬网</a>
             </div>
             <div class="fr ui-header-nav ">
-                <a class="ui-header-nav-opr " href="#">登陆</a>
+                <a class="ui-header-nav-opr " id="login" href="#">登陆</a>
                 <a class="ui-header-nav-opr " href="#">注册</a>
                 <a class="ui-header-nav-opr " href="#">我的交易</a>
                 <a class="ui-header-nav-opr " href="#">联系客服</a>
@@ -94,12 +95,28 @@
                 <div class="hot-img" title="hot"></div>
             </dl>
         </div>
-        <div class="fl slider sliderWF">
-            <div class="sliderWF-main">
-                <img class="" alt="设计好才是王道" src="img/slider.png">
+        <div class="fl slider sliderWF ">
+            <div class="sliderWF-main ">
+                <a href="javascript:void(0);">
+                    <img class="" alt="设计好才是王道" src="img/slider.png">
+                </a>
+                <a href="javascript:void(0);">
+                    <img class="" alt="设计好才是王道" src="img/slider.png">
+                </a>
+                <a href="javascript:void(0);">
+                    <img class="" alt="设计好才是王道" src="img/slider.png">
+                </a>
+                <a href="javascript:void(0);">
+                    <img class="" alt="设计好才是王道" src="img/slider.png">
+                </a>
             </div>
             <div class="sliderWF-extra"></div>
-
+            <a class="prev-btn sliderWF-prev">
+                <i class="iconfont">&#x3465;</i>
+            </a>
+            <a class="next-btn sliderWF-next">
+                <i class="iconfont">&#x3464;</i>
+            </a>
         </div>
     </div>
     <div class="row">
@@ -340,23 +357,23 @@
     <div class="row designs-container-row clearfix">
         <h2 class="designs-container-title">海量作品</h2>
 
-        <div class="nav-list">
-            <div class="nav active">
+        <div class="design-list J-nav-list" id="J-nav-list">
+            <a href="#tab1" class="single-design-box J-nav active" >
                 平面
-            </div>
-            <div class="nav">
+            </a>
+            <a href="#tab2"class="single-design-box J-nav">
                 网页
-            </div>
-            <div class="nav">
+            </a>
+            <a href="#tab3" class="single-design-box J-nav">
                 移动APP
-            </div>
-            <div class="nav">
+            </a>
+            <a href="#tab4" class="single-design-box J-nav">
                 插画
-            </div>
-            <div class="more-box gray-box">MORE +</div>
+            </a>
+
         </div>
-
-        <div class="designs-pic-list clearfix">
+        <div class="more-box gray-box">MORE +</div>
+        <div class="designs-pic-list clearfix active J-loaded" id="tab1">
             <div class="design-item">
                 <a href="#" class="design-item-pic">
                     <p class="mask-box">
@@ -541,6 +558,15 @@
                     <span class="gray-font fr">722</span>
                 </div>
             </div>
+        </div>
+        <div class="designs-pic-list clearfix" id="tab2">
+               <img src="img/loading.gif">正在努力加载中
+        </div>
+        <div class="designs-pic-list clearfix" id="tab3">
+           tab3
+        </div>
+        <div class="designs-pic-list clearfix" id="tab4">
+            tab4
         </div>
     </div>
 </div>
@@ -640,5 +666,59 @@
         </div>
     </div>
 </div>
+<script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+<script src="js/mybase.js" type="text/javascript"></script>
+<script src="js/utils.js" type="text/javascript"></script>
+<!--<script>-->
+<!--$("body").delegate("#login", "click", function () {-->
+<!--alert("aaa");-->
+<!--});-->
+<!--</script>-->
+<script src="js/sliderWF.js" type="text/javascript"></script>
+<script>
+    (function () {
+        slider = new SliderWF({
+            rootTag: ".top-focus",
+            millisec:5000
+        });
+        slider.sliderInit();
+
+//        activeNodeIndex=1;//当前
+//        document.getElementById("J-nav-list").addEventListener("click",function(e) {
+//            // 检查事件源e.targe是否为J-nav
+//            if(e.target && e.target.classList.contains("J-nav")) {
+//                //阻止默认事件
+//                e.preventDefault();
+//                //阻止事件冒泡
+//                e.stopPropagation();//避免触发组件父类的已有的点击事件
+//
+//                var parentElement = this;
+//                //this.parentNode.firstChild()
+//                var childrenElement =parentElement.children;
+//                childrenElement[activeNodeIndex].classList.remove()
+//                var activeElement =;
+//                var targetElement=$(this.hash)[0];
+//
+//                activeElement.removeClass("active"); //找到之前active的对象并移除其活动状态
+//                $(this).addClass("active");
+//                $(activeElement[0].hash).removeClass("active");//找到之前active的对象并移除其活动状态
+//
+//                if(!targetElement.classList.contains("J-loaded")){
+//                    targetElement.classList.add("loading");
+//                    targetElement.innerHTML='<div> <img src="img/loading.gif">正在努力加载中</div>';
+//                    var _this_=this;
+//                    setTimeout(function(_this_){
+//                        targetElement.innerHTML="加载成功";
+//                        targetElement.classList.remove("loading");
+//                    },1000)
+//                }else{
+//                }
+//                targetElement.classList.add("active");
+//                targetElement.classList.add("J-loaded");
+//            }
+//        });
+//    })();
+
+</script>
 </body>
 </html>

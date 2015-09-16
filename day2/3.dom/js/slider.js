@@ -1,73 +1,74 @@
-ï»¿////ç‹æ– æ»‘å—slideræ’ä»¶ 2015å¹´8æœˆ13æ—¥00:36:37
-; //è¿™ä¸ªåˆ†å·ç”¨äºé¿å…ä¸Šä¸€ä¸ªjs å°‘åˆ†å·
+/**
+ * Created by Administrator on 2015/9/16.
+ */
+; //Õâ¸ö·ÖºÅÓÃÓÚ±ÜÃâÉÏÒ»¸öjs ÉÙ·ÖºÅ
 (function ($) {
-    //var SliderWF = function () { è¿™æ ·å†™ä¹Ÿå¯ä»¥
     function SliderWF(data) {
 
-        this.rootTag = data.rootTag ? data.rootTag : ""; //æ ¹èŠ‚ç‚¹
-        this.nView = data.nView ? data.nView : 1; //æ¯ä¸ª.sliderWF-mainä¸­éœ€è¦å±•ç¤ºçš„é¡¹æ•°
-        this.viewheight = data.viewheight ? data.viewheight : $(this.rootTag + " .sliderWF").css("height"); //æ˜¾ç¤ºéƒ¨åˆ†é«˜åº¦
-        this.viewwidthTotal = data.viewwidthTotal ? data.viewwidthTotal : $(this.rootTag + " .sliderWF").css("width"); //è·å–æ˜¾ç¤ºåŒºåŸŸæ€»å®½åº¦
-        this.viewpadding = data.viewpadding ? data.viewpadding : 0; //paddingå·¦å³é—´éš”
-        this.speed = data.speed ? data.speed : 1500; //é»˜è®¤:å®šä¹‰é€Ÿåº¦
-        this.prevTagClassOrId = data.prevTagClassOrId ? data.prevTagClassOrId : ".sliderWF-prev"; //å‰ä¸€ä¸ª æŒ‰é’®
-        this.nextTagClassOrId = data.nextTagClassOrId ? data.nextTagClassOrId : ".sliderWF-next"; //åä¸€ä¸ª æŒ‰é’®
-        this.totalTagClassOrId = data.totalTagClassOrId ? data.nextTagClassOrId : ".sliderWF-total"; //ç»‘å®šæ€»æ»‘å—æ•°
-        this.currentIndexTagClassOrId = data.currentIndexTagClassOrId ? data.nextTagClassOrId : ".sliderWF-currentIndex"; //ç»‘å®šå½“å‰æ»‘å—åºå·tag
+        this.rootTag = data.rootTag ? data.rootTag : ""; //¸ù½Úµã
+        this.nView = data.nView ? data.nView : 1; //Ã¿¸ö.sliderWF-mainÖĞĞèÒªÕ¹Ê¾µÄÏîÊı
+        this.viewheight = data.viewheight ? data.viewheight : $(this.rootTag + " .sliderWF").css("height"); //ÏÔÊ¾²¿·Ö¸ß¶È
+        this.viewwidthTotal = data.viewwidthTotal ? data.viewwidthTotal : $(this.rootTag + " .sliderWF").css("width"); //»ñÈ¡ÏÔÊ¾ÇøÓò×Ü¿í¶È
+        this.viewpadding = data.viewpadding ? data.viewpadding : 0; //padding×óÓÒ¼ä¸ô
+        this.speed = data.speed ? data.speed : 1500; //Ä¬ÈÏ:¶¨ÒåËÙ¶È
+        this.prevTagClassOrId = data.prevTagClassOrId ? data.prevTagClassOrId : ".sliderWF-prev"; //Ç°Ò»¸ö °´Å¥
+        this.nextTagClassOrId = data.nextTagClassOrId ? data.nextTagClassOrId : ".sliderWF-next"; //ºóÒ»¸ö °´Å¥
+        this.totalTagClassOrId = data.totalTagClassOrId ? data.nextTagClassOrId : ".sliderWF-total"; //°ó¶¨×Ü»¬¿éÊı
+        this.currentIndexTagClassOrId = data.currentIndexTagClassOrId ? data.nextTagClassOrId : ".sliderWF-currentIndex"; //°ó¶¨µ±Ç°»¬¿éĞòºÅtag
 
-        this.ifAnimate = false; //æ˜¯å¦æ­£åœ¨åŠ¨ç”»
-        this.currentSliderIndex = 0; //è®°å½•å½“å‰å±•ç¤ºçš„æ»‘å—åºæ•°
-        this.nImg = $(this.rootTag + " .sliderWF-main img," + this.rootTag + " .sliderWF-main .imgWF").length; //è·å–æ»‘å—æ•°ç›®ç”¨äºè®¾ç½® .sliderWF-main å®½åº¦
-        this.viewwidth = this.viewwidthTotal.substr(0, this.viewwidthTotal.length - 2) / this.nView + "px"; //æ¯ä¸ªå±•ç¤ºé¡¹çš„å®½åº¦
+        this.ifAnimate = false; //ÊÇ·ñÕıÔÚ¶¯»­
+        this.currentSliderIndex = 0; //¼ÇÂ¼µ±Ç°Õ¹Ê¾µÄ»¬¿éĞòÊı
+        this.nImg = $(this.rootTag + " .sliderWF-main img," + this.rootTag + " .sliderWF-main .imgWF").length; //»ñÈ¡»¬¿éÊıÄ¿ÓÃÓÚÉèÖÃ .sliderWF-main ¿í¶È
+        this.viewwidth = this.viewwidthTotal.substr(0, this.viewwidthTotal.length - 2) / this.nView + "px"; //Ã¿¸öÕ¹Ê¾ÏîµÄ¿í¶È
 
         this.millisec=data.millisec?data.millisec:5000;
-        this.moveType=1;//-1è¡¨ç¤ºå‘å·¦æ»š
+        this.moveType=1;//-1±íÊ¾Ïò×ó¹ö
 
     };
     //SliderWF.sliderLeft= function (_this_) {
-    //    //æ»‘å—å·¦ç§»
-    //    //åˆ¤æ–­æ˜¯å¦æ­£åœ¨åŠ¨ç”» å¦‚æœæ­£åœ¨åŠ¨ç”»åˆ™ä¸ç»§ç»­
+    //    //»¬¿é×óÒÆ
+    //    //ÅĞ¶ÏÊÇ·ñÕıÔÚ¶¯»­ Èç¹ûÕıÔÚ¶¯»­Ôò²»¼ÌĞø
     //    if (_this_.currentSliderIndex < _this_.nImg - 1 * _this_.nView && !_this_.ifAnimate) {
-    //        _this_.ifAnimate = !_this_.ifAnimate; //åŠ é”
+    //        _this_.ifAnimate = !_this_.ifAnimate; //¼ÓËø
     //        _this_.currentSliderIndex++;
     //        _this_.sliderAnimate(_this_);
     //    }
     //};
     SliderWF.prototype = {
         sliderInit: function () {
-            $(this.rootTag + " .sliderWF " + this.prevTagClassOrId).hide(); //éšè—å·¦æ»‘å—æŒ‰é’®
+            $(this.rootTag + " .sliderWF " + this.prevTagClassOrId).hide(); //Òş²Ø×ó»¬¿é°´Å¥
             $(this.rootTag + " .sliderWF " + this.totalTagClassOrId).html(this.nImg);
-            var _this_ = this; //ä¿å­˜thiså˜é‡
+            var _this_ = this; //±£´æthis±äÁ¿
             $(this.rootTag + " .sliderWF-main img ," + this.rootTag + " .sliderWF-main .imgWF").each(function () { //
-                $(this).css("height", _this_.viewheight); //è®¾ç½®å›¾ç‰‡å®½åº¦é«˜åº¦
+                $(this).css("height", _this_.viewheight); //ÉèÖÃÍ¼Æ¬¿í¶È¸ß¶È
                 $(this).css("width", _this_.viewwidth.substr(0, _this_.viewwidth.length - 2) - _this_.viewpadding * 2 + "px");
             });
-            //delete this.viewwidth;//ä¼šåˆ é™¤è¿™æ¡å±æ€§
+            //delete this.viewwidth;//»áÉ¾³ıÕâÌõÊôĞÔ
             $(this.rootTag + " .sliderWF-main").css("width", this.viewwidth.substr(0, this.viewwidth.length - 2) * this.nImg);
             if (SliderWF[this.rootTag]) {
                 $(this.rootTag + " .sliderWF " + this.prevTagClassOrId).off("click");
                 $(this.rootTag + " .sliderWF " + this.nextTagClassOrId).off("click");
                 _this_.currentSliderIndex = 0;
-                _this_.ifAnimate = !_this_.ifAnimate; //åŠ é”
+                _this_.ifAnimate = !_this_.ifAnimate; //¼ÓËø
                 _this_.sliderAnimate(_this_);
             } else {
                 SliderWF[this.rootTag] = true;
             }
             $(this.rootTag + " .sliderWF " + this.prevTagClassOrId).click(function (e) {
-                //æ»‘å—å³ç§»
+                //»¬¿éÓÒÒÆ
                 e.stopPropagation();
                 if (_this_.currentSliderIndex > 0 && !_this_.ifAnimate) {
-                    _this_.ifAnimate = !_this_.ifAnimate; //åŠ é”
+                    _this_.ifAnimate = !_this_.ifAnimate; //¼ÓËø
                     _this_.currentSliderIndex--;
                     _this_.sliderAnimate(_this_);
                 }
             });
             $(this.rootTag + " .sliderWF " + this.nextTagClassOrId).click(function (e) {
-                //æ»‘å—å·¦ç§»
+                //»¬¿é×óÒÆ
                 e.stopPropagation();
-                //åˆ¤æ–­æ˜¯å¦æ­£åœ¨åŠ¨ç”» å¦‚æœæ­£åœ¨åŠ¨ç”»åˆ™ä¸ç»§ç»­
+                //ÅĞ¶ÏÊÇ·ñÕıÔÚ¶¯»­ Èç¹ûÕıÔÚ¶¯»­Ôò²»¼ÌĞø
                 if (_this_.currentSliderIndex < _this_.nImg - 1 * _this_.nView && !_this_.ifAnimate) {
-                    _this_.ifAnimate = !_this_.ifAnimate; //åŠ é”
+                    _this_.ifAnimate = !_this_.ifAnimate; //¼ÓËø
                     _this_.currentSliderIndex++;
                     _this_.sliderAnimate(_this_);
                 }
@@ -78,10 +79,10 @@
             //setInterval(this.millisec,this.sliderLeft());
         },
         sliderLeft: function () {
-            //æ»‘å—å·¦ç§»
-            //åˆ¤æ–­æ˜¯å¦æ­£åœ¨åŠ¨ç”» å¦‚æœæ­£åœ¨åŠ¨ç”»åˆ™ä¸ç»§ç»­
+            //»¬¿é×óÒÆ
+            //ÅĞ¶ÏÊÇ·ñÕıÔÚ¶¯»­ Èç¹ûÕıÔÚ¶¯»­Ôò²»¼ÌĞø
             if (!this.ifAnimate) {
-                this.ifAnimate = !this.ifAnimate; //åŠ é”
+                this.ifAnimate = !this.ifAnimate; //¼ÓËø
                 if(this.currentSliderIndex==this.nImg-1 ){
                     moveType=-1;
                 }else if(this.currentSliderIndex==0 ){
@@ -92,7 +93,7 @@
             }
         },
         sliderAnimate: function () {
-            var _this_ = this; //ä¿å­˜thiså˜é‡
+            var _this_ = this; //±£´æthis±äÁ¿
             $(this.rootTag + " .sliderWF-main ").animate({
                 marginLeft: this.viewwidth.substr(0, this.viewwidth.length - 2) * this.currentSliderIndex * (-1) + 'px'
             }, _this_.speed, function () {
@@ -104,19 +105,19 @@
                 if (_this_.currentSliderIndex == _this_.nImg - 1 * _this_.nView) {
                     $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).hide();
                 }
-                //å› ä¸ºcurrentSliderIndexæ˜¯ä»0å¼€å§‹
+                //ÒòÎªcurrentSliderIndexÊÇ´Ó0¿ªÊ¼
                 $(_this_.rootTag + " .sliderWF " + _this_.currentIndexTagClassOrId).html(parseInt(_this_.currentSliderIndex) + 1);
-                _this_.ifAnimate = !_this_.ifAnimate; //è§£é”
+                _this_.ifAnimate = !_this_.ifAnimate; //½âËø
             });
         },
         returnIfAnimate: function () {
             return this.ifAnimate;
         },
-        //this.sliderInit(this);//è°ƒç”¨åŸå‹æ–¹æ³•
-        //é‡è¦æ­¤å¤„å¿…é¡»æŠŠè‡ªå·±ä¼ è¿›å» å› ä¸ºåœ¨æ‰§è¡Œ .click .each .animate(function(){ this })æ—¶ "this" å·²ç»ä¸å†æ˜¯SliderWF
-        // this æ˜¯æŒ‡è·ç¦»ä»–æœ€è¿‘çš„é‚£ä¸ªfunctionæ‰€å±çš„å¯¹è±¡
+        //this.sliderInit(this);//µ÷ÓÃÔ­ĞÍ·½·¨
+        //ÖØÒª´Ë´¦±ØĞë°Ñ×Ô¼º´«½øÈ¥ ÒòÎªÔÚÖ´ĞĞ .click .each .animate(function(){ this })Ê± "this" ÒÑ¾­²»ÔÙÊÇSliderWF
+        // this ÊÇÖ¸¾àÀëËû×î½üµÄÄÇ¸öfunctionËùÊôµÄ¶ÔÏó
 
-        ////ç”¨äºæŒ‡å®šmillisecåæ‰§è¡Œæ»šåŠ¨
+        ////ÓÃÓÚÖ¸¶¨millisecºóÖ´ĞĞ¹ö¶¯
         //sliderByTime: function (_this_) {
         //    //if (Object.prototype.toString.call(cb) == "[object Function]") {
         //    //    callback = cb;

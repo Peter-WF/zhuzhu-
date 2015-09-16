@@ -256,6 +256,32 @@ body {
 .top-container .slider {
     height: 300px;
     width: 790px;
+    position: relative;
+}
+
+.top-container .slider .prev-btn, .top-container .slider .next-btn {
+    position: absolute;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    top: 50%;
+    margin-top: -25px;
+    font-size: 26px;
+    line-height: 47px;
+    background: #000;
+    color: #fff;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    z-index: 10;
+    cursor: pointer;
+}
+
+.top-container .slider .prev-btn {
+    left: 10px;
+}
+
+.top-container .slider .next-btn {
+    right: 10px;
 }
 
 .top-container .top-designers {
@@ -523,12 +549,12 @@ body {
     line-height: 1.2;
 }
 
-.designs-container .nav-list {
+.designs-container .design-list {
     display: block;
     float: left;
 }
 
-.nav-list .nav {
+.design-list .single-design-box {
     /*display: inline-block;*/
     float: left;
     color: rgb(124, 124, 124);
@@ -539,9 +565,10 @@ body {
     padding-left: 13px;
     padding-right: 12px;
     cursor: pointer;
+    margin-left: 5px;
 }
 
-.nav-list .nav:hover {
+.design-list .single-design-box:hover, .design-list .single-design-box.active {
     color: white;
     background-color: rgb(54, 49, 49);
 }
@@ -556,8 +583,19 @@ body {
     clear: both;
     margin-left: -5px;
     margin-right: -5px;
+    display: none;
 }
-
+.designs-pic-list.active{
+    display: block;
+}
+.designs-pic-list.loading{
+    width: 1200px;
+    height: 400px;
+    text-align: center;
+    padding-top: 300px;
+    overflow: hidden;
+    display: block;
+}
 .designs-pic-list .design-item {
     width: 270px;
     height: 310px;
@@ -616,7 +654,8 @@ body {
 .design-item .top-line {
     margin-bottom: 20px;
 }
-.s-sm{
+
+.s-sm {
     display: inline-block;
     background: url("../img/s-sm.png?__sprite");
     width: 20px;
