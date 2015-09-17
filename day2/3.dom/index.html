@@ -41,7 +41,10 @@
 <div class="ban-ner" style="">
     <div class="menu-top">
         <div class="logo-img" alt="天蓬网"></div>
-        <ul class="menu-top-ul clearfix">
+        <div class="menu-navbar-toggle  toggle-btn" data-toggle="J-menu-top" type="button">
+            菜单
+        </div>
+        <ul class="menu-top-ul clearfix" id="J-menu-top">
             <li class="fl menu-top-li">首页</li>
             <li class="fl menu-top-li">设计师</li>
             <li class="fl menu-top-li">成功交易</li>
@@ -358,22 +361,22 @@
         <h2 class="designs-container-title">海量作品</h2>
 
         <div class="design-list J-nav-list" id="J-nav-list">
-            <a href="#tab1" class="single-design-box J-nav active" >
+            <a href="#tab1" data-targetid="tab1" class="single-design-box J-nav active">
                 平面
             </a>
-            <a href="#tab2"class="single-design-box J-nav">
+            <a href="#tab2" data-targetid="tab2" class="single-design-box J-nav">
                 网页
             </a>
-            <a href="#tab3" class="single-design-box J-nav">
+            <a href="#tab3" data-targetid="tab3" class="single-design-box J-nav">
                 移动APP
             </a>
-            <a href="#tab4" class="single-design-box J-nav">
+            <a href="#tab4" data-targetid="tab4" class="single-design-box J-nav">
                 插画
             </a>
 
         </div>
         <div class="more-box gray-box">MORE +</div>
-        <div class="designs-pic-list clearfix active J-loaded" id="tab1">
+        <div class="designs-pic-list clearfix tab active J-loaded" id="tab1">
             <div class="design-item">
                 <a href="#" class="design-item-pic">
                     <p class="mask-box">
@@ -559,13 +562,13 @@
                 </div>
             </div>
         </div>
-        <div class="designs-pic-list clearfix" id="tab2">
-               <img src="img/loading.gif">正在努力加载中
+        <div class="designs-pic-list clearfix tab" id="tab2">
+            <img src="img/loading.gif">正在努力加载中
         </div>
-        <div class="designs-pic-list clearfix" id="tab3">
-           tab3
+        <div class="designs-pic-list clearfix tab" id="tab3">
+            tab3
         </div>
-        <div class="designs-pic-list clearfix" id="tab4">
+        <div class="designs-pic-list clearfix tab" id="tab4">
             tab4
         </div>
     </div>
@@ -667,8 +670,9 @@
     </div>
 </div>
 <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
-<script src="js/mybase.js" type="text/javascript"></script>
+<script src="js/event.js" type="text/javascript"></script>
 <script src="js/utils.js" type="text/javascript"></script>
+<script src="js/mybase.js" type="text/javascript"></script>
 <!--<script>-->
 <!--$("body").delegate("#login", "click", function () {-->
 <!--alert("aaa");-->
@@ -679,45 +683,17 @@
     (function () {
         slider = new SliderWF({
             rootTag: ".top-focus",
-            millisec:5000
+            millisec: 5000
         });
         slider.sliderInit();
 
-//        activeNodeIndex=1;//当前
-//        document.getElementById("J-nav-list").addEventListener("click",function(e) {
-//            // 检查事件源e.targe是否为J-nav
-//            if(e.target && e.target.classList.contains("J-nav")) {
-//                //阻止默认事件
-//                e.preventDefault();
-//                //阻止事件冒泡
-//                e.stopPropagation();//避免触发组件父类的已有的点击事件
-//
-//                var parentElement = this;
-//                //this.parentNode.firstChild()
-//                var childrenElement =parentElement.children;
-//                childrenElement[activeNodeIndex].classList.remove()
-//                var activeElement =;
-//                var targetElement=$(this.hash)[0];
-//
-//                activeElement.removeClass("active"); //找到之前active的对象并移除其活动状态
-//                $(this).addClass("active");
-//                $(activeElement[0].hash).removeClass("active");//找到之前active的对象并移除其活动状态
-//
-//                if(!targetElement.classList.contains("J-loaded")){
-//                    targetElement.classList.add("loading");
-//                    targetElement.innerHTML='<div> <img src="img/loading.gif">正在努力加载中</div>';
-//                    var _this_=this;
-//                    setTimeout(function(_this_){
-//                        targetElement.innerHTML="加载成功";
-//                        targetElement.classList.remove("loading");
-//                    },1000)
-//                }else{
-//                }
-//                targetElement.classList.add("active");
-//                targetElement.classList.add("J-loaded");
-//            }
-//        });
-//    })();
+
+        var navListE=document.getElementById("J-nav-list");
+        EventUtil.addEvent(navListE,"click",Utils.navList);
+
+        var navListE = document.getElementById("J-nav-list");
+        Utils.bindingToggleStyle(navListE,"hidden");
+    })();
 
 </script>
 </body>

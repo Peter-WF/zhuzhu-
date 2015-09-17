@@ -1,8 +1,7 @@
-/**
- * Created by Administrator on 2015/9/16.
- */
+////王斐 滑块slider插件 2015年8月13日00:36:37
 ; //这个分号用于避免上一个js 少分号
 (function ($) {
+    //var SliderWF = function () { 这样写也可以
     function SliderWF(data) {
 
         this.rootTag = data.rootTag ? data.rootTag : ""; //根节点
@@ -109,6 +108,7 @@
                 $(_this_.rootTag + " .sliderWF " + _this_.currentIndexTagClassOrId).html(parseInt(_this_.currentSliderIndex) + 1);
                 _this_.ifAnimate = !_this_.ifAnimate; //解锁
             });
+
         },
         returnIfAnimate: function () {
             return this.ifAnimate;

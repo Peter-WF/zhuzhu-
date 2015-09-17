@@ -83,11 +83,11 @@
             if (!this.ifAnimate) {
                 this.ifAnimate = !this.ifAnimate; //加锁
                 if(this.currentSliderIndex==this.nImg-1 ){
-                    moveType=-1;
+                    this.moveType=-1;
                 }else if(this.currentSliderIndex==0 ){
-                    moveType=1;
+                    this.moveType=1;
                 }
-                this.currentSliderIndex+=moveType;
+                this.currentSliderIndex+=this.moveType;
                 this.sliderAnimate(this);
             }
         },

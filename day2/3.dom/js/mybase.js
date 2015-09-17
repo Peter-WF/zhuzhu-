@@ -1,17 +1,4 @@
 ﻿(function () {
-    //事件委托好处: 1.提高性能。 2. 新添加的元素还会有之前的事件。
-    $(document.body).delegate(".delete-img", "click", function (e) {
-        //阻止事件冒泡
-        e.stopPropagation();//避免触发组件父类的已有的点击事件
-        $(this).parent().remove();//点击按钮后删除(移除)
-    });
-
-    $(document.body).delegate(".close-img", "click", function (e) {
-        //阻止事件冒泡
-        e.stopPropagation();//避免触发组件父类的已有的点击事件
-        $(this).parent().hide();//点击按钮后隐藏(关闭)
-    });
-
 
     //2015年8月19日00:04:29 王斐
     //$("img").load(function () {
@@ -63,33 +50,7 @@
     }
 
 
-    $(".J-nav-list").delegate(">.J-nav[data-type!='noactive']", "click", function (e) {
-        //阻止默认事件
-        e.preventDefault();
-        //阻止事件冒泡
-        e.stopPropagation();//避免触发组件父类的已有的点击事件
-        var parent = $(this).parent();
-        //this.parentNode.firstChild()
-        var activeElement = parent.find(".active");
-        var targetElement=$(this.hash)[0];
 
-        activeElement.removeClass("active"); //找到之前active的对象并移除其活动状态
-        $(this).addClass("active");
-        $(activeElement[0].hash).removeClass("active");//找到之前active的对象并移除其活动状态
 
-       if(!targetElement.classList.contains("J-loaded")){
-           targetElement.classList.add("loading");
-           targetElement.innerHTML='<div> <img src="img/loading.gif">正在努力加载中</div>';
-           var _this_=this;
-           setTimeout(function(_this_){
-               targetElement.innerHTML="加载成功";
-               targetElement.classList.remove("loading");
-           },1000)
-       }else{
-       }
-        targetElement.classList.add("active");
-        targetElement.classList.add("J-loaded");
-
-    });
     //document.getElementsByClassName("J-nav-list").
 })();
