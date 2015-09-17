@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    body{
+        background-color: #FFFFFF;
+    }
+    .compass {
+        width: 500px;
+        height: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+    #J-compass{
+        margin-top: 250px;
+    }
+</style>
+<body>
+<div class="compass">
+    <img src="compass.png" id="J-compass" alt="指南针"/>
+    <a id="J-console"></a>
+</div>
+<script>
+    window.addEventListener("deviceorientation", handleOrientation, true);
+    var compassElement = document.getElementById("J-compass");//指南针盘
+    var console = document.getElementById("J-console");//控制台
+    function handleOrientation(event) {
+//        var absolute = event.absolute;
+        var alpha = event.alpha;
+//        var beta = event.beta;
+//        var gamma = event.gamma;
+        compassElement.style.webkitTransform="rotate("+alpha+"deg)";
+        console.innerHTML = "alpha: " + alpha + ", beta: " + beta
+    }
+
+</script>
+</body>
+</html>
