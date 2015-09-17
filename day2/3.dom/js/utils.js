@@ -44,10 +44,10 @@
             return domObj;
             //执行成功返回true
         },
-        toggleClass:function(domObj, className){
-            if(this.hasClass(domObj, className)){
+        toggleClass: function (domObj, className) {
+            if (this.hasClass(domObj, className)) {
                 return this.removeClass(domObj, className);
-            }else{
+            } else {
                 return this.addClass(domObj, className);
             }
         },
@@ -83,25 +83,38 @@
             }
         },
         extend2: function (superClass, subClass) {
-            function tempFunction() {
-
-            };
-            tempFunction.prototype = superClass.prototype;
 
             function F() {
+                function tempFunction() {
+
+                };
+                tempFunction.prototype = superClass.prototype;
+                return tempFunction
             }
 
-            F.prototype = parent;
-            return new F();
+            subClass.prototype = new F();
 
         },
         extend3: function (superClass, subClass) {
-            for (var methods in superClass) {
-                if (!subClass[methods]) {
-                    subClass[methods] = superClass[methods];
-                }
+            //待修改
+            function F() {
+                function tempFunction() {
+
+                };
+                tempFunction.prototype = superClass.prototype;
+                return tempFunction
             }
+
+            subClass.prototype = new F();
+
         },
+        //extend3: function (superClass, subClass) {
+        //    for (var methods in superClass) {
+        //        if (!subClass[methods]) {
+        //            subClass[methods] = superClass[methods];
+        //        }
+        //    }
+        //},
         // 类型判断(不知道是否需要判断下效率)
         isString: function (val) {
             if (Object.prototype.toString.call(val) == "[object String]") {
@@ -133,14 +146,28 @@
             }
             return false;
         },
-        //动画 1000ms 30帧
-        //getElement,
-        animate: function (element, endStyle, speed, cb) {
-
+        //动画  30帧/s 一般人眼识别每秒30帧可以让人感觉很舒服 相当于一帧需要1000/30毫秒 约等于33ms 间隔下一帧
+        //animate : 我的动画函数
+        //需要参数; 操作对象, 结束状态 , 时间(多少毫秒内执行完) , 回调函数.
+        animate: function (element, endStyle, time, cb) {
+            var derta = endStyle - element.style.marginLeft;//1.根据目标状态与当前状态的状态差求出变化距离derta
+            var total = time * 30;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
+            var 没帧改变量 = derta / total;
+            //setInterval()
+            //3.
         },
+        //需要参数 执行对象 操作值Json
+        animateOperation: function (element, operationJsonList) {
+            //运动操作
+            for (var operation in operationJsonList) {
+                alert(operation);
+            }
+        }
+        ,
         animateMove: function (element, endStyle, speed, cb) {
 
-        },
+        }
+        ,
         /*
          * @string id
          * @string styleName 样式名
@@ -152,7 +179,8 @@
                 var arr = element.ownerDocument.defaultView.getComputedStyle(element, null);
                 return arr[styleName];
             }
-        },
+        }
+        ,
 
 
         move: function (obj, target, speed) {
@@ -173,7 +201,7 @@
         //navList事件处理
         navList: function (e) {
             // 检查事件源e.targe是否为J-nav
-            var currentActiveTab="";
+            var currentActiveTab = "";
             if (e.target && Utils.hasClass(e.target, "J-nav")) {
                 //阻止默认事件
                 e.preventDefault();
@@ -217,14 +245,27 @@
 
             }
         },
-         //绑定css切换操作 cla类名
-        bindingToggleStyle: function (element, cla) {
+        //绑定css切换操作 cla类名
+        bindingToggleClass: function (element, cla) {
 
             var toggleBtn = document.getElementsByClassName("toggle-btn")[0];
             EventUtil.addEvent(toggleBtn, "click", function (e) {
                 var targetElementId = e.target.getAttribute("data-toggle");
                 var targetElement = document.getElementById(targetElementId);
-                Utils.toggleClass(targetElement,cla);
+                Utils.toggleClass(targetElement, cla);
+            });
+        },
+        //绑定css切换操作 style
+        bindingToggleStyle: function (element, style) {
+            var toggleBtn = document.getElementsByClassName("toggle-btn")[0];
+            EventUtil.addEvent(toggleBtn, "click", function (e) {
+                for (var oneStyle in style) {
+                    if(element.style[oneStyle]!=""){
+                        element.style[oneStyle] ="";
+                    }else{
+                        element.style[oneStyle] =style[oneStyle];
+                    }
+                }
             });
         }
     }

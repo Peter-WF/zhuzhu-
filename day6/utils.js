@@ -3,31 +3,53 @@
  */
 ;
 (function () {
-    function Utils(val) {
-
-    }
-
-    Utils.prototype = {
+    var Utils = {
         // 生成唯一ID
-        uuidIndex: 1,
         uuid: function () {
-            //考虑到并发因此这里定义一个序号用于处理并发
-            var newId = new Date().getTime() + "" + uuidIndex;
-            uuidIndex++;
-            return newId;
+            function tempFunction() {
+                var uuidIndex = 1;
+                return function innerFunction() {
+                    return (new Date().getTime() + "" + uuidIndex++);
+                }
+            }
+
+            this.uuid = tempFunction();
+        },
+        uuid2: function () {
+            var uuidIndex = 1;
+            return function innerFunction() {
+                return (new Date().getTime() + "" + uuidIndex++);
+            }
+        },
+        hasClass: function (dom, className) {
+            className = className.replace(/^\s|\s$/g, "");
+            return (
+                    " " + ((dom || {}).className || "").replace(/\s/g, " ") + " "
+                ).indexOf(" " + className + " ") >= 0
         },
         // 給 DOM 添加 className
         addClass: function (domObj, className) {
-            domObj.classList.add(className);
-            //document.getElementById("testId").classList.add("a")
-            return true;
+            //domObj.classList.add(className);
+            if (!this.hasClass(domObj, className)) {
+                domObj.className = domObj.className + " " + className;
+            }
+            return domObj;
             //执行成功返回true
         },
         // 去掉 DOM 上的某个 className
         removeClass: function (domObj, className) {
-            domObj.classList.remove(className);
-            return true;
+            //domObj.classList.remove(className);//不兼容IE8
+            var reg = new RegExp(className, "g");
+            domObj.className = domObj.className.replace(reg, "");
+            return domObj;
             //执行成功返回true
+        },
+        toggleClass: function (domObj, className) {
+            if (this.hasClass(domObj, className)) {
+                return this.removeClass(domObj, className);
+            } else {
+                return this.addClass(domObj, className);
+            }
         },
         // 在当前的 domcument 上加载一个 script 脚本，加载完成后执行 cb
         loadScript: function (script, cb) {
@@ -54,15 +76,45 @@
         },
         // super为父类的构造函数，sub为子类的构造函数。实现继承。用尽量多的方法完善该函数，例如原型链的方式，深克隆的方式等
         extend: function (superClass, subClass) {
-            for ( var methods in superClass.prototype) {
-                if(!subClass.prototype[methods]){
-                    subClass.prototype[methods]=superClass.prototype[methods];
+            for (var methods in superClass.prototype) {
+                if (!subClass.prototype[methods]) {
+                    subClass.prototype[methods] = superClass.prototype[methods];
                 }
             }
         },
         extend2: function (superClass, subClass) {
-            Person.call(this);
+
+            function F() {
+                function tempFunction() {
+
+                };
+                tempFunction.prototype = superClass.prototype;
+                return tempFunction
+            }
+
+            subClass.prototype = new F();
+
         },
+        extend3: function (superClass, subClass) {
+            //待修改
+            function F() {
+                function tempFunction() {
+
+                };
+                tempFunction.prototype = superClass.prototype;
+                return tempFunction
+            }
+
+            subClass.prototype = new F();
+
+        },
+        //extend3: function (superClass, subClass) {
+        //    for (var methods in superClass) {
+        //        if (!subClass[methods]) {
+        //            subClass[methods] = superClass[methods];
+        //        }
+        //    }
+        //},
         // 类型判断(不知道是否需要判断下效率)
         isString: function (val) {
             if (Object.prototype.toString.call(val) == "[object String]") {
@@ -93,28 +145,119 @@
                 return true;
             }
             return false;
+        },
+        //动画  30帧/s 一般人眼识别每秒30帧可以让人感觉很舒服 相当于一帧需要1000/30毫秒 约等于33ms 间隔下一帧
+        //animate : 我的动画函数
+        //需要参数; 操作对象, 结束状态 , 时间(多少毫秒内执行完) , 回调函数.
+        animate: function (element, endStyle, time, cb) {
+            var derta = endStyle - element.style.marginLeft;//1.根据目标状态与当前状态的状态差求出变化距离derta
+            var total = time * 30;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
+            var 没帧改变量 = derta / total;
+            setInterval()
+            //3.
+        },
+        //需要参数 执行对象 操作值Json
+        animateOperation: function (element,operationJsonList) {
+            //运动操作
+            for(var operation in operationJsonList){
+                alert(operation);
+            }
+        }
+        ,
+        animateMove: function (element, endStyle, speed, cb) {
+
+        }
+        ,
+        /*
+         * @string id
+         * @string styleName 样式名
+         */
+        getEyeJsStyle: function (element, styleName) {
+            if (element.currentStyle) {//ie
+                return element.currentStyle[styleName];
+            } else { //ff
+                var arr = element.ownerDocument.defaultView.getComputedStyle(element, null);
+                return arr[styleName];
+            }
+        }
+        ,
+
+
+        move: function (obj, target, speed) {
+            speed = -obj.offsetLeft > target ? speed : -speed;
+            clearInterval(moveTime);
+            var moveTime = setInterval(function () {
+
+                if (-obj.offsetLeft == target) {
+
+                    clearInterval(moveTime);
+
+                } else {
+                    obj.style.left = obj.offsetLeft + speed + "px";
+                }
+            }, 30);
+        }
+        ,
+        //navList事件处理
+        navList: function (e) {
+            // 检查事件源e.targe是否为J-nav
+            var currentActiveTab = "";
+            if (e.target && Utils.hasClass(e.target, "J-nav")) {
+                //阻止默认事件
+                e.preventDefault();
+                //阻止事件冒泡
+                e.stopPropagation();//避免触发组件父类的已有的点击事件
+
+                var parentElement = this;
+                //this.parentNode.firstChild()
+                var childrenElementList = parentElement.children;
+                var targetId = e.target.getAttribute("data-targetid");//得到当前点击处的data-targetid属性
+
+
+                for (var i = 0; i < childrenElementList.length; i++) {
+                    Utils.removeClass(childrenElementList[i], "active");//移除所有active//TODO 需要优化
+                }
+                Utils.addClass(e.target, "active");//给当前点击处添加active
+
+                var allTab = document.getElementsByClassName("tab");
+                if (currentActiveTab == "") {
+                    for (var i = 0; i < allTab.length; i++) {
+                        Utils.removeClass(allTab[i], "active");//移除所有active//TODO 需要优化
+                    }
+                } else {
+
+                    Utils.removeClass(document.getElementById(currentActiveTab), "active");
+                }
+                currentActiveTab = targetId;
+                var targetElement = document.getElementById(targetId);
+                if (!Utils.hasClass(targetElement, "J-loaded")) {
+                    Utils.addClass(targetElement, "loading");
+                    targetElement.innerHTML = '<div> <img src="img/loading.gif">正在努力加载中</div>';
+                    var _this_ = this;
+                    setTimeout(function (_this_) {
+                        targetElement.innerHTML = "加载成功";
+                        Utils.removeClass(targetElement, "loading");
+                    }, 1000)
+                } else {
+                }
+                Utils.addClass(targetElement, "active");//添加active类
+                Utils.addClass(targetElement, "J-loaded");//添加J-loaded类
+
+            }
+        }
+        ,
+        //绑定css切换操作 cla类名
+        bindingToggleClass: function (element, cla) {
+
+            var toggleBtn = document.getElementsByClassName("toggle-btn")[0];
+            EventUtil.addEvent(toggleBtn, "click", function (e) {
+                var targetElementId = e.target.getAttribute("data-toggle");
+                var targetElement = document.getElementById(targetElementId);
+                Utils.toggleClass(targetElement, cla);
+            });
         }
     }
-    window.utils = Utils;
-})();
 
-//var utils = {
-//    // 生成唯一ID
-//    uuid: function(){},
-//    // 給 DOM 添加 className
-//    addClass: function( domObj, className ){},
-//    // 去掉 DOM 上的某个 className
-//    removeClass: function( domObj, className ){},
-//    // 在当前的 domcument 上加载一个 script 脚本，加载完成后执行 cb
-//    loadScript: function( script, cb ){},
-//    // 返回一个不重复的数组
-//    uniqueArray: function( array ){},
-//    // super为父类的构造函数，sub为子类的构造函数。实现继承。用尽量多的方法完善该函数，例如原型链的方式，深克隆的方式等
-//    extend: function(super, sub) {},
-//// 类型判断
-//isString: function( val ){},
-//isNumber: function( val ){}
-//isObject: function( val ){},
-//isArray: function( val ){},
-//isFunction: function( val ){}
-//};
+    window.Utils = Utils;
+})
+();

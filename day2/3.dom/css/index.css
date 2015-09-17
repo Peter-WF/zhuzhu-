@@ -95,7 +95,6 @@ body {
     }
 }
 
-
 .function-div {
     position: absolute;
     right: 60px;
@@ -106,10 +105,16 @@ body {
 .ban-ner .menu-top .menu-top-ul {
     /* height: 40px; */
     line-height: 40px;
-    display: block;
     margin-left: 130px;
 
 }
+/*TODO 这里有BUG*/
+@media (mix-width: 901px) {
+    .menu-top-ul {
+        display: block !important;
+    }
+}
+
 .ban-ner .menu-top .menu-top-ul .menu-top-li {
     color: rgb(160, 160, 160);
     font-size: 13px;
@@ -121,13 +126,15 @@ body {
 @media (max-width: 900px) {
     .function-div {
         bottom: 30px;
-        top:auto;
+        top: auto;
     }
+
     .ban-ner .menu-top .menu-top-ul {
         margin-top: 70px;
         margin-left: 0px;
     }
-    .ban-ner .menu-top .menu-top-ul .menu-top-li{
+
+    .ban-ner .menu-top .menu-top-ul .menu-top-li {
         float: none;
 
         margin-right: 80px;

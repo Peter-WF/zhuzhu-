@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
+<style>
+    .testClass {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: fixed;
+
+    }
+</style>
 <body>
-<div class="testClass" id="testId"></div>
+<div class="testClass testClass2" data-targetid="testId" id="testId"></div>
 </body>
 <script type="text/javascript" src="utils.js" charset="UTF-8">
 </script>
@@ -13,27 +22,110 @@
 <!--</script>-->
 <script type="text/javascript">
     (function () {
-        util = new utils({});
-/*        util.loadScript("testUtil.js", function () {
-            alert("huidiao")
-        });*/
-        tempstu=new Student()
-        util.extend(Person,Student);
+
+        tempstu = new Student();
+
+//        Utils.extend(Person,Student);
     })();
-    function Person(name){
-        this.name=name;
+    function Person(name) {
+        this.name = "我的名字是Person";
     }
-    Person.prototype={
-        getName:function(){
-            return this.name;
+    Person.prototype = {
+        getName: function () {
+            return "我来自Person, " + this.name;
         }
     }
-    function Student(grade){
-        this.grade=grade;
+    function Student(grade) {
+        this.name = "我的名字是Student";
+        this.grade = "我的成绩";
     }
-//    Student.prototype=new Person("wf");
-    Student.prototype.getGrade=function(){
+    Student.prototype.getGrade = function () {
         return this.grade;
     };
+    //    Student.prototype=new Person("wf");
+
+    function testUuid() {
+        var rst = "";
+        for (var i = 0; i < 10; i++) {
+            rst = rst + " " + Utils.uuid();
+        }
+        alert(rst);
+    }
+    function testAddClass() {
+        var testDiv = document.getElementById("testId");
+        Utils.addClass(testDiv, "testClass2");
+        alert(testDiv.className);
+    }
+    function testRemoveClass() {
+        var testDiv = document.getElementById("testId");
+        Utils.removeClass(testDiv, "testClass2");
+        alert(testDiv.className);
+    }
+    function testHasClass() {
+        var testDiv = document.getElementById("testId");
+        alert(Utils.hasClass(testDiv, "testClass2"));
+    }
+    //测试继承
+    //testExtend测试结果
+    //执行完我所写的第一个extend方法后, 相当于是把父亲的方法一个一个给子类
+    //跟直接在子类上操作一样 并没有将子类与父类绑定
+
+    function testExtend() {
+        Utils.extend(Person, Student);
+        var newStudent = new Student();
+        alert(newStudent.getName());
+        alert(Person.prototype.getName.call(newStudent));
+        alert(newStudent.getGrade());
+
+        Student.prototype.getName = function () {
+            return "我来自Student, " + this.name;
+        };
+        alert(newStudent.getName());
+    }
+    //testExtend2测试结果
+    //执行完我所写的extend2方法后
+    //子类修改父类不修改
+    //父类修改子类不修改
+    function testExtend2() {
+        Utils.extend(Person, Student);
+        Person.prototype.getName = function () {
+            alert("我才是真正的getName")
+        }
+        var newStudent = new Student();
+        alert(newStudent.getName());
+    }
+    //testExtend3测试结果
+    //相当于是把父类的原型引用给了子类原型
+    //父类修改子类修改
+    //子类修改父类修改
+    //如果对子类prototype赋值,则一样影响父类的prototype
+    function testExtend3() {
+        Student.prototype = Person.prototype;
+        Student.prototype.getName = "我来搞破坏";
+        Student.prototype.getName1 = "我来搞破坏";
+    }
+
+    //testExtend4测试结果
+    //执行完我所写的extend2方法后
+    //相当于是直接覆盖了之前子类的原型方法
+    //父类的原型方法更改会被继承到子类,而且子类的更改不会污染父类
+    //但是,重要的一点,我不知道如何调用从父类继承的方法
+    //虽然可以通过Person.prototype.getName.call(new Student());调用
+    //但是这个调用后this指向的并不是我这个new的Student()
+    //因此看来还需要把this指向这个new Student()
+    function testExtend4() {
+        Utils.extend2(Person, Student);
+//        Student.prototype.getName="我来搞破坏";
+//        Student.prototype.getName1="我来搞破坏";
+        Person.prototype.getName2 = function () {
+            alert("我是getName的兄弟getName2");
+        }
+        Student.prototype.getName1 = "我来搞破坏";
+    }
+    function testLoadScript() {
+        Utils.loadScript("testUtil.js", function () {
+            alert("callback");
+        });
+    }
 </script>
 </html>
