@@ -18,9 +18,9 @@
         天蓬网
     </title>
     <link rel="stylesheet" href="css/cssreset.css"/>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/sliderWF.css">
+    <link rel="stylesheet" href="css/base.less">
+    <link rel="stylesheet" href="css/index-less.less">
+    <link rel="stylesheet" href="css/sliderWF.less">
 </head>
 <body>
 <div class="header">
@@ -44,7 +44,7 @@
         <div class="menu-navbar-toggle  toggle-btn" data-toggle="J-menu-top" type="button">
             菜单
         </div>
-        <ul class="menu-top-ul clearfix" id="J-menu-top">
+        <ul class="menu-top-ul clearfix" style="display: none;" id="J-menu-top">
             <li class="fl menu-top-li">首页</li>
             <li class="fl menu-top-li">设计师</li>
             <li class="fl menu-top-li">成功交易</li>
@@ -355,7 +355,7 @@
 
     </div>
 </div>
-</div>
+
 <div class="designs-container">
     <div class="row designs-container-row clearfix">
         <h2 class="designs-container-title">海量作品</h2>
@@ -669,10 +669,12 @@
         </div>
     </div>
 </div>
-<script src="js/jquery-2.1.4.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.3.js" type="text/javascript"></script>
 <script src="js/event.js" type="text/javascript"></script>
-<script src="js/utils.js" type="text/javascript"></script>
+<script src="../../day6/utils.js" type="text/javascript"></script>
 <script src="js/mybase.js" type="text/javascript"></script>
+<script src="js/plugins/nav-list.js" type="text/javascript"></script>
+<script src="js/supportIE8.js" type="text/javascript"></script>
 <!--<script>-->
 <!--$("body").delegate("#login", "click", function () {-->
 <!--alert("aaa");-->
@@ -688,9 +690,9 @@
         slider.sliderInit();
 
 
-        var navListE=document.getElementById("J-nav-list");
-        EventUtil.addEvent(navListE,"click",Utils.navList);
-
+//      var navListE=document.getElementById("J-nav-list");
+//      EventUtil.addEvent(navListE,"click",Utils.navList);
+        NavList("J-nav-list");
         var navListE = document.getElementById("J-menu-top");
         Utils.bindingToggleStyle(navListE,{display:"none"});
     })();
