@@ -44,9 +44,9 @@ body {
     background: url("../img/ban-ner.png") center top no-repeat;
     /*background-size: 100% 100%;*/
     background-size: cover;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
-            src='../img/ban-ner.png',
-            sizingMethod='scale');
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(*/
+            /*src='../img/ban-ner.png',*/
+            /*sizingMethod='scale');*/
     /*min-width: 1190px;*/
     height: 480px;
     width: 100%;
@@ -72,7 +72,6 @@ body {
     position: absolute;
     float: right;
     right: 60px;
-    margin-bottom: 8px;
     width: 50px;
     height: 14px;
     padding-top: 12px;
@@ -98,22 +97,18 @@ body {
 .function-div {
     position: absolute;
     right: 60px;
-    top: 30px;
+    bottom: 30px;
     text-align: right;
 }
 
 .ban-ner .menu-top .menu-top-ul {
     /* height: 40px; */
     line-height: 40px;
-    margin-left: 130px;
+    margin-top: 70px;
 
 }
+
 /*TODO 这里有BUG*/
-@media (mix-width: 901px) {
-    .menu-top-ul {
-        display: block !important;
-    }
-}
 
 .ban-ner .menu-top .menu-top-ul .menu-top-li {
     color: rgb(160, 160, 160);
@@ -121,23 +116,27 @@ body {
     display: block;
     text-align: right;
     margin-left: 40px;
+    float: none;
+    margin-right: 80px;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
+
     .function-div {
-        bottom: 30px;
-        top: auto;
+        bottom: auto;
+        top: 30px;
+
     }
 
     .ban-ner .menu-top .menu-top-ul {
-        margin-top: 70px;
-        margin-left: 0px;
+        margin-top: 0px;
+        margin-left: 130px;
+        display: block !important;
     }
 
     .ban-ner .menu-top .menu-top-ul .menu-top-li {
-        float: none;
-
-        margin-right: 80px;
+        float: left;
+        margin-right: 0px;
     }
 }
 
@@ -623,7 +622,8 @@ body {
     margin-left: 5px;
 }
 
-.design-list .single-design-box:hover, .design-list .single-design-box.active {
+.design-list .single-design-box:hover,
+.design-list .single-design-box.active {
     color: white;
     background-color: rgb(54, 49, 49);
 }
