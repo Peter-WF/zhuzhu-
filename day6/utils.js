@@ -7,12 +7,11 @@
         // 生成唯一ID
         uuid: function () {
             function tempFunction() {
-                var uuidIndex = 1;
+                var uuidIndex = 1;//闭包保存
                 return function innerFunction() {
                     return (new Date().getTime() + "" + uuidIndex++);
                 }
             }
-
             this.uuid = tempFunction();
         },
         uuid2: function () {
@@ -86,7 +85,6 @@
 
             function F() {
                 function tempFunction() {
-
                 };
                 tempFunction.prototype = superClass.prototype;
                 return tempFunction
@@ -96,7 +94,7 @@
 
         },
         extend3: function (superClass, subClass) {
-            //待修改
+            //待修改 修改this 的指向
             function F() {
                 function tempFunction() {
 
@@ -146,22 +144,96 @@
             }
             return false;
         },
+
         //动画  30帧/s 一般人眼识别每秒30帧可以让人感觉很舒服 相当于一帧需要1000/30毫秒 约等于33ms 间隔下一帧
         //animate : 我的动画函数
         //需要参数; 操作对象, 结束状态 , 时间(多少毫秒内执行完) , 回调函数.
+        //Utils.animate(document.getElementById("J-menu-top"),{"margin-top":"800px"},5000,"");
+        //通过
+        //测试:Utils.animate(document.getElementById("J-menu-top"),{"font-weight":"800"},5000,"");
+        //
         animate: function (element, endStyle, time, cb) {
-            var derta = endStyle - element.style.marginLeft;//1.根据目标状态与当前状态的状态差求出变化距离derta
-            var total = time * 30;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
-            var 没帧改变量 = derta / total;
-            setInterval()
-            //3.
+            //var derta = this.getStateDerta(element,endStyle);//1.根据目标状态与当前状态的状态差求出变化距离derta
+            var total = time / 1000 * 30;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
+            var current帧数 = 0;
+            var 每帧改变量 = this.计算每帧改变量(element, endStyle, total);//derta / total;
+            var tempIntervalEle = setInterval(function () {
+                if (current帧数 < total) {
+                    Utils.animateOperation(element, 每帧改变量, (current帧数 + 1));
+                    current帧数++;
+                } else {
+                    clearInterval(tempIntervalEle);
+                }
+
+            }, 33);
         },
-        //需要参数 执行对象 操作值Json
-        animateOperation: function (element,operationJsonList) {
-            //运动操作
-            for(var operation in operationJsonList){
-                alert(operation);
+        //计算每帧改变量
+        //结合getStateDerta()
+        计算每帧改变量: function (element, operationJsonList, total) {
+            var 每帧改变量Json = {};//定义返回值
+            for (var operation in operationJsonList) {
+                var value = operationJsonList[operation];
+                var currentState = this.getEyeJsStyle(element, operation);
+                currentState = parseFloat(currentState == "auto" || currentState ? 0 : currentState);
+                var 取出的后两位是 = value.substring(value.length - 2, value.length);
+                value = parseFloat(value);
+                if (取出的后两位是 == "px") {
+                    每帧改变量Json[operation] = ((value - currentState) / total) + "px";
+                } else {
+                    每帧改变量Json[operation] = ((value - currentState) / total);
+                }
+
             }
+            return 每帧改变量Json;
+        },
+        //根据目标状态与当前状态的状态差求出变化距离derta
+        //测试:Utils.getStateDerta(document.getElementById("J-menu-top"),{right:"66px","line-height":"100px"});
+        //通过
+
+        getStateDerta: function (element, operationJsonList) {
+            var StateDerta = {};//定义返回值
+            for (var operation in operationJsonList) {
+                var value = operationJsonList[operation];
+                var currentState = this.getEyeJsStyle(element, operation);
+                currentState = parseFloat(currentState == "auto" || currentState ? 0 : currentState);
+                var 取出的后两位是 = value.substring(value.length - 2, value.length);
+                value = parseFloat(value);
+                if (取出的后两位是 == "px") {
+                    StateDerta[operation] = (value - currentState) + "px";
+                } else {
+                    StateDerta[operation] = (value - currentState);
+                }
+
+            }
+            return StateDerta;
+
+        },
+        //需要参数 执行对象 操作值Json n是指倍数
+        //测试Utils.animateOperation(document.getElementById("J-menu-top"),{right:"66px",color:"red"});
+        //通过
+        //TODO 效率可能是一个问题
+        animateOperation: function (element, operationJsonList, n) {
+            //运动操作
+            for (var operation in operationJsonList) {
+                var value = operationJsonList[operation];
+
+                if (!this.isNumber(value)) {
+                    var 取出的后两位是 = value.substring(value.length - 2, value.length);
+                    var current = this.getEyeJsStyle(element, operation);
+                    current = current.substring(0, current.length - 2);
+                    element.style[operation] = this.numAdd(current, value.substring(0, value.length - 2)) + 取出的后两位是;
+                } else {
+                    var current = this.getEyeJsStyleNum(element, operation);
+                    element.style[operation] = this.numAdd(current, value);
+                }
+            }
+        },
+        numAdd: function (num1, num2) {
+            return parseFloat(num1) + parseFloat(num2);
+        },
+        //判断当前对象的样式是否等于目标样式
+        isEqual: function () {
+
         }
         ,
         animateMove: function (element, endStyle, speed, cb) {
@@ -179,10 +251,11 @@
                 var arr = element.ownerDocument.defaultView.getComputedStyle(element, null);
                 return arr[styleName];
             }
-        }
-        ,
-
-
+        },
+        getEyeJsStyleNum: function (element, styleName) {
+            var strAns = this.getEyeJsStyle(element, styleName);
+            return parseFloat("0" + strAns);
+        },
         move: function (obj, target, speed) {
             speed = -obj.offsetLeft > target ? speed : -speed;
             clearInterval(moveTime);
@@ -202,7 +275,7 @@
         navList: function (e) {
             // 检查事件源e.targe是否为J-nav
             var currentActiveTab = "";
-            if (e.target && Utils.hasClass(e.target, "J-nav")) {
+            if (e.target && Utils.hasClass(e.target ? e.target : e.srcElement, "J-nav")) {
                 //阻止默认事件
                 e.preventDefault();
                 //阻止事件冒泡
@@ -244,8 +317,7 @@
                 Utils.addClass(targetElement, "J-loaded");//添加J-loaded类
 
             }
-        }
-        ,
+        },
         //绑定css切换操作 cla类名
         bindingToggleClass: function (element, cla) {
 
@@ -254,6 +326,19 @@
                 var targetElementId = e.target.getAttribute("data-toggle");
                 var targetElement = document.getElementById(targetElementId);
                 Utils.toggleClass(targetElement, cla);
+            });
+        },
+        //绑定css切换操作 style
+        bindingToggleStyle: function (element, style) {
+            var toggleBtn = document.getElementsByClassName("toggle-btn")[0];
+            EventUtil.addEvent(toggleBtn, "click", function (e) {
+                for (var oneStyle in style) {
+                    if (element.style[oneStyle] != "") {
+                        element.style[oneStyle] = "";
+                    } else {
+                        element.style[oneStyle] = style[oneStyle];
+                    }
+                }
             });
         }
     }
