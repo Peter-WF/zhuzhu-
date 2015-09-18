@@ -1,0 +1,428 @@
+//失败实例
+//var error =
+{
+    "success": false,
+    "code": -1001,
+    "data": "请输入正确手机号"
+}
+//成功实例
+//var success =
+    {
+    "success": false,
+    "code": 401,
+    "data": "登陆异常，请输入您接收到的手机验证码"
+}
+//页面首次加载数据
+//var dataFirst =
+{
+    "success": true,
+    "data": {
+        tradingPushList: [
+            {
+                "employerName": "\"Peter\"",
+                "designerName": "\"Nancy\"",
+                "money": 10000
+            },
+            {
+                "employerName": "\"Peter\"",
+                "designerName": "\"Nancy\"",
+                "money": 10000
+            }
+        ],
+        sliderImg: [
+            {
+                "detail": "设计好才是王道",
+                "src": "/img/slider.png"
+            },
+            {
+                "detail": "设计好才是王道",
+                "src": "/img/slider.png"
+            },
+            {
+                "detail": "设计好才是王道",
+                "src": "/img/slider.png"
+            },
+            {
+                "detail": "设计好才是王道",
+                "src": "/img/slider.png"
+            }
+        ],
+        designers: [
+            {
+                "userId": 110,
+                "headimg": "img/girl.png",
+                "designername": "某设计",
+                "comeFrom": "来源:腾讯公司 网页设计",
+                "designer-number": 0,
+                "type": "s",
+                "state": "free",
+                "designerWorks": [
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    }
+                ]
+
+            },
+            {
+                "userId": 111,
+                "headimg": "img/girl.png",
+                "designername": "某设计",
+                "comeFrom": "来源:腾讯公司 网页设计",
+                "designer-number": 0,
+                "type": "g",
+                "state": "busy",
+                "designerWorks": [
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    }
+                ]
+            },
+            {
+                "userId": "112",
+                "headimg": "img/girl.png",
+                "designername": "某设计",
+                "comeFrom": "来源:腾讯公司 网页设计",
+                "designer-number": 0,
+                "type": "p",
+                "state": "free",
+                "designerWorks": [
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    }
+                ]
+            },
+            {
+                "userId": 110,
+                "headimg": "img/girl.png",
+                "designername": "某设计",
+                "comeFrom": "来源:腾讯公司 网页设计",
+                "designer-number": 0,
+                "type": "s",
+                "state": "free",
+                "designerWorks": [
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    }
+                ]
+
+            },
+            {
+                "userId": 111,
+                "headimg": "img/girl.png",
+                "designername": "某设计",
+                "comeFrom": "来源:腾讯公司 网页设计",
+                "designer-number": 0,
+                "type": "g",
+                "state": "busy",
+                "designerWorks": [
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    }
+                ]
+            },
+            {
+                "userId": "112",
+                "headimg": "img/girl.png",
+                "designername": "某设计",
+                "comeFrom": "来源:腾讯公司 网页设计",
+                "designer-number": 0,
+                "type": "p",
+                "state": "free",
+                "designerWorks": [
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    },
+                    {
+                        "pic": "/img/test-img1.png",
+                        "detail": "有没有觉得很有创意呀"
+                    }
+                ]
+            }
+        ],
+        "designsList": [
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            }
+        ],
+        "Qr-code": "/img/qr-code.png",
+        "about": [
+            {
+                "key": "天蓬网",
+                "value": "www.tianpeng.com"
+            },
+            {
+                "key": "版权声明",
+                "value": "www.tianpeng.com"
+            }
+        ],
+        "help": [
+            {
+                "key": "天蓬规则",
+                "value": "#"
+            }, {
+                "key": "天蓬规则",
+                "value": "#"
+            }
+        ],
+        "friendlink": [
+            {
+                "key": "天蓬网",
+                "value": "www.tianpeng.com"
+            },
+            {
+                "key": "猪八戒网",
+                "value": "www.zhubajie.com"
+            }
+        ],
+        "copyright": "",
+
+    }
+}
+//通过ajax加载请求
+//var dataAjax =
+{
+    "success": true,
+    "data": {
+        "designsList": [
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            },
+            {
+                "designsId": 111,
+                "designsTitle": "设计阿基米德定力A波车的",
+                "img": "/img/test-img3.png",
+                "like": 772,
+                "loadTime": "三小时前",
+                "designsType": "产品类型",
+                "author": {
+                    "id": 110,
+                    "name": "天朋王"
+                }
+            }
+        ]
+    }
+}
