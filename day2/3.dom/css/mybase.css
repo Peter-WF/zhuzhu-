@@ -1,74 +1,80 @@
-/*包含行内元素css(用于清除由于空格产生的间隔)*/
+/*锟斤拷锟斤拷锟斤拷锟斤拷元锟斤拷css(锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟节空革拷锟斤拷锟斤拷锟侥硷拷锟斤拷)*/
 .inlineBlock-Father {
-    font-size: 0 !important;
-    letter-spacing: 0px !important; /*根据不同字体字号或许需要做一定的调整*/
-    word-spacing: 0px !important;
+  font-size: 0 !important;
+  letter-spacing: 0px !important;
+  /*锟斤拷锟捷诧拷同锟斤拷锟斤拷锟街号伙拷锟斤拷锟斤拷要锟斤拷一锟斤拷锟侥碉拷锟斤拷*/
+  word-spacing: 0px !important;
 }
-/*行内元素css*/
+/*锟斤拷锟斤拷元锟斤拷css*/
 .inlineBlock-Son {
-    display: inline-block !important;
-    *display: inline !important;
-    *zoom: 1 !important;
-    letter-spacing: normal !important;
-    word-spacing: normal !important;
+  display: inline-block !important;
+  *display: inline !important;
+  *zoom: 1 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
 }
-/*伪装成可点击*/
+/*伪装锟缴可碉拷锟斤拷*/
 .button-Son:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-/*将它内部的标签伪装成可点击*/
+/*锟斤拷锟斤拷锟节诧拷锟侥憋拷签伪装锟缴可碉拷锟斤拷*/
 .button-Father *:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
-/*鼠标移动产生立体效果*/
+/*锟斤拷锟斤拷锟狡讹拷锟斤拷锟斤拷锟斤拷锟斤拷效锟斤拷*/
 .boxShadow-div:hover {
-    -webkit-box-shadow: #666 0px 0px 10px;
-    -moz-box-shadow: #666 0px 0px 10px;
-    box-shadow: #666 0px 0px 10px;
+  -webkit-box-shadow: #666 0px 0px 10px;
+  -moz-box-shadow: #666 0px 0px 10px;
+  box-shadow: #666 0px 0px 10px;
 }
-/*弧度边框*/
+/*锟斤拷锟饺边匡拷*/
 .borderRadius-div {
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
-
 .round {
-    border-radius: 5px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */
-    -moz-border-radius: 5px; /* Mozilla浏览器的私有属性 */
-    -webkit-border-radius: 5px; /* Webkit浏览器的私有属性 */
-    border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角 */
+  border-radius: 5px;
+  /* 锟斤拷锟叫角讹拷使锟矫半径为5px锟斤拷圆锟角ｏ拷锟斤拷锟斤拷锟斤拷为CSS3锟斤拷准锟斤拷锟斤拷 */
+  -moz-border-radius: 5px;
+  /* Mozilla锟斤拷锟斤拷锟斤拷锟斤拷私锟斤拷锟斤拷锟斤拷 */
+  -webkit-border-radius: 5px;
+  /* Webkit锟斤拷锟斤拷锟斤拷锟斤拷私锟斤拷锟斤拷锟斤拷 */
+  border-radius: 5px 4px 3px 2px;
+  /* 锟侥革拷锟诫径值锟街憋拷锟斤拷锟斤拷锟较角★拷锟斤拷锟较角★拷锟斤拷锟铰角猴拷锟斤拷锟铰斤拷 */
 }
-
-/*圆形*/
+/*圆锟斤拷*/
 .circle {
-    border-radius: 50%;
-    width: 77px;
-    height: 77px;
+  border-radius: 50%;
+  width: 77px;
+  height: 77px;
 }
-/*清除浮动*/
+/*锟斤拷锟斤拷锟斤拷锟斤拷*/
 .clearfix:after {
-    display: table;
-    content: "";
-    width: 0;
-    clear: both;
-    overflow: hidden;
+  display: table;
+  content: "";
+  width: 0;
+  clear: both;
+  overflow: hidden;
 }
-
 .clearfix {
-    *zoom: 1;
-    zoom: 1; /* for ie6 & ie7 */
-    *overflow: hidden;
+  *zoom: 1;
+  zoom: 1;
+  /* for ie6 & ie7 */
+  *overflow: hidden;
 }
-/*图片旋转*/
+/*图片锟斤拷转*/
 .rotate180deg {
-    /*scale缩放*/
-    -webkit-transform: rotateZ(180deg); /*webkit谷歌*/
-    -moz-transform: rotateZ(180deg); /*mozilla内核*/
-    -o-transform: rotateZ(180deg); /*opera内核识别码*/
-    -ms-transform: rotateZ(180deg); /*ie内核识别码*/
-    transform: rotateZ(180deg);
+  /*scale锟斤拷锟斤拷*/
+  -webkit-transform: rotateZ(180deg);
+  /*webkit锟饺革拷*/
+  -moz-transform: rotateZ(180deg);
+  /*mozilla锟节猴拷*/
+  -o-transform: rotateZ(180deg);
+  /*opera锟节猴拷识锟斤拷锟斤拷*/
+  -ms-transform: rotateZ(180deg);
+  /*ie锟节猴拷识锟斤拷锟斤拷*/
+  transform: rotateZ(180deg);
 }
 /*body {
 	background-image: url(http://s4.sinaimg.cn/orignal/7842060ag7647e795a303);
@@ -76,204 +82,180 @@
 	background-position: center top;
 	background-attachment: fixed;
 }*/
-
-/*html5输入选择器 required valid invalid*/
-
+/*html5锟斤拷锟斤拷选锟斤拷锟斤拷 required valid invalid*/
 input:valid {
-    border: 1px solid rgba(0, 128, 0, 0.3); /*合法的,要可以被require覆盖*/
+  border: 1px solid rgba(0, 128, 0, 0.3);
+  /*锟较凤拷锟斤拷,要锟斤拷锟皆憋拷require锟斤拷锟斤拷*/
 }
-
-/*正确时的css*/
+/*锟斤拷确时锟斤拷css*/
 input:required {
-    border: 1px solid blue; /*不论用户输入与否 只要有required属性就会被选择器识别*/
+  border: 1px solid blue;
+  /*锟斤拷锟斤拷锟矫伙拷锟斤拷锟斤拷锟斤拷锟斤拷 只要锟斤拷required锟斤拷锟皆就会被选锟斤拷锟斤拷识锟斤拷*/
 }
-
 input:invalid {
-    border: 1px solid red; /*不合法的一定要放在最后面加入,以免被覆盖*/
+  border: 1px solid red;
+  /*锟斤拷锟较凤拷锟斤拷一锟斤拷要锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷,锟斤拷锟解被锟斤拷锟斤拷*/
 }
-
 .pic_box:after {
-    display: inline-block;
-    width: 0;
-    height: 100%;
-    content: "center";
-    vertical-align: middle;
-    overflow: hidden;
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  content: "center";
+  vertical-align: middle;
+  overflow: hidden;
 }
-/*遮罩层*/
+/*锟斤拷锟街诧拷*/
 .maskWF {
-    background-color: rgb(0, 0, 0);
-    opacity: 0.2;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 997;
-    width: 100%;
-    height: 100%;
+  background-color: #000000;
+  opacity: 0.2;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 997;
+  width: 100%;
+  height: 100%;
 }
-
-
-
-/*下拉菜单dropdown-menuWF*/
+/*锟斤拷锟斤拷锟剿碉拷dropdown-menuWF*/
 .dropdown-menuWF {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 300;
-    display: none;
-    float: left;
-    /*min-width: 160px;*/
-    padding: 5px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 300;
+  display: none;
+  float: left;
+  /*min-width: 160px;*/
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
-
-
-/*2015年8月19日00:24:14 王斐*/
-/*设置懒加载:当浏览器禁用js时显示<noscript>里的图片*/
+/*2015锟斤拷8锟斤拷19锟斤拷00:24:14 锟斤拷锟斤拷*/
+/*锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷:锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷js时锟斤拷示<noscript>锟斤拷锟斤拷图片*/
 /*<img class="lazy" data-original="img/example.jpg"  width="640" heigh="480">
 <noscript><img src="img/example.jpg" width="640" heigh="480"></noscript>*/
-
 /*.lazy {
     display: none;
 }*/
-
 /*$("img.lazy").show().lazyload();*/
-
-
-/*一、大小不固定，多行文字的垂直居中*/
-/*① 单行文本居中*/
+/*一锟斤拷锟斤拷小锟斤拷锟教讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟街的达拷直锟斤拷锟斤拷*/
+/*锟斤拷 锟斤拷锟斤拷锟侥憋拷锟斤拷锟斤拷*/
 .wf_align_box_1 {
-    height: 10px;
-    line-height: 10px;
+  height: 10px;
+  line-height: 10px;
 }
-/*② 多行文字*/
+/*锟斤拷 锟斤拷锟斤拷锟斤拷锟斤拷*/
 .wf_align_box_2 {
-    display: table-cell;
-    height: 300px;
-    vertical-align: middle;
+  display: table-cell;
+  height: 300px;
+  vertical-align: middle;
 }
-
 .wf_align_box_2 .wf_align_word {
-    display: inline-block;
+  display: inline-block;
 }
-/*二、大小不固定，图片的垂直居中*/
-/*① 透明gif图片+背景定位*/
+/*锟斤拷锟斤拷锟斤拷小锟斤拷锟教讹拷锟斤拷图片锟侥达拷直锟斤拷锟斤拷*/
+/*锟斤拷 透锟斤拷gif图片+锟斤拷锟斤拷锟斤拷位*/
 .wf_align_box_3 img {
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
 }
-/*例如<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);">*/
-/*原理:设置img的src 并将宽度高度拉伸至最大 在设置要显示的图片为bg-img, 再利用background-position: center; 实现居中*/
-
-/*② display:table-cell和文字大小控制居中*/
+/*锟斤拷锟斤拷<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);">*/
+/*原锟斤拷:锟斤拷锟斤拷img锟斤拷src 锟斤拷锟斤拷锟斤拷锟饺高讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷 锟斤拷锟斤拷锟斤拷要锟斤拷示锟斤拷图片为bg-img, 锟斤拷锟斤拷锟斤拷background-position: center; 实锟街撅拷锟斤拷*/
+/*锟斤拷 display:table-cell锟斤拷锟斤拷锟街达拷小锟斤拷锟狡撅拷锟斤拷*/
 .wf_align_box_4 li {
-    float: left;
-    margin-right: 13px;
+  float: left;
+  margin-right: 13px;
 }
-
 .wf_align_box_4 li div {
-    display: table-cell;
-    width: 144px;
-    height: 144px;
-    border: 1px solid #beceeb;
-    font-size: 118px;
-    text-align: center;
-    vertical-align: middle;
+  display: table-cell;
+  width: 144px;
+  height: 144px;
+  border: 1px solid #beceeb;
+  font-size: 118px;
+  text-align: center;
+  vertical-align: middle;
 }
-
 .wf_align_box_4 li div img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
-/*例子*/
+/*锟斤拷锟斤拷*/
 /*<ul class="wf_align_box_3 fix">
     <li>
     	<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);" />
     </li>
 </ul>*/
-
-/*③ display:inline-block和文字大小控制居中*/
+/*锟斤拷 display:inline-block锟斤拷锟斤拷锟街达拷小锟斤拷锟狡撅拷锟斤拷*/
 .wf_align_box_5 a {
-    display: inline-block;
-    width: 1.2em;
-    font-size: 128px;
-    text-align: center;
-    vertical-align: middle;
+  display: inline-block;
+  width: 1.2em;
+  font-size: 128px;
+  text-align: center;
+  vertical-align: middle;
 }
-
 .wf_align_box_5 a img {
-    vertical-align: middle;
-    padding: 2px;
-    border: 1px solid #beceeb;
+  vertical-align: middle;
+  padding: 2px;
+  border: 1px solid #beceeb;
 }
-
-/*④ 使用空白图片实现垂直对齐*/
-/*好吧，我知道说大话会被人笑的，但是我还是非常自信地推荐下面这种我想出来的图片垂直居中对齐的方法。非常简单，非常易懂，出错率低，上手方便，兼容性上佳！*/
-
+/*锟斤拷 使锟矫空帮拷图片实锟街达拷直锟斤拷锟斤拷*/
+/*锟矫吧ｏ拷锟斤拷知锟斤拷说锟襟话会被锟斤拷笑锟侥ｏ拷锟斤拷锟斤拷锟揭伙拷锟角非筹拷锟斤拷锟脚碉拷锟狡硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷图片锟斤拷直锟斤拷锟叫讹拷锟斤拷锟侥凤拷锟斤拷锟斤拷锟角筹拷锟津单ｏ拷锟角筹拷锟阶讹拷锟斤拷锟斤拷锟斤拷锟绞低ｏ拷锟斤拷锟街凤拷锟姐，锟斤拷锟斤拷锟斤拷锟较佳ｏ拷*/
 .wf_align_box_6 li {
-    height: 128px;
-    width: 150px;
-    padding: 13px 0;
-    float: left;
-    margin-right: 10px;
-    border: 1px solid #beceeb;
-    text-align: center;
-    font-size: 0;
+  height: 128px;
+  width: 150px;
+  padding: 13px 0;
+  float: left;
+  margin-right: 10px;
+  border: 1px solid #beceeb;
+  text-align: center;
+  font-size: 0;
 }
-
 .wf_align_box_6 li .alpha_img {
-    height: 100%;
-    width: 1px;
-    vertical-align: middle;
+  height: 100%;
+  width: 1px;
+  vertical-align: middle;
 }
-
 .wf_align_box_6 li .show_img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
-
-/*例子*/
+/*锟斤拷锟斤拷*/
 /*<ul class="wf_align_box_6 fix">
     <li>
         <img class="show_img" src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" />
         <img class="alpha_img" src="../image/pixel.gif" />
     </li>
 </ul>*/
-/*原理*/
-/*一句话，将要显示的图片与一张透明的高度100%，宽度1像素的透明图片vertical-align:middle对齐。
-其核心原理其实与第二种利用font-size大小实现IE下图片垂直居中是一致的。将font-size设置得很大，目的是撑开IE下默认文字空间的高度，其性质类似于空格，然后通过vertical-align:middle属性让图片与这个高高的空白空格空间垂直居中对齐；而这里将这个看不见的文字空间实例成一张透明的gif图片，高度可以轻松设置为外部标签的高度，然后通过vertical-align:middle对齐，就实现效果了，在各个浏览器下都是一样的表现，不需要担心什么兼容性的问题。而且代码很简单，很易懂，想出错都难！*/
-
-
-/**消息提示组件的样式**/
+/*原锟斤拷*/
+/*一锟戒话锟斤拷锟斤拷要锟斤拷示锟斤拷图片锟斤拷一锟斤拷透锟斤拷锟侥高讹拷100%锟斤拷锟斤拷锟斤拷1锟斤拷锟截碉拷透锟斤拷图片vertical-align:middle锟斤拷锟诫。
+锟斤拷锟斤拷锟斤拷原锟斤拷锟斤拷实锟斤拷锟节讹拷锟斤拷锟斤拷锟斤拷font-size锟斤拷小实锟斤拷IE锟斤拷图片锟斤拷直锟斤拷锟斤拷锟斤拷一锟铰的★拷锟斤拷font-size锟斤拷锟矫得很达拷锟斤拷目锟斤拷锟角撑匡拷IE锟斤拷默锟斤拷锟斤拷锟街空硷拷锟侥高度ｏ拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟节空革拷锟斤拷然锟斤拷通锟斤拷vertical-align:middle锟斤拷锟斤拷锟斤拷图片锟斤拷锟斤拷锟斤拷锟竭高的空白空革拷锟秸间垂直锟斤拷锟叫讹拷锟诫；锟斤拷锟斤拷锟斤将锟斤拷锟津看诧拷锟斤拷锟斤拷锟斤拷锟街空硷拷实锟斤拷锟斤拷一锟斤拷透锟斤拷锟斤拷gif图片锟斤拷锟竭度匡拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷为锟解部锟斤拷签锟侥高度ｏ拷然锟斤拷通锟斤拷vertical-align:middle锟斤拷锟诫，锟斤拷实锟斤拷效锟斤拷锟剿ｏ拷锟节革拷锟斤拷锟斤拷锟斤拷锟斤拷锟铰讹拷锟斤拷一锟斤拷锟侥憋拷锟街ｏ拷锟斤拷锟斤拷要锟斤拷锟斤拷什么锟斤拷锟斤拷锟皆碉拷锟斤拷锟解。锟斤拷锟揭达拷锟斤拷锟杰简单ｏ拷锟斤拷锟阶讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟窖ｏ拷*/
+/**锟斤拷息锟斤拷示锟斤拷锟斤拷锟斤拷锟斤拷式**/
 .operatMessage {
-    text-align: center;
-    background: #5cb85c;
-    position: absolute;
-    bottom: 40px;
-    z-index: 10;
-    left: 20px;
-    right: 20px;
-    padding: 15px;
-    color: #fff;
-    border-radius: 4px;
-    -webkit-box-shadow: 0px 0px 6px 1px #5cb85c;
-    box-shadow: 0px 0px 6px 1px #5cb85c;
-    display: none;
-    margin:auto;
-    width:200px;
-    /* filter:alpha(opacity=50);
-       -moz-opacity:0.5;
-       -khtml-opacity: 0.5;
-       opacity: 0.5; */
+  text-align: center;
+  background: #5cb85c;
+  position: absolute;
+  bottom: 40px;
+  z-index: 10;
+  left: 20px;
+  right: 20px;
+  padding: 15px;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 6px 1px #5cb85c;
+  box-shadow: 0px 0px 6px 1px #5cb85c;
+  display: none;
+  margin: auto;
+  width: 200px;
+  /* filter:alpha(opacity=50);
+     -moz-opacity:0.5;
+     -khtml-opacity: 0.5;
+     opacity: 0.5; */
 }

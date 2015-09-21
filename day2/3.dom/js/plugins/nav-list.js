@@ -1,4 +1,4 @@
-//navListÊÂ¼ş´¦Àí
+//navListäº‹ä»¶å¤„ç†
 ;
 (function () {
     /**
@@ -11,42 +11,42 @@
     }
 
     NavList.prototype = {
-        //TODOÕâÀï¿¼ÂÇÊÇ·ñĞèÒª°ÑOperationFunctuon·ÅÔÚ¹¹Ôì·½·¨ÖĞÒÔÃâ±»¸²¸Ç
+        //TODOè¿™é‡Œè€ƒè™‘æ˜¯å¦éœ€è¦æŠŠOperationFunctuonæ”¾åœ¨æ„é€ æ–¹æ³•ä¸­ä»¥å…è¢«è¦†ç›–
         init: function (id) {
             var navListE = document.getElementById(id);
             EventUtil.addEvent(navListE, "click", this.OperationFunctuon(id));
             return this;
         },
         OperationFunctuon: function (id) {
-            // ¼ì²éÊÂ¼şÔ´e.targeÊÇ·ñÎªJ-nav
-            var currentActiveTab = "";//ÀûÓÃ±Õ°ü±£´æÊı¾İ
+            // æ£€æŸ¥äº‹ä»¶æºe.targeæ˜¯å¦ä¸ºJ-nav-item
+            var currentActiveTab = "";//åˆ©ç”¨é—­åŒ…ä¿å­˜æ•°æ®
             var navListE = document.getElementById(id);
             return function (e) {
-                //TODO ÕâÀïÕâ¸ö J-nav¿ÉÄÜĞ´ËÀ²»Ì«ºÃ
+                //TODO è¿™é‡Œè¿™ä¸ª J-nav-itemå¯èƒ½å†™æ­»ä¸å¤ªå¥½
                 var currentId = e.target ? e.target : e.srcElement;
-                if (currentId && Utils.hasClass(currentId, "J-nav")) {
-                    //×èÖ¹Ä¬ÈÏÊÂ¼ş
+                if (currentId && Utils.hasClass(currentId, "J-nav-item")) {
+                    //é˜»æ­¢é»˜è®¤äº‹ä»¶
 
                     //e.preventDefault();
                     (e.preventDefault) ? e.preventDefault() : e.returnValue = false;
-                    //×èÖ¹ÊÂ¼şÃ°Åİ
+                    //é˜»æ­¢äº‹ä»¶å†’æ³¡
                     (e.stopPropagation) ? e.stopPropagation() : e.cancelBubble = true;
 
                     var parentElement = navListE;
                     //this.parentNode.firstChild()
                     var childrenElementList = parentElement.children;
-                    var targetId = currentId.getAttribute("data-targetid");//µÃµ½µ±Ç°µã»÷´¦µÄdata-targetidÊôĞÔ
+                    var targetId = currentId.getAttribute("data-targetid");//å¾—åˆ°å½“å‰ç‚¹å‡»å¤„çš„data-targetidå±æ€§
 
 
                     for (var i = 0; i < childrenElementList.length; i++) {
-                        Utils.removeClass(childrenElementList[i], "active");//ÒÆ³ıËùÓĞactive//TODO ĞèÒªÓÅ»¯
+                        Utils.removeClass(childrenElementList[i], "active");//ç§»é™¤æ‰€æœ‰active//TODO éœ€è¦ä¼˜åŒ–
                     }
-                    Utils.addClass(currentId, "active");//¸øµ±Ç°µã»÷´¦Ìí¼Óactive
+                    Utils.addClass(currentId, "active");//ç»™å½“å‰ç‚¹å‡»å¤„æ·»åŠ active
 
                     var allTab = document.getElementsByClassName("tab");
                     if (currentActiveTab == "") {
                         for (var i = 0; i < allTab.length; i++) {
-                            Utils.removeClass(allTab[i], "active");//ÒÆ³ıËùÓĞactive//TODO ĞèÒªÓÅ»¯
+                            Utils.removeClass(allTab[i], "active");//ç§»é™¤æ‰€æœ‰active//TODO éœ€è¦ä¼˜åŒ–
                         }
                     } else {
 
@@ -56,16 +56,16 @@
                     var targetElement = document.getElementById(targetId);
                     if (!Utils.hasClass(targetElement, "J-loaded")) {
                         Utils.addClass(targetElement, "loading");
-                        targetElement.innerHTML = '<div> <img src="img/loading.gif">ÕıÔÚÅ¬Á¦¼ÓÔØÖĞ</div>';
+                        targetElement.innerHTML = '<div> <img src="img/loading.gif">æ­£åœ¨åŠªåŠ›åŠ è½½ä¸­</div>';
                         var _this_ = this;
                         setTimeout(function (_this_) {
-                            targetElement.innerHTML = "¼ÓÔØ³É¹¦";
+                            targetElement.innerHTML = "åŠ è½½æˆåŠŸ";
                             Utils.removeClass(targetElement, "loading");
                         }, 1000)
                     } else {
                     }
-                    Utils.addClass(targetElement, "active");//Ìí¼ÓactiveÀà
-                    Utils.addClass(targetElement, "J-loaded");//Ìí¼ÓJ-loadedÀà
+                    Utils.addClass(targetElement, "active");//æ·»åŠ activeç±»
+                    Utils.addClass(targetElement, "J-loaded");//æ·»åŠ J-loadedç±»
 
                     return
                 }
