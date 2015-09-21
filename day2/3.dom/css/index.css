@@ -544,15 +544,16 @@ body {
   margin-left: -5px;
   margin-right: -5px;
   display: none;
+  height: 700px;
 }
 .designs-pic-list.active {
   display: block;
 }
 .designs-pic-list.loading {
   width: 1200px;
-  height: 400px;
+  height: 600px;
   text-align: center;
-  padding-top: 300px;
+  padding-top: 100px;
   overflow: hidden;
   display: block;
 }

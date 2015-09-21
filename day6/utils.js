@@ -12,6 +12,7 @@
                     return (new Date().getTime() + "" + uuidIndex++);
                 }
             }
+
             this.uuid = tempFunction();
         },
         uuid2: function () {
@@ -340,6 +341,53 @@
                     }
                 }
             });
+        }, createXMLHttpRequest: function () {
+
+            if (window.ActiveXObject) {
+                return xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            else if (window.XMLHttpRequest) {
+                return xmlHttp = new XMLHttpRequest();
+            }
+
+        }
+        , myAjax: function (data) {
+            // 新建一个XMLHttpRequest实例对象
+
+            var xhr = this.createXMLHttpRequest();
+
+            // 在通信过程中，每当发生状态变化的时候，就会触发readyStateChange事件，设置回调函数
+            xhr.onreadystatechange = function () {
+
+                // 通信成功时，状态值为4
+                var completed = 4;
+                if (xhr.readyState === completed) {
+                    if (xhr.status === 200) {
+                        // 处理服务器发送过来的数据
+                        var responseText=JSON.parse(xhr.responseText);
+                        //if(!responseText){
+                        //    responseText=eval("("+responseText+")");
+                        //}
+                        data.success(responseText);
+                    } else {
+                        // 处理错误
+                        data.error(xhr.response);
+                    }
+                }
+            };
+
+
+            // setRequestHeader方法用于设置HTTP请求的头信息。
+            //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            // 指定返回的数据类型
+            //xhr.responseType = data.returnType;//data.returnType
+
+            // open方式用于指定HTTP请求方式、请求的地址、是否异步
+            xhr.open('get', data.url, data.async);
+
+            // 发送HTTP请求，只有POST才能发送数据
+            xhr.send();
         }
     }
 

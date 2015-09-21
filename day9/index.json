@@ -1,18 +1,18 @@
-//Ê§°ÜÊµÀı
+//å¤±è´¥å®ä¾‹
 //var error =
 {
     "success": false,
     "code": -1001,
-    "data": "ÇëÊäÈëÕıÈ·ÊÖ»úºÅ"
+    "data": "è¯·è¾“å…¥æ­£ç¡®æ‰‹æœºå·"
 }
-//³É¹¦ÊµÀı
+//æˆåŠŸå®ä¾‹
 //var success =
     {
     "success": false,
     "code": 401,
-    "data": "µÇÂ½Òì³££¬ÇëÊäÈëÄú½ÓÊÕµ½µÄÊÖ»úÑéÖ¤Âë"
+    "data": "ç™»é™†å¼‚å¸¸ï¼Œè¯·è¾“å…¥æ‚¨æ¥æ”¶åˆ°çš„æ‰‹æœºéªŒè¯ç "
 }
-//Ò³ÃæÊ×´Î¼ÓÔØÊı¾İ
+//é¡µé¢é¦–æ¬¡åŠ è½½æ•°æ®
 //var dataFirst =
 {
     "success": true,
@@ -31,19 +31,19 @@
         ],
         sliderImg: [
             {
-                "detail": "Éè¼ÆºÃ²ÅÊÇÍõµÀ",
+                "detail": "è®¾è®¡å¥½æ‰æ˜¯ç‹é“",
                 "src": "/img/slider.png"
             },
             {
-                "detail": "Éè¼ÆºÃ²ÅÊÇÍõµÀ",
+                "detail": "è®¾è®¡å¥½æ‰æ˜¯ç‹é“",
                 "src": "/img/slider.png"
             },
             {
-                "detail": "Éè¼ÆºÃ²ÅÊÇÍõµÀ",
+                "detail": "è®¾è®¡å¥½æ‰æ˜¯ç‹é“",
                 "src": "/img/slider.png"
             },
             {
-                "detail": "Éè¼ÆºÃ²ÅÊÇÍõµÀ",
+                "detail": "è®¾è®¡å¥½æ‰æ˜¯ç‹é“",
                 "src": "/img/slider.png"
             }
         ],
@@ -51,23 +51,23 @@
             {
                 "userId": 110,
                 "headimg": "img/girl.png",
-                "designername": "Ä³Éè¼Æ",
-                "comeFrom": "À´Ô´:ÌÚÑ¶¹«Ë¾ ÍøÒ³Éè¼Æ",
+                "designername": "æŸè®¾è®¡",
+                "comeFrom": "æ¥æº:è…¾è®¯å…¬å¸ ç½‘é¡µè®¾è®¡",
                 "designer-number": 0,
                 "type": "s",
                 "state": "free",
                 "designerWorks": [
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     }
                 ]
 
@@ -75,69 +75,69 @@
             {
                 "userId": 111,
                 "headimg": "img/girl.png",
-                "designername": "Ä³Éè¼Æ",
-                "comeFrom": "À´Ô´:ÌÚÑ¶¹«Ë¾ ÍøÒ³Éè¼Æ",
+                "designername": "æŸè®¾è®¡",
+                "comeFrom": "æ¥æº:è…¾è®¯å…¬å¸ ç½‘é¡µè®¾è®¡",
                 "designer-number": 0,
                 "type": "g",
                 "state": "busy",
                 "designerWorks": [
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     }
                 ]
             },
             {
                 "userId": "112",
                 "headimg": "img/girl.png",
-                "designername": "Ä³Éè¼Æ",
-                "comeFrom": "À´Ô´:ÌÚÑ¶¹«Ë¾ ÍøÒ³Éè¼Æ",
+                "designername": "æŸè®¾è®¡",
+                "comeFrom": "æ¥æº:è…¾è®¯å…¬å¸ ç½‘é¡µè®¾è®¡",
                 "designer-number": 0,
                 "type": "p",
                 "state": "free",
                 "designerWorks": [
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     }
                 ]
             },
             {
                 "userId": 110,
                 "headimg": "img/girl.png",
-                "designername": "Ä³Éè¼Æ",
-                "comeFrom": "À´Ô´:ÌÚÑ¶¹«Ë¾ ÍøÒ³Éè¼Æ",
+                "designername": "æŸè®¾è®¡",
+                "comeFrom": "æ¥æº:è…¾è®¯å…¬å¸ ç½‘é¡µè®¾è®¡",
                 "designer-number": 0,
                 "type": "s",
                 "state": "free",
                 "designerWorks": [
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     }
                 ]
 
@@ -145,46 +145,46 @@
             {
                 "userId": 111,
                 "headimg": "img/girl.png",
-                "designername": "Ä³Éè¼Æ",
-                "comeFrom": "À´Ô´:ÌÚÑ¶¹«Ë¾ ÍøÒ³Éè¼Æ",
+                "designername": "æŸè®¾è®¡",
+                "comeFrom": "æ¥æº:è…¾è®¯å…¬å¸ ç½‘é¡µè®¾è®¡",
                 "designer-number": 0,
                 "type": "g",
                 "state": "busy",
                 "designerWorks": [
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     }
                 ]
             },
             {
                 "userId": "112",
                 "headimg": "img/girl.png",
-                "designername": "Ä³Éè¼Æ",
-                "comeFrom": "À´Ô´:ÌÚÑ¶¹«Ë¾ ÍøÒ³Éè¼Æ",
+                "designername": "æŸè®¾è®¡",
+                "comeFrom": "æ¥æº:è…¾è®¯å…¬å¸ ç½‘é¡µè®¾è®¡",
                 "designer-number": 0,
                 "type": "p",
                 "state": "free",
                 "designerWorks": [
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     },
                     {
                         "pic": "/img/test-img1.png",
-                        "detail": "ÓĞÃ»ÓĞ¾õµÃºÜÓĞ´´ÒâÑ½"
+                        "detail": "æœ‰æ²¡æœ‰è§‰å¾—å¾ˆæœ‰åˆ›æ„å‘€"
                     }
                 ]
             }
@@ -192,128 +192,128 @@
         "designsList": [
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             },
             {
                 "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
+                "designsTitle": "è®¾è®¡é˜¿åŸºç±³å¾·å®šåŠ›Aæ³¢è½¦çš„",
                 "img": "/img/test-img3.png",
                 "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
+                "loadTime": "ä¸‰å°æ—¶å‰",
+                "designsType": "äº§å“ç±»å‹",
                 "author": {
                     "id": 110,
-                    "name": "ÌìÅóÍõ"
+                    "name": "å¤©æœ‹ç‹"
                 }
             }
         ],
         "Qr-code": "/img/qr-code.png",
         "about": [
             {
-                "key": "ÌìÅîÍø",
+                "key": "å¤©è“¬ç½‘",
                 "value": "www.tianpeng.com"
             },
             {
-                "key": "°æÈ¨ÉùÃ÷",
+                "key": "ç‰ˆæƒå£°æ˜",
                 "value": "www.tianpeng.com"
             }
         ],
         "help": [
             {
-                "key": "ÌìÅî¹æÔò",
+                "key": "å¤©è“¬è§„åˆ™",
                 "value": "#"
             }, {
-                "key": "ÌìÅî¹æÔò",
+                "key": "å¤©è“¬è§„åˆ™",
                 "value": "#"
             }
         ],
         "friendlink": [
             {
-                "key": "ÌìÅîÍø",
+                "key": "å¤©è“¬ç½‘",
                 "value": "www.tianpeng.com"
             },
             {
-                "key": "Öí°Ë½äÍø",
+                "key": "çŒªå…«æˆ’ç½‘",
                 "value": "www.zhubajie.com"
             }
         ],
@@ -321,108 +321,4 @@
 
     }
 }
-//Í¨¹ıajax¼ÓÔØÇëÇó
-//var dataAjax =
-{
-    "success": true,
-    "data": {
-        "designsList": [
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            },
-            {
-                "designsId": 111,
-                "designsTitle": "Éè¼Æ°¢»ùÃ×µÂ¶¨Á¦A²¨³µµÄ",
-                "img": "/img/test-img3.png",
-                "like": 772,
-                "loadTime": "ÈıĞ¡Ê±Ç°",
-                "designsType": "²úÆ·ÀàĞÍ",
-                "author": {
-                    "id": 110,
-                    "name": "ÌìÅóÍõ"
-                }
-            }
-        ]
-    }
-}
+

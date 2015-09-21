@@ -6,21 +6,22 @@
      * @param id
      * @constructor
      */
-    function NavList(id) {
-        return new NavList.prototype.init(id);
+    function NavList(id,callback) {
+        return new NavList.prototype.init(id,callback);
     }
 
     NavList.prototype = {
         //TODO这里考虑是否需要把OperationFunctuon放在构造方法中以免被覆盖
-        init: function (id) {
+        init: function (id,callback) {
             var navListE = document.getElementById(id);
-            EventUtil.addEvent(navListE, "click", this.OperationFunctuon(id));
+            EventUtil.addEvent(navListE, "click", this.OperationFunctuon(id,callback));
             return this;
         },
-        OperationFunctuon: function (id) {
+        OperationFunctuon: function (id,callback) {
             // 检查事件源e.targe是否为J-nav-item
             var currentActiveTab = "";//利用闭包保存数据
             var navListE = document.getElementById(id);
+            var callback=callback;
             return function (e) {
                 //TODO 这里这个 J-nav-item可能写死不太好
                 var currentId = e.target ? e.target : e.srcElement;
@@ -57,11 +58,16 @@
                     if (!Utils.hasClass(targetElement, "J-loaded")) {
                         Utils.addClass(targetElement, "loading");
                         targetElement.innerHTML = '<div> <img src="img/loading.gif">正在努力加载中</div>';
+
                         var _this_ = this;
-                        setTimeout(function (_this_) {
-                            targetElement.innerHTML = "加载成功";
-                            Utils.removeClass(targetElement, "loading");
-                        }, 1000)
+                        callback(targetElement,function(){
+                            Utils.removeClass(targetElement,"loading");
+                        });
+                        //setTimeout(function (_this_) {
+                        //    targetElement.innerHTML = "加载成功";
+                        //    Utils.removeClass(targetElement, "loading");
+                        //
+                        //}, 1000);
                     } else {
                     }
                     Utils.addClass(targetElement, "active");//添加active类
