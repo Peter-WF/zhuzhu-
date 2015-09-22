@@ -1,23 +1,8 @@
-//失败实例
-//var error =
-{
-    "success": false,
-    "code": -1001,
-    "data": "请输入正确手机号"
-}
-//成功实例
-//var success =
-    {
-    "success": false,
-    "code": 401,
-    "data": "登陆异常，请输入您接收到的手机验证码"
-}
-//页面首次加载数据
-//var dataFirst =
+
 {
     "success": true,
     "data": {
-        tradingPushList: [
+        "tradingPushList": [
             {
                 "employerName": "\"Peter\"",
                 "designerName": "\"Nancy\"",
@@ -29,7 +14,7 @@
                 "money": 10000
             }
         ],
-        sliderImg: [
+        "sliderImg": [
             {
                 "detail": "设计好才是王道",
                 "src": "/img/slider.png"
@@ -47,7 +32,7 @@
                 "src": "/img/slider.png"
             }
         ],
-        designers: [
+        "designers": [
             {
                 "userId": 110,
                 "headimg": "img/girl.png",
@@ -317,7 +302,7 @@
                 "value": "www.zhubajie.com"
             }
         ],
-        "copyright": "",
+        "copyright": ""
 
     }
 }

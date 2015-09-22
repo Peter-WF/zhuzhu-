@@ -8,19 +8,20 @@ $fis_data = array(
     "posts" => array(
       array(
         "title" => "post 1",
-        "link" => "/post/id/1",
+        "link" => "/post/id/1&tradingPushList",
         "content" => "content 1"
       ),
       array(
         "title" => "post 2",
-        "link" => "/post/id/2",
+        "link" => "/post/id/2&sliderImg",
         "content" => "content 2"
       ),
       array(
         "title" => "post 3",
-        "link" => "/post/id/3",
+        "link" => "/post/id/3&designers",
         "content" => "content 3"
       )
     )
   )
 );
+

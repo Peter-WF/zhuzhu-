@@ -1,0 +1,16 @@
+//失败实例
+//var error =
+{
+  "success": false,
+  "code": -1001,
+  "data": "请输入正确手机号"
+}
+//成功实例
+//var success =
+{
+  "success": false,
+  "code": 401,
+  "data": "登陆异常，请输入您接收到的手机验证码"
+}
+//页面首次加载数据
+//var dataFirst =
