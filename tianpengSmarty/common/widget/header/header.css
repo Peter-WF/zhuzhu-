@@ -1,0 +1,27 @@
+.header {
+  height: 26px;
+  background-color: #363131;
+  position: relative;
+}
+.zbj-grid {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.ui-header-greet {
+  margin-left: 43px;
+}
+.ui-header-greet-opr {
+  font-size: 12px;
+  color: #cccccc;
+}
+.ui-header-nav {
+  margin-right: 45px;
+}
+.ui-header-nav-opr {
+  font-size: 13px;
+  margin-left: 40px;
+  color: #cccccc;
+}
+.ui-header-nav-opr:hover {
+  color: #e8413c;
+}
