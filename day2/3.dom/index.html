@@ -17,10 +17,10 @@
     <title>
         天蓬网
     </title>
-    <link rel="stylesheet" href="../css/cssreset.css"/>
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/sliderWF.css">
+    <link rel="stylesheet" href="css/cssreset.css"/>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sliderWF.css">
 </head>
 <body>
 <div class="header">
@@ -670,38 +670,23 @@
         </div>
     </div>
 </div>
-<script src="../../../day6/utils.js" type="text/javascript"></script>
-<script src="../js/plugins/sea.js"></script>
-<!--<script>-->
-<!--// Set configuration-->
-<!--seajs.config({-->
-<!--base: "../js/",-->
-<!--alias: {-->
-<!--"jquery": "plugins/jquery/jquery-1.11.3.js",-->
-<!--"nav-list":"plugins/nav-list.js",-->
-<!--"sliderWF":"plugins/sliderWF.js",-->
-<!--"event":"event.js",-->
-<!--//            "utils":"../day6/utils.js",-->
-<!--"supportIE8":"supportIE8.js"-->
-<!--}-->
-<!--});-->
-<!--seajs.use('../static/tianpeng/src/main', function(a) {-->
-<!--//        a.doSomething();-->
-
-<!--});-->
-
-<!--</script>-->
-<script src="../js/plugins/jquery/jquery-1.11.3.js" type="text/javascript"></script>
-
-<script src="../js/plugins/nav-list.js" type="text/javascript"></script>
-<script src="../js/plugins/sliderWF.js" type="text/javascript"></script>
-<script src="../js/supportIE8.js" type="text/javascript"></script>
-<script src="../js/event.js" type="text/javascript"></script>
-
+<script src="../../day6/utils.js" type="text/javascript"></script>
+<script src="js/plugins/sea.js"></script>
 <script>
-    (function () {
-
-
+    // Set configuration
+    seajs.config({
+        base: "js/",
+        alias: {
+            "jquery": "plugins/jquery/jquery-1.11.3.js",
+            "nav-list": "plugins/nav-list.js",
+            "sliderWF": "plugins/sliderWF.js",
+            "event": "event.js",
+//            "utils":"../day6/utils.js",
+            "supportIE8": "supportIE8.js"
+        }
+    });
+    seajs.use('static/tianpeng/src/main', function (a) {
+//        a.doSomething();
         slider = new SliderWF({
             rootTag: ".top-focus",
             millisec: 5000
@@ -713,12 +698,38 @@
         Utils.bindingToggleStyle(navListE, {display: "none"});
 
         NavList("J-nav-list", loadDesign);
+    });
+
+</script>
+<!--<script src="../js/plugins/jquery/jquery-1.11.3.js" type="text/javascript"></script>
+
+<script src="../js/plugins/nav-list.js" type="text/javascript"></script>
+<script src="../js/plugins/sliderWF.js" type="text/javascript"></script>
+<script src="../js/supportIE8.js" type="text/javascript"></script>
+<script src="../js/event.js" type="text/javascript"></script>-->
+
+<script>
+    (function () {
+
+
+//        slider = new SliderWF({
+//            rootTag: ".top-focus",
+//            millisec: 5000
+//        });
+//        slider.sliderInit();
+//
+//
+//        var navListE = document.getElementById("J-menu-top");
+//        Utils.bindingToggleStyle(navListE, {display: "none"});
+//
+//        NavList("J-nav-list", loadDesign);
+
 //      var navListE=document.getElementById("J-nav-list");
 //      EventUtil.addEvent(navListE,"click",Utils.navList);
 
 
     })();
-    function loadDesign(element,callback) {
+    function loadDesign(element, callback) {
 //            var dom = '<div class="design-item">'
 //                    + '<a href="#" class="design-item-pic">'
 //                    + '<p class="mask-box" id="designs-itle">'
@@ -750,7 +761,7 @@
                 if (data.success) {
                     for (var i = 0; i < data.data.designsList.length; i++) {
                         dom += '<div class="design-item">'
-                                +'<a href="#" class="design-item-pic">'
+                                + '<a href="#" class="design-item-pic">'
                                 + '<p class="mask-box">'
                                 + data.data.designsList[i].designsTitle
                                 + '</p>'
@@ -783,7 +794,7 @@
         });
     }
     $.ajax({
-        type:"post",
+        type: "post",
         url: "../../../day9/ajax.json",
         async: true,
         returnType: "json",

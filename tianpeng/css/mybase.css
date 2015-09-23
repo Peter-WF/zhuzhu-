@@ -1,0 +1,261 @@
+/*��������Ԫ��css(�����������ڿո������ļ���)*/
+.inlineBlock-Father {
+  font-size: 0 !important;
+  letter-spacing: 0px !important;
+  /*���ݲ�ͬ�����ֺŻ�����Ҫ��һ���ĵ���*/
+  word-spacing: 0px !important;
+}
+/*����Ԫ��css*/
+.inlineBlock-Son {
+  display: inline-block !important;
+  *display: inline !important;
+  *zoom: 1 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+/*αװ�ɿɵ���*/
+.button-Son:hover {
+  cursor: pointer;
+}
+/*�����ڲ��ı�ǩαװ�ɿɵ���*/
+.button-Father *:hover {
+  cursor: pointer;
+}
+/*�����ƶ���������Ч��*/
+.boxShadow-div:hover {
+  -webkit-box-shadow: #666 0px 0px 10px;
+  -moz-box-shadow: #666 0px 0px 10px;
+  box-shadow: #666 0px 0px 10px;
+}
+/*���ȱ߿�*/
+.borderRadius-div {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.round {
+  border-radius: 5px;
+  /* ���нǶ�ʹ�ð뾶Ϊ5px��Բ�ǣ�������ΪCSS3��׼���� */
+  -moz-border-radius: 5px;
+  /* Mozilla��������˽������ */
+  -webkit-border-radius: 5px;
+  /* Webkit��������˽������ */
+  border-radius: 5px 4px 3px 2px;
+  /* �ĸ��뾶ֵ�ֱ������Ͻǡ����Ͻǡ����½Ǻ����½� */
+}
+/*Բ��*/
+.circle {
+  border-radius: 50%;
+  width: 77px;
+  height: 77px;
+}
+/*��������*/
+.clearfix:after {
+  display: table;
+  content: "";
+  width: 0;
+  clear: both;
+  overflow: hidden;
+}
+.clearfix {
+  *zoom: 1;
+  zoom: 1;
+  /* for ie6 & ie7 */
+  *overflow: hidden;
+}
+/*ͼƬ��ת*/
+.rotate180deg {
+  /*scale����*/
+  -webkit-transform: rotateZ(180deg);
+  /*webkit�ȸ�*/
+  -moz-transform: rotateZ(180deg);
+  /*mozilla�ں�*/
+  -o-transform: rotateZ(180deg);
+  /*opera�ں�ʶ����*/
+  -ms-transform: rotateZ(180deg);
+  /*ie�ں�ʶ����*/
+  transform: rotateZ(180deg);
+}
+/*body {
+	background-image: url(http://s4.sinaimg.cn/orignal/7842060ag7647e795a303);
+	background-repeat: repeat-x;
+	background-position: center top;
+	background-attachment: fixed;
+}*/
+/*html5����ѡ���� required valid invalid*/
+input:valid {
+  border: 1px solid rgba(0, 128, 0, 0.3);
+  /*�Ϸ���,Ҫ���Ա�require����*/
+}
+/*��ȷʱ��css*/
+input:required {
+  border: 1px solid blue;
+  /*�����û��������� ֻҪ��required���Ծͻᱻѡ����ʶ��*/
+}
+input:invalid {
+  border: 1px solid red;
+  /*���Ϸ���һ��Ҫ��������������,���ⱻ����*/
+}
+.pic_box:after {
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  content: "center";
+  vertical-align: middle;
+  overflow: hidden;
+}
+/*���ֲ�*/
+.maskWF {
+  background-color: #000000;
+  opacity: 0.2;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 997;
+  width: 100%;
+  height: 100%;
+}
+/*�����˵�dropdown-menuWF*/
+.dropdown-menuWF {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 300;
+  display: none;
+  float: left;
+  /*min-width: 160px;*/
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+/*2015��8��19��00:24:14 ����*/
+/*����������:������������jsʱ��ʾ<noscript>����ͼƬ*/
+/*<img class="lazy" data-original="img/example.jpg"  width="640" heigh="480">
+<noscript><img src="img/example.jpg" width="640" heigh="480"></noscript>*/
+/*.lazy {
+    display: none;
+}*/
+/*$("img.lazy").show().lazyload();*/
+/*һ����С���̶����������ֵĴ�ֱ����*/
+/*�� �����ı�����*/
+.wf_align_box_1 {
+  height: 10px;
+  line-height: 10px;
+}
+/*�� ��������*/
+.wf_align_box_2 {
+  display: table-cell;
+  height: 300px;
+  vertical-align: middle;
+}
+.wf_align_box_2 .wf_align_word {
+  display: inline-block;
+}
+/*������С���̶���ͼƬ�Ĵ�ֱ����*/
+/*�� ͸��gifͼƬ+������λ*/
+.wf_align_box_3 img {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+/*����<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);">*/
+/*ԭ��:����img��src �������ȸ߶����������� ������Ҫ��ʾ��ͼƬΪbg-img, ������background-position: center; ʵ�־���*/
+/*�� display:table-cell�����ִ�С���ƾ���*/
+.wf_align_box_4 li {
+  float: left;
+  margin-right: 13px;
+}
+.wf_align_box_4 li div {
+  display: table-cell;
+  width: 144px;
+  height: 144px;
+  border: 1px solid #beceeb;
+  font-size: 118px;
+  text-align: center;
+  vertical-align: middle;
+}
+.wf_align_box_4 li div img {
+  vertical-align: middle;
+}
+/*����*/
+/*<ul class="wf_align_box_3 fix">
+    <li>
+    	<img src="../image/pixel.gif" style="background-image:url(http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg);" />
+    </li>
+</ul>*/
+/*�� display:inline-block�����ִ�С���ƾ���*/
+.wf_align_box_5 a {
+  display: inline-block;
+  width: 1.2em;
+  font-size: 128px;
+  text-align: center;
+  vertical-align: middle;
+}
+.wf_align_box_5 a img {
+  vertical-align: middle;
+  padding: 2px;
+  border: 1px solid #beceeb;
+}
+/*�� ʹ�ÿհ�ͼƬʵ�ִ�ֱ����*/
+/*�ðɣ���֪��˵�󻰻ᱻ��Ц�ģ������һ��Ƿǳ����ŵ��Ƽ�������������������ͼƬ��ֱ���ж����ķ������ǳ��򵥣��ǳ��׶��������ʵͣ����ַ��㣬�������ϼѣ�*/
+.wf_align_box_6 li {
+  height: 128px;
+  width: 150px;
+  padding: 13px 0;
+  float: left;
+  margin-right: 10px;
+  border: 1px solid #beceeb;
+  text-align: center;
+  font-size: 0;
+}
+.wf_align_box_6 li .alpha_img {
+  height: 100%;
+  width: 1px;
+  vertical-align: middle;
+}
+.wf_align_box_6 li .show_img {
+  vertical-align: middle;
+}
+/*����*/
+/*<ul class="wf_align_box_6 fix">
+    <li>
+        <img class="show_img" src="http://image.zhangxinxu.com/image/study/s/s128/mm1.jpg" />
+        <img class="alpha_img" src="../image/pixel.gif" />
+    </li>
+</ul>*/
+/*ԭ��*/
+/*һ�仰����Ҫ��ʾ��ͼƬ��һ��͸���ĸ߶�100%������1���ص�͸��ͼƬvertical-align:middle���롣
+������ԭ����ʵ���ڶ�������font-size��Сʵ��IE��ͼƬ��ֱ������һ�µġ���font-size���õúܴ���Ŀ���ǳſ�IE��Ĭ�����ֿռ��ĸ߶ȣ������������ڿո���Ȼ��ͨ��vertical-align:middle������ͼƬ�������߸ߵĿհ׿ո��ռ䴹ֱ���ж��룻�����ｫ���򿴲��������ֿռ�ʵ����һ��͸����gifͼƬ���߶ȿ�����������Ϊ�ⲿ��ǩ�ĸ߶ȣ�Ȼ��ͨ��vertical-align:middle���룬��ʵ��Ч���ˣ��ڸ����������¶���һ���ı��֣�����Ҫ����ʲô�����Ե����⡣���Ҵ����ܼ򵥣����׶����������ѣ�*/
+/**��Ϣ��ʾ��������ʽ**/
+.operatMessage {
+  text-align: center;
+  background: #5cb85c;
+  position: absolute;
+  bottom: 40px;
+  z-index: 10;
+  left: 20px;
+  right: 20px;
+  padding: 15px;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 6px 1px #5cb85c;
+  box-shadow: 0px 0px 6px 1px #5cb85c;
+  display: none;
+  margin: auto;
+  width: 200px;
+  /* filter:alpha(opacity=50);
+     -moz-opacity:0.5;
+     -khtml-opacity: 0.5;
+     opacity: 0.5; */
+}
