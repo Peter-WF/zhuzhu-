@@ -146,7 +146,7 @@
             return false;
         },
 
-        //动画  30帧/s 一般人眼识别每秒30帧可以让人感觉很舒服 相当于一帧需要1000/30毫秒 约等于33ms 间隔下一帧
+        //动画  60帧/s 一般人眼识别每秒60帧可以让人感觉很舒服 相当于一帧需要1000/60毫秒 约等于16.6ms 间隔下一帧
         //animate : 我的动画函数
         //需要参数; 操作对象, 结束状态 , 时间(多少毫秒内执行完) , 回调函数.
         //Utils.animate(document.getElementById("J-menu-top"),{"margin-top":"800px"},5000,"");
@@ -155,7 +155,7 @@
         //
         animate: function (element, endStyle, time, cb) {
             //var derta = this.getStateDerta(element,endStyle);//1.根据目标状态与当前状态的状态差求出变化距离derta
-            var total = time / 1000 * 30;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
+            var total = time / 1000 * 60;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
             var current帧数 = 0;
             var 每帧改变量 = this.计算每帧改变量(element, endStyle, total);//derta / total;
             var tempIntervalEle = setInterval(function () {
@@ -164,9 +164,10 @@
                     current帧数++;
                 } else {
                     clearInterval(tempIntervalEle);
+                    cb();
                 }
 
-            }, 33);
+            }, 16.6);
         },
         //计算每帧改变量
         //结合getStateDerta()
@@ -175,7 +176,7 @@
             for (var operation in operationJsonList) {
                 var value = operationJsonList[operation];
                 var currentState = this.getEyeJsStyle(element, operation);
-                currentState = parseFloat(currentState == "auto" || currentState ? 0 : currentState);
+                currentState = parseFloat(currentState == "auto" || !currentState ? 0 : currentState);
                 var 取出的后两位是 = value.substring(value.length - 2, value.length);
                 value = parseFloat(value);
                 if (取出的后两位是 == "px") {
@@ -364,7 +365,7 @@
                 if (xhr.readyState === completed) {
                     if (xhr.status === 200) {
                         // 处理服务器发送过来的数据
-                        var responseText=JSON.parse(xhr.responseText);
+                        var responseText = JSON.parse(xhr.responseText);
                         //if(!responseText){
                         //    responseText=eval("("+responseText+")");
                         //}
