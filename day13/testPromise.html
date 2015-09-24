@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script src="Promises.js"></script>
+<script src="utils.js"></script>
+<script>
+    /**
+     * 如果是偶数说明成功
+     */
+    function f1(value){
+        console.log("外边传给我的是这个 : "+value);
+        if(value==="success"){
+            return "我是f1方法执行成功的返回值";
+        }else{
+            console.log("执行失败");
+            return "我是f1方法执行失败的返回值";
+        }
+    }
+    function f2(value){
+        console.log(value);
+        if(Utils.uuid()%2){
+            return "我是f2方法执行成功的返回值";
+        }else{
+            return "我是f2方法执行失败的返回值";
+        }
+
+    }
+    function f3(value){
+        console.log(value);
+        if(Utils.uuid()%2){
+            return "我是f3方法执行成功的返回值";
+        }else{
+            return "我是f3方法执行失败的返回值";
+        }
+
+    }
+    function f4(value){
+        console.log(value);
+        if(Utils.uuid()%2){
+            return "我是f4方法执行成功的返回值";
+        }else{
+            return "我是f4方法执行失败的返回值";
+        }
+
+    }
+
+</script>
+<script>
+    function test(){
+        var testPromise=new Promise();
+
+        var endPromise =testPromise.then(f1,f2).then(f2,f3).then(f3,f4);
+        testPromise.resolve("success");
+//        f1();
+//        setTimeout(function(){
+//
+//        },2000);
+//        console.log(endPromise.PromiseValue );
+    }
+</script>
+<script>
+    (function(){
+        test();
+    })();
+</script>
+</body>
+</html>
