@@ -1,0 +1,19 @@
+.w-header {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  padding: 5px;
+}
+.w-header ul {
+  display: block;
+  list-style: none;
+}
+.w-header ul li {
+  display: inline-block;
+  background-color: #CCCCCC;
+  vertical-align: middle;
+  height: 33px;
+  padding: 5px;
+}
+.w-header ul li a {
+  text-decoration: none;
+}
