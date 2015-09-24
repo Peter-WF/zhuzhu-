@@ -1,6 +1,6 @@
 {%*{%require name="js/nav-list.js"%}*%}
 {%*{%require name="common:static/js/nav-list.js"%}*%}
-{%require name="common:static/js/plugins/nav-list.js"%}
+{%*{%require name="common:static/js/plugins/nav-list.js"%}*%}
 <div class="designs-container">
     <div class="row designs-container-row clearfix">
         <h2 class="designs-container-title">海量作品</h2>

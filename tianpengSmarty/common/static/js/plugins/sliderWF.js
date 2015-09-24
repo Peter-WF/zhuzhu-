@@ -20,8 +20,8 @@
         this.nImg = $(this.rootTag + " .sliderWF-main img," + this.rootTag + " .sliderWF-main .imgWF").length; //获取滑块数目用于设置 .sliderWF-main 宽度
         this.viewwidth = this.viewwidthTotal.substr(0, this.viewwidthTotal.length - 2) / this.nView + "px"; //每个展示项的宽度
 
-        this.millisec=data.millisec?data.millisec:5000;
-        this.moveType=1;//-1表示向左滚
+        this.millisec = data.millisec ? data.millisec : 5000;
+        this.moveType = 1;//-1表示向左滚
 
     };
     //SliderWF.sliderLeft= function (_this_) {
@@ -82,32 +82,50 @@
             //判断是否正在动画 如果正在动画则不继续
             if (!this.ifAnimate) {
                 this.ifAnimate = !this.ifAnimate; //加锁
-                if(this.currentSliderIndex==this.nImg-1 ){
-                    this.moveType=-1;
-                }else if(this.currentSliderIndex==0 ){
-                    this.moveType=1;
+                if (this.currentSliderIndex == this.nImg - 1) {
+                    this.moveType = -1;
+                } else if (this.currentSliderIndex == 0) {
+                    this.moveType = 1;
                 }
-                this.currentSliderIndex+=this.moveType;
+                this.currentSliderIndex += this.moveType;
                 this.sliderAnimate(this);
             }
         },
         sliderAnimate: function () {
             var _this_ = this; //保存this变量
-            $(this.rootTag + " .sliderWF-main ").animate({
-                marginLeft: this.viewwidth.substr(0, this.viewwidth.length - 2) * this.currentSliderIndex * (-1) + 'px'
-            }, _this_.speed, function () {
-                $(_this_.rootTag + " .sliderWF " + _this_.prevTagClassOrId).show();
-                $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).show();
-                if (_this_.currentSliderIndex == 0) {
-                    $(_this_.rootTag + " .sliderWF " + _this_.prevTagClassOrId).hide();
+            //$(this.rootTag + " .sliderWF-main ").animate({
+            //    marginLeft: this.viewwidth.substr(0, this.viewwidth.length - 2) * this.currentSliderIndex * (-1) + 'px'
+            //}, _this_.speed, function () {
+            //    $(_this_.rootTag + " .sliderWF " + _this_.prevTagClassOrId).show();
+            //    $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).show();
+            //    if (_this_.currentSliderIndex == 0) {
+            //        $(_this_.rootTag + " .sliderWF " + _this_.prevTagClassOrId).hide();
+            //    }
+            //    if (_this_.currentSliderIndex == _this_.nImg - 1 * _this_.nView) {
+            //        $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).hide();
+            //    }
+            //    //因为currentSliderIndex是从0开始
+            //    $(_this_.rootTag + " .sliderWF " + _this_.currentIndexTagClassOrId).html(parseInt(_this_.currentSliderIndex) + 1);
+            //    _this_.ifAnimate = !_this_.ifAnimate; //解锁
+            //});
+            Utils.animate(
+                $(this.rootTag + " .sliderWF-main ")[0]
+                , {marginLeft: this.viewwidth.substr(0, this.viewwidth.length - 2) * this.currentSliderIndex * (-1) + 'px'}
+                , _this_.speed
+                , function () {
+                    $(_this_.rootTag + " .sliderWF " + _this_.prevTagClassOrId).show();
+                    $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).show();
+                    if (_this_.currentSliderIndex == 0) {
+                        $(_this_.rootTag + " .sliderWF " + _this_.prevTagClassOrId).hide();
+                    }
+                    if (_this_.currentSliderIndex == _this_.nImg - 1 * _this_.nView) {
+                        $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).hide();
+                    }
+                    //因为currentSliderIndex是从0开始
+                    $(_this_.rootTag + " .sliderWF " + _this_.currentIndexTagClassOrId).html(parseInt(_this_.currentSliderIndex) + 1);
+                    _this_.ifAnimate = !_this_.ifAnimate; //解锁
                 }
-                if (_this_.currentSliderIndex == _this_.nImg - 1 * _this_.nView) {
-                    $(_this_.rootTag + " .sliderWF " + _this_.nextTagClassOrId).hide();
-                }
-                //因为currentSliderIndex是从0开始
-                $(_this_.rootTag + " .sliderWF " + _this_.currentIndexTagClassOrId).html(parseInt(_this_.currentSliderIndex) + 1);
-                _this_.ifAnimate = !_this_.ifAnimate; //解锁
-            });
+            )
         },
         returnIfAnimate: function () {
             return this.ifAnimate;

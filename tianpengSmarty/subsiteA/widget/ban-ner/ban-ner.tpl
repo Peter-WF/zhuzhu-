@@ -1,6 +1,5 @@
 {%*{%require name="js/sliderWF.js"%}*%}
-{%*{%require name="common:static/js/sliderWF.js"%}*%}
-{%require name="common:static/js/plugins/sliderWF.js"%}
+{%*{%require name="common:static/js/plugins/sliderWF.js"%}*%}
 <div class="ban-ner" style="">
     <div class="menu-top">
         <div class="logo-img" alt="ÌìÅîÍø"></div>
