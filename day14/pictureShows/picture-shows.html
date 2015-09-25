@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!--	//网页手机wap2.0网页的head里加入下面这条元标签，在iPhone的浏览器中页面将以原始大小显示，并不允许缩放。  -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--	// 离线应用的另一个技巧    -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--	//指定的iphone中safari顶端的状态条的样式 -->
+    <meta content="telephone=yes" name="format-detection">
+    <!--	//当该 HTML 页面在手机上浏览时，该标签用于指定是否将网页内容中的手机号码显示为拨号的超链接。 -->
+    <title>
+        美图秀秀
+    </title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+            margin: auto;
+            display: block;
+        }
+
+        #myCanvas.active {
+            cursor: pointer;
+        }
+
+        .operation {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+        }
+
+        .fillRectColor {
+            margin-top: 20px;
+        }
+
+        .fillRectColor label {
+            display: block;
+            height: 30px;
+        }
+
+        .fillRectColor label input {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <canvas id="myCanvas" class="" width="500" height="500">
+        您的浏览器不支持canvas！
+    </canvas>
+    <div class="operation">
+
+        <button onclick="bindEvent(this)" data-type="insertImg">载入图片</button>
+        <button onclick="bindEvent(this)" data-type="saveImg">保存图片</button>
+        <button onclick="bindEvent(this)" data-type="bindDrawLine">随便画画</button>
+        <button onclick="bindEvent(this)" data-type="dragImg">随便拉拉</button>
+        <button onclick="bindEvent(this)" data-type="updateCanvasData">测试</button>
+        <div class="fillRectColor">
+            <label for="opacity">
+                透明度:
+                <input id="opacity" type="range" value="0" onchange="canvasUtils.updateCanvasData()"/>
+            </label>
+            <label for="red">
+                红
+                <input id="red" type="range" onchange="canvasUtils.updateCanvasData()" value="0"/>
+            </label>
+            <label for="green">
+                绿
+                <input id="green" type="range" onchange="canvasUtils.updateCanvasData()" value="0"/>
+            </label>
+            <label for="blue">
+                蓝
+                <input id="blue" type="range" onchange="canvasUtils.updateCanvasData()" value="0"/>
+            </label>
+            <label for="img-url">
+                图片路径: <span id="img-url-span"></span>
+                <input type="file"  id="img-url">
+                <!--onchange="canvasUtils.load()"-->
+            </label>
+        </div>
+    </div>
+</div>
+<script src="canvasUtils.js"></script>
+<script>
+
+    //定义Canvas
+    var canvasUtils = CanvasUtils("myCanvas");
+
+    //    控制中心
+    function bindEvent(btn) {
+        if (btn.getAttribute("data-type") === "bindDrawLine") {
+            canvasUtils.bindDrawLine(btn);
+        } else if (btn.getAttribute("data-type") === "insertImg") {
+            canvasUtils.insertImg(0, 0);
+        }
+        else if (btn.getAttribute("data-type") === "dragImg") {
+            canvasUtils.dragImg();
+        } else if (btn.getAttribute("data-type") === "updateCanvasData") {
+            canvasUtils.updateCanvasData();
+        }
+
+    }
+    function getPath(obj) {
+        if (obj) {
+            if
+            (window.navigator.userAgent.indexOf("MSIE") >= 1) {
+                obj.select();
+                return
+                document.selection.createRange().text;
+            } else if
+            (window.navigator.userAgent.indexOf("Firefox") >= 1) {
+                if (obj.files) {
+                    return
+                    obj.files.item(0).getAsDataURL();
+                }
+                return
+                obj.value;
+            }
+            return obj.value;
+        }
+    }
+
+</script>
+<script src="../../day6/utils.js"></script>
+</body>
+</html>
