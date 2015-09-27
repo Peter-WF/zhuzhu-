@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jcarousellite图片滚动插件7种带按钮jquery图片滚动</title>
+<meta name="description" content="jquery图片滚动用jcarousellite图片滚动插件制作7种带按钮的图片滚动效果总一种合适您，支持左右图片滚动、上下图片滚动、自动图片滚动。jquery插件、jquery插件 jquery下载。" />
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jcarousellite.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<style type="text/css">
+body,ul,li,div{padding:0;margin:0;list-style-type:none;}
+a,img {border:none;}
+.clear {clear:both;display:block;}
+.carousel {width:625px; margin:30px auto;}
+.carousel .prev , .carousel .next {height:23px;width:23px;overflow:hidden;display:block;margin-top:40px;text-decoration:none;cursor:pointer;}
+.carousel .prev {float:left;background:url(images/imageNavLeft.gif) no-repeat;}
+.carousel .next {float:left;background:url(images/imageNavRight.gif) no-repeat;}
+.carousel #prev-03.disabled{background:url(images/imageNavLeft-disabled.gif) no-repeat;cursor:default;}
+.carousel #next-03.disabled{background:url(images/imageNavRight-disabled.gif) no-repeat;cursor:default;}
+
+.jCarouselLite {float:left;width:486px;height:152px;overflow:hidden;/*必要元素*/}
+.jCarouselLite li{height:152px;width:162px;text-align:center;}
+.jCarouselLite li img,.jCarouselLite-01 li img{border:solid 1px #ddd;}
+
+.carousel-01 {width:152px;margin:30px auto;}
+.carousel-01 .prev , .carousel-01 .next {height:23px;width:23px;overflow:hidden;display:block;margin-left:60px;text-decoration:none;cursor:pointer;}
+.carousel-01 .prev {background:url(images/imageNavLeft.gif) no-repeat;}
+.carousel-01 .next {background:url(images/imageNavRight.gif) no-repeat;}
+.jCarouselLite-01 {height:385px;width:152px;overflow:hidden;/*必要元素*/}
+.jCarouselLite-01 li{height:152px;width:152px;text-align:center;padding:5px 0;}
+</style>
+</head>
+
+<body>
+	<div class="carousel">
+		<a href="javascript:void(0);" class="prev" id="prev-01">&nbsp </a>
+		<div class="jCarouselLite" id="demo-01">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0);" class="next" id="next-01">&nbsp </a>
+		<div class="clear"></div>   
+	</div><!--carousel end-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-01').jCarouselLite({
+			btnPrev: '#prev-01',
+			btnNext: '#next-01',
+			visible:2
+		});		
+	});
+	</script>
+	
+	<div class="carousel">
+		<a href="javascript:void(0);" class="prev" id="prev-02">&nbsp </a>
+		<div class="jCarouselLite" id="demo-02">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0);" class="next" id="next-02">&nbsp </a>
+		<div class="clear"></div>   
+	</div><!--carousel end-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-02').jCarouselLite({
+			btnPrev: '#prev-02',
+			btnNext: '#next-02',
+			auto: 800,
+    		speed: 1000
+		});		
+	});
+	</script>
+	
+	<div class="carousel">
+		<a href="javascript:void(0);" class="prev disabled" id="prev-03">&nbsp </a>
+		<div class="jCarouselLite" id="demo-03">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0);" class="next" id="next-03">&nbsp </a>
+		<div class="clear"></div>   
+	</div><!--carousel end-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-03').jCarouselLite({
+			btnPrev: '#prev-03',
+			btnNext: '#next-03',
+			circular: false,
+			scroll: 2
+		});		
+	});
+	</script>
+	
+	<div class="carousel">
+		<a href="javascript:void(0);" class="prev" id="prev-04">&nbsp </a>
+		<div class="jCarouselLite" id="demo-04">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0);" class="next" id="next-04">&nbsp </a>
+		<div class="clear"></div>   
+	</div><!--carousel end-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-04').jCarouselLite({
+			btnPrev: '#prev-04',
+			btnNext: '#next-04',
+			easing: "bounceout",
+    		speed: 1000
+		});		
+	});
+	</script>
+	
+	<div class="carousel-01">
+		<a href="javascript:void(0);" class="prev" id="prev-05">&nbsp </a>
+		<div class="jCarouselLite-01" id="demo-05">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+		<div style="clear:both;"></div>
+		<a href="javascript:void(0);" class="next" id="next-05">&nbsp </a>
+	</div><!--carousel end-->
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-05').jCarouselLite({
+			btnPrev: '#prev-05',
+			btnNext: '#next-05',
+			visible: 3,
+			vertical: true,
+			easing: "bounceout",
+    		speed: 1000
+		});		
+	});
+	</script>
+	
+	
+	<div class="carousel-01">
+		<a href="javascript:void(0);" class="prev" id="prev-06">&nbsp </a>
+		<div class="jCarouselLite-01" id="demo-06">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0);" class="next" id="next-06">&nbsp </a>
+	</div><!--carousel end-->
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-06').jCarouselLite({
+			btnPrev: '#prev-06',
+			btnNext: '#next-06',
+			visible: 3,
+			vertical: true
+		});		
+	});
+	</script>
+	
+	<div class="carousel">
+		<a href="javascript:void(0);" class="prev" id="prev-07">&nbsp </a>
+		<div class="jCarouselLite" id="demo-07">
+			<ul>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery图片滚动设置序号导航按钮和左右按钮控制单排图片滚动" src="images/1.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery flow 图片切换滚动插件 带分页索引按钮控制图片左右滚动" src="images/2.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片滚动 xslider 插件 按钮控制自动图片左右滚动、上下滚动" src="images/3.jpg" /></a></li>
+				<li><a href="http://www.17sucai.com/" target="_blank"><img height="150" width="150" alt="jquery 图片切换特效 鼠标点击左右按钮焦点图切换滚动" src="images/4.jpg" /></a></li>
+			</ul>
+		</div>
+		<a href="javascript:void(0);" class="next" id="next-07">&nbsp </a>
+		<div><button class="0">0</button><button class="1">1</button><button class="2">2</button></div>  
+	</div><!--carousel end-->
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#demo-07').jCarouselLite({
+			btnPrev: '#prev-07',
+			btnNext: '#next-07',
+			btnGo:[".0", ".1", ".2"]
+		});		
+	});
+	</script>
+</body>
+</html>

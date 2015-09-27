@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title></title>
+    <style>
+	input:valid {
+    border: 1px solid green;
+}/*正确时的css*/
+input:invalid {
+    border: 1px solid red;
+}
+input:required {
+    border: 1px solid blue;
+}/*不论用户输入与否 只要有required属性就会被选择器识别*/
+
+form:after{
+	content:"*";
+}
+
+
+</style>
+  </head>
+  <body>
+
+<form action="#" method="get">
+Name: <input type="text" name="usr_name" required />
+age: <input type="text" name="usr_name"  />
+<input type="submit" value="提交" />
+</form>
+
+  </body>
+</html>
