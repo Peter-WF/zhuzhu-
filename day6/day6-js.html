@@ -12,11 +12,73 @@
         position: fixed;
 
     }
+
+    .slider {
+        height: 300px;
+        width: 790px;
+        position: relative;
+    }
+
+    .slider .prev-btn,
+    .slider .next-btn {
+        position: absolute;
+        height: 50px;
+        text-align: center;
+        width: 50px;
+        top: 50%;
+        margin-top: -25px;
+        font-size: 26px;
+        line-height: 47px;
+        background: #000;
+        color: #fff;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .slider .prev-btn {
+        left: 10px;
+    }
+
+    .slider .next-btn {
+        right: 10px;
+    }
 </style>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sliderWF.css">
 <body>
 <div class="testClass testClass2" data-targetid="testId" id="testId"></div>
+<div class="fl slider sliderWF ">
+    <div class="sliderWF-main ">
+        <a href="javascript:void(0);">
+            <img class="" alt="设计好才是王道" src="slider.png">
+        </a>
+        <a href="javascript:void(0);">
+            <img class="" alt="设计好才是王道" src="slider.png">
+        </a>
+        <a href="javascript:void(0);">
+            <img class="" alt="设计好才是王道" src="slider.png">
+        </a>
+        <a href="javascript:void(0);">
+            <img class="" alt="设计好才是王道" src="slider.png">
+        </a>
+    </div>
+    <div class="sliderWF-extra"></div>
+    <a class="prev-btn sliderWF-prev">
+        <i class="iconfont">&#x3465;</i>
+    </a>
+    <a class="next-btn sliderWF-next">
+        <i class="iconfont">&#x3464;</i>
+    </a>
+</div>
 </body>
+<script type="text/javascript" src="jquery-1.11.3.js" charset="UTF-8">
+
+</script>
 <script type="text/javascript" src="utils.js" charset="UTF-8">
+</script>
+<script type="text/javascript" src="sliderWF.js" charset="UTF-8">
 </script>
 <!--<script type="text/javascript" src="testUtil.js" charset="UTF-8">-->
 <!--</script>-->
@@ -126,6 +188,13 @@
         Utils.loadScript("testUtil.js", function () {
             alert("callback");
         });
+    }
+    function testSlider() {
+        slider = new SliderWF({
+            millisec: 5000
+        });
+        slider.sliderInit();
+
     }
 </script>
 </html>
