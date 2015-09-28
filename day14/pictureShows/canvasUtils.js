@@ -20,6 +20,11 @@
             //初始化图片
             this.img = new Image();
             this.img.src = imgUrl;
+            //坐标
+            this.imgX = 0;
+            this.imgY = 0;
+            this.lastX = 0;
+            this.lastY = 0;
             //移除浏览器默认右键菜单事件
             this.canvas.oncontextmenu = function () {
                 Utils.removeClass(this.canvas, "active");
@@ -28,7 +33,7 @@
                 };
                 return false;
             };
-            var _this_=this;
+            var _this_ = this;
             //打开图片
             document.getElementById("img-url").addEventListener("change", function () {
                 _this_.clear();
@@ -37,7 +42,7 @@
                     reader.onload = function (event) {
                         _this_.img.src = event.target.result;
                         _this_.ctx.beginPath();
-                        _this_.ctx.drawImage(_this_.img, 0, 0,_this_.canvas.width, _this_.canvas.height);
+                        _this_.ctx.drawImage(_this_.img, 0, 0, _this_.canvas.width, _this_.canvas.height);
                         _this_.ctx.closePath();
                     };
                 }
@@ -70,11 +75,18 @@
          * @param centerX
          * @param centerY
          */
-        moveImg: function (centerX, centerY) {
-            var x = centerX - this.img.width / 2;
-            var y = centerY - this.img.height / 2;
+        moveImg: function (touchX, touchY) {
+            //var x = centerX - this.img.width / 2;
+            //var y = centerY - this.img.height / 2;
+            console.log("1.imgX:"+this.imgX + ';imgY:' + this.imgY+";");
+            this.imgX = this.imgX + (touchX - this.lastX);
+            this.imgY = this.imgY + (touchY - this.lastY);
+            this.lastX=touchX;
+            this.lastY=touchY;
+            console.log("2.imgX:"+this.imgX + ';imgY:' + this.imgY+";");
+            console.log("3.lastX:"+this.lastX + ';lastY:' + this.lastY+";");
             this.clear();
-            this.insertImg(x, y);
+            this.insertImg(this.imgX, this.imgY);
         },
         onLoadIng: function () {
 
@@ -159,13 +171,18 @@
         dragImg: function () {
             var _this_ = this;
             this.canvas.onmousedown = function (event) {
-                var x = event.layerX;
-                var y = event.layery;
+                //初始化当前点
+
+                //var x = event.layerX;
+                //var y = event.layery;
+                _this_.lastX = event.layerX;
+                _this_.lastY = event.layerY;
                 Utils.addClass(_this_.canvas, "active");
-                _this_.moveImg(x, y);
+                //_this_.moveImg(x, y);
                 _this_.canvas.onmousemove = function (e) {
                     var xx = e.layerX;
                     var yy = e.layerY;
+
                     console.log(xx + '---' + yy);
                     _this_.moveImg(xx, yy);
                 };
@@ -178,7 +195,7 @@
         },
         clear: function () {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);//清楚画布之前内容
-            this.imageData=null;//清空画布之前的内容
+            this.imageData = null;//清空画布之前的内容
         }
     }
     CanvasUtils.prototype.init.prototype = CanvasUtils.prototype;
