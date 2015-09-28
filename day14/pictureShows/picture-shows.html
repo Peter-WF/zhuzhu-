@@ -60,7 +60,6 @@
         <button onclick="bindEvent(this)" data-type="saveImg">保存图片</button>
         <button onclick="bindEvent(this)" data-type="bindDrawLine">随便画画</button>
         <button onclick="bindEvent(this)" data-type="dragImg">随便拉拉</button>
-        <button onclick="bindEvent(this)" data-type="updateCanvasData">测试</button>
         <div class="fillRectColor">
             <label for="opacity">
                 透明度:
@@ -80,10 +79,16 @@
             </label>
             <label for="img-url">
                 图片路径: <span id="img-url-span"></span>
-                <input type="file"  id="img-url">
+                <input type="file" id="img-url">
                 <!--onchange="canvasUtils.load()"-->
             </label>
         </div>
+        <button onclick="bindEvent(this)" data-type="inverse">反色</button>
+        <button onclick="bindEvent(this)" data-type="gray">灰色调</button>
+        <button onclick="bindEvent(this)" data-type="blur">模糊</button>
+        <button onclick="bindEvent(this)" data-type="cameo">浮雕</button>
+        <button onclick="bindEvent(this)" data-type="carving">雕刻</button>
+        <button onclick="bindEvent(this)" data-type="mirror">镜像</button>
     </div>
 </div>
 <script src="canvasUtils.js"></script>
@@ -94,37 +99,11 @@
 
     //    控制中心
     function bindEvent(btn) {
-        if (btn.getAttribute("data-type") === "bindDrawLine") {
-            canvasUtils.bindDrawLine(btn);
-        } else if (btn.getAttribute("data-type") === "insertImg") {
-            canvasUtils.insertImg(0, 0);
-        }
-        else if (btn.getAttribute("data-type") === "dragImg") {
-            canvasUtils.dragImg();
-        } else if (btn.getAttribute("data-type") === "updateCanvasData") {
-            canvasUtils.updateCanvasData();
-        }
+        canvasUtils[btn.getAttribute("data-type")]();
+    }
 
-    }
-    function getPath(obj) {
-        if (obj) {
-            if
-            (window.navigator.userAgent.indexOf("MSIE") >= 1) {
-                obj.select();
-                return
-                document.selection.createRange().text;
-            } else if
-            (window.navigator.userAgent.indexOf("Firefox") >= 1) {
-                if (obj.files) {
-                    return
-                    obj.files.item(0).getAsDataURL();
-                }
-                return
-                obj.value;
-            }
-            return obj.value;
-        }
-    }
+</script>
+<script>
 
 </script>
 <script src="../../day6/utils.js"></script>

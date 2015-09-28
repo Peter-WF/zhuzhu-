@@ -25,15 +25,15 @@
             this.imgY = 0;
             this.lastX = 0;
             this.lastY = 0;
+            var _this_=this;
             //移除浏览器默认右键菜单事件
             this.canvas.oncontextmenu = function () {
-                Utils.removeClass(this.canvas, "active");
+                Utils.removeClass(_this_.canvas, "active");
                 //移除涂色功能
-                this.canvas.onmousemove = function () {
+                _this_.canvas.onmousemove = function () {
                 };
                 return false;
             };
-            var _this_ = this;
             //打开图片
             document.getElementById("img-url").addEventListener("change", function () {
                 _this_.clear();
@@ -47,10 +47,27 @@
                     };
                 }
                 reader.readAsDataURL(this.files[0]);
-            })
-
-
-        },
+            });
+            this.initKeyboard(_this_);
+        }, initKeyboard: function (_this_) {
+            function keypress(e) {
+                var currKey = 0, CapsLock = 0, e = e || event;
+                currKey = e.keyCode || e.which || e.charCode;
+                CapsLock = currKey >= 65 && currKey <= 90;
+                if (currKey == 32) {
+                    console.log(currKey);
+                    _this_.dragImg();
+                }if(e.shiftKey&&currKey==115||currKey==83){
+                    _this_.saveImg();
+                }
+            }
+            function onkeyup(e){
+                canvasUtils.restoreEvent();
+            }
+            document.onkeypress = keypress;
+            document.onkeyup  = onkeyup ;
+        }
+        ,
         /**
          * 工具方法-画线
          * @param startX
@@ -76,40 +93,30 @@
          * @param centerY
          */
         moveImg: function (touchX, touchY) {
-            //var x = centerX - this.img.width / 2;
-            //var y = centerY - this.img.height / 2;
-            console.log("1.imgX:"+this.imgX + ';imgY:' + this.imgY+";");
+            console.log("1.imgX:" + this.imgX + ';imgY:' + this.imgY + ";");
             this.imgX = this.imgX + (touchX - this.lastX);
             this.imgY = this.imgY + (touchY - this.lastY);
-            this.lastX=touchX;
-            this.lastY=touchY;
-            console.log("2.imgX:"+this.imgX + ';imgY:' + this.imgY+";");
-            console.log("3.lastX:"+this.lastX + ';lastY:' + this.lastY+";");
+            this.lastX = touchX;
+            this.lastY = touchY;
+            console.log("2.imgX:" + this.imgX + ';imgY:' + this.imgY + ";");
+            console.log("3.lastX:" + this.lastX + ';lastY:' + this.lastY + ";");
             this.clear();
             this.insertImg(this.imgX, this.imgY);
-        },
-        onLoadIng: function () {
-
-            document.getElementById("img-url").select();
-            imgUrl = document.selection.createRange().text;
-            document.getElementById("img-url-span").innerHTML = imgUrl;
-
-            this.img.src = imgUrl;
         },
         //插入图片
         insertImg: function (x, y) {
             //var ctx = this.canvas.getContext('2d');
-            this.ctx.drawImage(this.img, x, y); // 设置对应的图像对象，以及它在画布上的位置 默认插在左上角
+            this.ctx.drawImage(this.img, x | 0, y | 0); // 设置对应的图像对象，以及它在画布上的位置 默认插在左上角
             this.imageData = null; //存储当前图片信息
         },
         //保存图片
         saveImg: function () {
             var image = new Image();
-            image.src = this.canvas.toDataURL("test.png");
-            return image;
+            image.src = this.canvas.toDataURL("image/png");
+            this.img = image;
+            //return image;
         },
         //修改Canvas信息
-
         updateCanvasData: function () {
             var currentImgData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);//存储当前图片信息
             if (!this.imageData) {
@@ -145,8 +152,7 @@
             //this.ctx.fillRect(180,10,150,100);
         },
         //随便画画
-        bindDrawLine: function (btn) {
-            var _btn_ = btn;
+        bindDrawLine: function () {
             var _this_ = this;
             this.canvas.onmousedown = function (event) {
                 var x = event.layerX;
@@ -193,9 +199,68 @@
                 };
             }
         },
+        //移除onmousedown onmousemove事件
+        restoreEvent: function () {
+            this.canvas.onmousedown = function () {
+
+            };
+            this.canvas.onmousemove = function () {
+
+            };
+        },
+        //清楚画布之前内容
         clear: function () {
-            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);//清楚画布之前内容
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             this.imageData = null;//清空画布之前的内容
+        },
+        //反色
+        inverse: function () {
+            var currentImgData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);//存储当前图片信息
+            if (!this.imageData) {
+                this.imageData = currentImgData;
+            }
+            for (var i = 0; i < this.imageData.data.length; i++) {
+                if (i % 4 != 3) {
+                    currentImgData.data[i] = 255 - this.imageData.data[i];
+                }
+            }
+            this.ctx.putImageData(currentImgData, 0, 0);
+        },
+        //灰色调
+        //newr = (r * 0.272) + (g * 0.534) + (b * 0.131);
+        //newg = (r * 0.349) + (g * 0.686) + (b * 0.168);
+        //newb = (r * 0.393) + (g * 0.769) + (b * 0.189);
+        gray: function () {
+            var currentImgData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);//存储当前图片信息
+            if (!this.imageData) {
+                this.imageData = currentImgData;
+            }
+            for (var i = 0; i < this.imageData.data.length; i++) {
+                if (i % 4 == 0) {
+                    currentImgData.data[i] = currentImgData.data[i] * 0.272 + currentImgData.data[i + 1] * 0.534 + currentImgData.data[i + 2] * 0.131;
+                } else if (i % 4 == 1) {
+                    currentImgData.data[i] = currentImgData.data[i - 1] * 0.349 + currentImgData.data[i + 1] * 0.686 + currentImgData.data[i + 1] * 0.168;
+                } else if (i % 4 == 2) {
+                    currentImgData.data[i] = currentImgData.data[i - 2] * 0.393 + currentImgData.data[i - 1] * 0.769 + currentImgData.data[i] * 0.189;
+                }
+            }
+            this.ctx.putImageData(currentImgData, 0, 0);
+        },
+        //模糊
+        blur: function () {
+
+        },
+        //浮雕
+        cameo: function () {
+
+        },
+        //雕刻
+        carving: function () {
+
+        },
+        //镜像
+        mirror: function () {
+
         }
     }
     CanvasUtils.prototype.init.prototype = CanvasUtils.prototype;
