@@ -2,7 +2,8 @@
   <div class="row footer-row">
 
     <div class="grid zbj-grid ui-footer-nav clearfix">
-      <img src="{%uri name="common:widget/footer/$QrCode"%}" alt="" class="Qr-code"/>
+      <img src="img/qr-code.png" alt="" class="Qr-code"/>
+      {%*{%uri name="common:widget/footer/$QrCode"%}*%}
       {%*{%var_dump($dataFirst.data.QrCode)%}*%}
       <dl class="item-about">
         <dt class="about-title"><a class="red-font" href="#" target="_blank" title="关于"><i></i> 关于</a></dt>

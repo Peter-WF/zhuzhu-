@@ -20,17 +20,22 @@
 {%require name="common:static/css/sliderWF.css"%}
 {%/head%}
 {%body id="screen"%}
-{%require name="common:static/js/plugins/jquery/jquery-1.11.3.js"%}
-{%require name="common:static/js/event.js"%}
-{%require name="common:static/js/utils.js"%}
-{%require name="common:static/js/supportIE8.js"%}
-{%require name="common:static/js/plugins/sliderWF.js"%}
-{%require name="common:static/js/plugins/nav-list.js"%}
-{%require name="common:static/js/init.js"%}
-{%widget name="common:widget/header/header.tpl"%}
+    {%require name="common:static/js/plugins/jquery/jquery-1.11.3.js"%}
+    {%require name="common:static/js/event.js"%}
+    {%require name="common:static/js/utils.js"%}
+    {%require name="common:static/js/supportIE8.js"%}
+    {%require name="common:static/js/plugins/sliderWF.js"%}
+    {%require name="common:static/js/plugins/nav-list.js"%}
+    {%require name="common:static/js/init.js"%}
 
-{%block name="main"%}{%/block%}
-{%widget name="common:widget/footer/footer.tpl" QrCode=$dataFirst.data.QrCode about=$dataFirst.data.about help=$dataFirst.data.help friendlink=$dataFirst.data.friendlink copyrightContent=$dataFirst.data.copyrightContent copyright=$dataFirst.data.copyright%}
+    {%widget name="common:widget/header/header.tpl"%}
+    {%block name="main"%}{%/block%}
+
+    {%widget name="common:widget/footer/footer.tpl"
+    QrCode=$dataFirst.data.QrCode about=$dataFirst.data.about
+    help=$dataFirst.data.help friendlink=$dataFirst.data.friendlink
+    copyrightContent=$dataFirst.data.copyrightContent copyright=$dataFirst.data.copyright%}
+
 {%script%}
 
 {%/script%}

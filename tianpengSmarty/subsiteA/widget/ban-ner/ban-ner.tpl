@@ -27,8 +27,21 @@
         <a href="#" class="center-btn">了解天蓬网</a>
 
         <div class="trading-push">
-            <a>雇主<span class="emphasis ">王大大</span>和设计师<span class="emphasis ">ANJUA贝贝</span>成功达成合作，金额<span
-                        class="emphasis ">10000</span>元</a>
+            {%foreach $tradingPushList as $tradingPush%}
+                <a class="trading-item">
+                    雇主
+                <span class="emphasis ">
+                    {%$tradingPush.employerName%}
+                </span>
+                    和设计师
+                <span class="emphasis ">
+                    {%$tradingPush.designerName%}</span>成功达成合作，金额
+                <span class="emphasis ">
+                     {%$tradingPush.money%}
+                </span>
+                    元
+                </a>
+            {%/foreach%}
         </div>
     </div>
 </div>

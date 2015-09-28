@@ -7,13 +7,13 @@ $fis_data = array(
         "data" => array(
             "tradingPushList" => array(
                 array(
-                    "employerName" => "\"Peter\"",
-                    "designerName" => "\"Nancy\"",
+                    "employerName" => "Peter",
+                    "designerName" => "Nancy",
                     "money" => 10000
                 ), array(
-                    "employerName" => "\"Peter\"",
-                    "designerName" => "\"Nancy\"",
-                    "money" => 10000
+                    "employerName" => "Nancy1",
+                    "designerName" => "Peter1",
+                    "money" => 10001
                 )
             ),
             "sliderImg" => array(
@@ -38,11 +38,131 @@ $fis_data = array(
                 array(
                     "userId" => 110,
                     "headimg" => "img/girl.png",
-                    "designername" => "某设计",
-                    "comeFrom" => "来源=>腾讯公司 网页设计",
+                    "designername" => "王斐",
+                    "comeFrom" => "百度 网页设计",
                     "designer-number" => 0,
                     "type" => "s",
-                    "state" => "free",
+                    "state" => "空闲",
+                    "designerWorks" => array(
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        )
+                    )
+
+                ),
+                array(
+                    "userId" => 110,
+                    "headimg" => "img/girl.png",
+                    "designername" => "王斐",
+                    "comeFrom" => "百度 网页设计",
+                    "designer-number" => 0,
+                    "type" => "s",
+                    "state" => "空闲",
+                    "designerWorks" => array(
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        )
+                    )
+
+                ),
+                array(
+                    "userId" => 110,
+                    "headimg" => "img/girl.png",
+                    "designername" => "王斐",
+                    "comeFrom" => "百度 网页设计",
+                    "designer-number" => 0,
+                    "type" => "s",
+                    "state" => "空闲",
+                    "designerWorks" => array(
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        )
+                    )
+
+                ),
+                array(
+                    "userId" => 110,
+                    "headimg" => "img/girl.png",
+                    "designername" => "王斐",
+                    "comeFrom" => "百度 网页设计",
+                    "designer-number" => 0,
+                    "type" => "s",
+                    "state" => "空闲",
+                    "designerWorks" => array(
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        )
+                    )
+
+                ),
+                array(
+                    "userId" => 110,
+                    "headimg" => "img/girl.png",
+                    "designername" => "王斐",
+                    "comeFrom" => "百度 网页设计",
+                    "designer-number" => 0,
+                    "type" => "s",
+                    "state" => "空闲",
+                    "designerWorks" => array(
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        ),
+                        array(
+                            "pic" => "/img/test-img1.png",
+                            "detail" => "有没有觉得很有创意呀"
+                        )
+                    )
+
+                ),
+                array(
+                    "userId" => 110,
+                    "headimg" => "img/girl.png",
+                    "designername" => "王斐",
+                    "comeFrom" => "百度 网页设计",
+                    "designer-number" => 0,
+                    "type" => "s",
+                    "state" => "空闲",
                     "designerWorks" => array(
                         array(
                             "pic" => "/img/test-img1.png",
@@ -62,17 +182,87 @@ $fis_data = array(
             ),
             "designsList" => array(
                 array("designsId" => 111,
+                    "designsTitle" => "作品标题",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "提交时间",
+                    "designsType" => "作品类型",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "王斐"
+                    )),
+                array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
                     "img" => "/img/test-img3.png",
                     "like" => 772,
                     "loadTime" => "三小时前",
-                    "designsType" => "产品类型",
+                    "designsType" => "网页设计 - 电子商务/商城",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "天朋王"
+                    )),
+                array("designsId" => 111,
+                    "designsTitle" => "设计阿基米德定力A波车的",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "三小时前",
+                    "designsType" => "网页设计 - 电子商务/商城",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "天朋王"
+                    )),
+                array("designsId" => 111,
+                    "designsTitle" => "设计阿基米德定力A波车的",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "三小时前",
+                    "designsType" => "网页设计 - 电子商务/商城",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "天朋王"
+                    )),
+                array("designsId" => 111,
+                    "designsTitle" => "设计阿基米德定力A波车的",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "三小时前",
+                    "designsType" => "网页设计 - 电子商务/商城",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "天朋王"
+                    )),
+                array("designsId" => 111,
+                    "designsTitle" => "设计阿基米德定力A波车的",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "三小时前",
+                    "designsType" => "网页设计 - 电子商务/商城",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "天朋王"
+                    )),
+                array("designsId" => 111,
+                    "designsTitle" => "设计阿基米德定力A波车的",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "三小时前",
+                    "designsType" => "网页设计 - 电子商务/商城",
+                    "author" => array(
+                        "id" => 110,
+                        "name" => "天朋王"
+                    )),
+                array("designsId" => 111,
+                    "designsTitle" => "设计阿基米德定力A波车的",
+                    "img" => "/img/test-img3.png",
+                    "like" => 772,
+                    "loadTime" => "三小时前",
+                    "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
                         "name" => "天朋王"
                     ))
             ),
-            "QrCode" => "img/qr-code.png",
+            "QrCode" => "../img/qr-code.png",
             "about" => array(
                 array(
                     "key" => "天蓬网",
