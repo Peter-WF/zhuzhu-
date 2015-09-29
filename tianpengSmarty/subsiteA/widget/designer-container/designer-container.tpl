@@ -13,10 +13,9 @@
                             <img class="designer-img" src="img/girl.png" alt="">
                             <div class="blue-box"><span class="white-font">{%$designer.state%}</span></div>
                         </a>
-                        {%*{%if($designer.type=="s")%}*%}
-                        {%*<div class="s-sm" title="超级用户"></div>*%}
-                        {%*{%/if %}*%}
-
+                        {%if $designer.type eq 's'%}
+                        <div class="s-sm" title="超级用户"></div>
+                        {%/if%}
                         <div class="fl">
                             <p class="designer-name">{%$designer.designername%}</p>
 

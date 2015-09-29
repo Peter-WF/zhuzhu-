@@ -27,7 +27,7 @@
     {%require name="common:static/js/plugins/sliderWF.js"%}
     {%require name="common:static/js/plugins/nav-list.js"%}
     {%require name="common:static/js/init.js"%}
-
+    {%require name="common:static/js/mybase.js"%}
     {%widget name="common:widget/header/header.tpl"%}
     {%block name="main"%}{%/block%}
 

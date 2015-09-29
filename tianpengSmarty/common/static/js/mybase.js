@@ -49,6 +49,18 @@
         this.length -= 1
     }
 
+    /**
+     * 自定义setInterval
+     * @param code
+     * @param delay
+     */
+    window.setIntervalWf=function(code,delay){
+        var startTime=new Date().getTime();
+        while(new Date().getTime()<startTime+delay){
+
+        };
+        code();
+    };
 
 
 
