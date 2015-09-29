@@ -14,7 +14,7 @@
     NavList("J-nav-list", loadDesign);
     function loadDesign(element, callback) {
         Utils.myAjax({
-            url: "../test/ajax.json",
+            url: "../../ajax.json",
             async: true,
             returnType: "json",
             success: function (data) {
