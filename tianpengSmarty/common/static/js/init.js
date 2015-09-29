@@ -35,7 +35,7 @@
                             + '</div>'
                             + '<div class="mid-line clearfix">'
                             + '<a href="#" id="">' + data.data.designsList[i].designsType + '</a>'
-                            + '<img class="fr" src="img/heart.png" alt=""/>'
+                            + '<div class="fr like-img"></div>'
                             + ' </div>'
                             + '<div class="bottom-line clearfix">'
                             + '<span class="gray-font fl" id="loadTime">' + data.data.designsList[i].loadTime + '</span>'
