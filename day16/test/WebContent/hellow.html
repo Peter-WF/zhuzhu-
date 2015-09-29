@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<form action="../upload">-->
+<label for="url">请输入路径<input type="text" id="url"></label>
+<button onclick="upload()"></button>
+<p>返回值是: <span id="return"></span></p>
+<!--</form>-->
+<script src="utils.js">
+
+
+</script>
+<script>
+    function upload() {
+        var url = doocument.getElementById("url");
+        Utils.myAjax({
+            url: "start",
+            data: url,
+            success: function (data) {
+                var returnText = doocument.getElementById("return");
+                returnText.innerHTML = data;
+            }
+        });
+    }
+</script>
+</body>
+</html>
