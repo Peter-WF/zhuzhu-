@@ -15,6 +15,7 @@
 <meta content="telephone=yes" name="format-detection">
 <!--	//当该 HTML 页面在手机上浏览时，该标签用于指定是否将网页内容中的手机号码显示为拨号的超链接。 -->
 <title>{%$site.title%}</title>
+
 {%require name="common:static/css/cssreset.css"%}
 {%require name="common:static/css/base.css"%}
 {%require name="common:static/css/sliderWF.css"%}
@@ -37,6 +38,8 @@
     copyrightContent=$dataFirst.data.copyrightContent copyright=$dataFirst.data.copyright%}
 
 {%script%}
+
+    require.async("common:static/js/init2.js");
 
 {%/script%}
 {%/body%}
