@@ -91,6 +91,7 @@
     })();
     function Person(name) {
         this.name = "我的名字是Person";
+        alert("我是病毒O(∩_∩)O哈哈~");
     }
     Person.prototype = {
         getName: function () {
@@ -177,6 +178,31 @@
     //因此看来还需要把this指向这个new Student()
     function testExtend4() {
         Utils.extend2(Person, Student);
+//        Student.prototype.getName="我来搞破坏";
+//        Student.prototype.getName1="我来搞破坏";
+        Person.prototype.getName2 = function () {
+            alert("我是getName的兄弟getName2");
+        }
+        Student.prototype.getName1 = "我来搞破坏";
+    }
+    /**
+     * 测试继承extend3方法--测试超哥讲的
+     */
+    function testExtend5() {
+        Utils.extend3(Person, Student);
+//        Student.prototype.getName="我来搞破坏";
+//        Student.prototype.getName1="我来搞破坏";
+        Person.prototype.getName2 = function () {
+            alert("我是getName的兄弟getName2");
+        }
+        Student.prototype.getName1 = "我来搞破坏";
+    }
+    /**
+     * 测试继承extend4方法--测试书本上的继承
+     * 请注意:这种继承会导致父类构造方法中的参数继承下来
+     */
+    function testExtend6() {
+        Utils.extend4(Person, Student);
 //        Student.prototype.getName="我来搞破坏";
 //        Student.prototype.getName1="我来搞破坏";
         Person.prototype.getName2 = function () {

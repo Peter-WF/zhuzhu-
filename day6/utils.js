@@ -94,26 +94,32 @@
             subClass.prototype = new F();
 
         },
+        /**
+         * 继承最终版完美继承无死角
+         * 请注意:这种继承与"直接把一个父类的实例赋值给子类原型"的方法不同
+         * 这种不会继承父类构造方法中的this属性的值,不会污染子类对象
+         * 注意! 这个是不会执行父类的构造方法
+         * @param superClass
+         * @param subClass
+         */
         extend3: function (superClass, subClass) {
-            //待修改 修改this 的指向
-            function F() {
-                function tempFunction() {
-
-                };
-                tempFunction.prototype = superClass.prototype;
-                return tempFunction
-            }
-
-            subClass.prototype = new F();
-
+            function tempFunction() {
+            };
+            tempFunction.prototype = superClass.prototype;
+            subClass.prototype = new tempFunction();//这里形成了闭包, 将tempFunction锁入内存
+            //测试发现new操作会将类方法的原型属性对象化为一个object
         },
-        //extend3: function (superClass, subClass) {
-        //    for (var methods in superClass) {
-        //        if (!subClass[methods]) {
-        //            subClass[methods] = superClass[methods];
-        //        }
-        //    }
-        //},
+        /**
+         * 书本上的继承-----"直接把一个父类的实例赋值给子类原型"的方法
+         * 请注意:这种继承会导致父类构造方法中的参数继承下来
+         * 注意! 这个会执行父类的构造方法 很危险
+         * @param superClass
+         * @param subClass
+         */
+        extend4: function (superClass, subClass) {
+            subClass.prototype = new superClass();
+        },
+
         // 类型判断(不知道是否需要判断下效率)
         isString: function (val) {
             if (Object.prototype.toString.call(val) == "[object String]") {

@@ -94,26 +94,32 @@
             subClass.prototype = new F();
 
         },
+        /**
+         * 继承最终版完美继承无死角
+         * 请注意:这种继承与"直接把一个父类的实例赋值给子类原型"的方法不同
+         * 这种不会继承父类构造方法中的this属性的值,不会污染子类对象
+         * 注意! 这个是不会执行父类的构造方法
+         * @param superClass
+         * @param subClass
+         */
         extend3: function (superClass, subClass) {
-            //待修改 修改this 的指向
-            function F() {
-                function tempFunction() {
-
-                };
-                tempFunction.prototype = superClass.prototype;
-                return tempFunction
-            }
-
-            subClass.prototype = new F();
-
+            function tempFunction() {
+            };
+            tempFunction.prototype = superClass.prototype;
+            subClass.prototype = new tempFunction();//这里形成了闭包, 将tempFunction锁入内存
+            //测试发现new操作会将类方法的原型属性对象化为一个object
         },
-        //extend3: function (superClass, subClass) {
-        //    for (var methods in superClass) {
-        //        if (!subClass[methods]) {
-        //            subClass[methods] = superClass[methods];
-        //        }
-        //    }
-        //},
+        /**
+         * 书本上的继承-----"直接把一个父类的实例赋值给子类原型"的方法
+         * 请注意:这种继承会导致父类构造方法中的参数继承下来
+         * 注意! 这个会执行父类的构造方法 很危险
+         * @param superClass
+         * @param subClass
+         */
+        extend4: function (superClass, subClass) {
+            subClass.prototype = new superClass();
+        },
+
         // 类型判断(不知道是否需要判断下效率)
         isString: function (val) {
             if (Object.prototype.toString.call(val) == "[object String]") {
@@ -158,6 +164,7 @@
             var total = time / 1000 * 60;//2.根据动画时间计算一共需要划分多少帧 时间*帧数
             var current帧数 = 0;
             var 每帧改变量 = this.计算每帧改变量(element, endStyle, total);//derta / total;
+            console.time("控制台计时器一");
             var tempIntervalEle = setInterval(function () {
                 if (current帧数 < total) {
                     Utils.animateOperation(element, 每帧改变量, (current帧数 + 1));
@@ -166,8 +173,8 @@
                     clearInterval(tempIntervalEle);
                     cb();
                 }
-
             }, 16.6);
+            console.timeEnd("控制台计时器一");
         },
         //计算每帧改变量
         //结合getStateDerta()
@@ -216,6 +223,8 @@
         //TODO 效率可能是一个问题
         animateOperation: function (element, operationJsonList, n) {
             //运动操作
+            //var operationList = {};
+
             for (var operation in operationJsonList) {
                 var value = operationJsonList[operation];
 
@@ -224,11 +233,16 @@
                     var current = this.getEyeJsStyle(element, operation);
                     current = current.substring(0, current.length - 2);
                     element.style[operation] = this.numAdd(current, value.substring(0, value.length - 2)) + 取出的后两位是;
+                    //operationList[operation] = this.numAdd(current, value.substring(0, value.length - 2)) + 取出的后两位是;
                 } else {
                     var current = this.getEyeJsStyleNum(element, operation);
                     element.style[operation] = this.numAdd(current, value);
+                    //operationList[operation] = this.numAdd(current, value);
                 }
             }
+            //for(var operation in operationList){
+            //    element.style[operation]=operationList[operation];
+            //}
         },
         numAdd: function (num1, num2) {
             return parseFloat(num1) + parseFloat(num2);
