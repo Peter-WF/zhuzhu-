@@ -34,10 +34,10 @@
 //    var console = document.getElementById("J-console");//控制台
     function handleOrientation(event) {
 //        var absolute = event.absolute;
-        var alpha = event.alpha;
+//        var alpha = event.alpha;
 //        var beta = event.beta;
 //        var gamma = event.gamma;
-        compassElement.style.webkitTransform="rotate("+alpha+"deg)";
+        compassElement.style.webkitTransform="rotate("+Math.round(event.alpha)+"deg)";
 //        console.innerHTML = "alpha: " + alpha;
     }
 
