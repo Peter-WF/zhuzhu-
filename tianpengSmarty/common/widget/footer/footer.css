@@ -2,6 +2,12 @@
   height: 290px;
   padding-top: 60px;
   background-color: #3b3636;
+  min-width: 1190px;
+}
+@media screen and (min-width: 1310px) {
+  .footer {
+    width: auto;
+  }
 }
 .footer-row {
   position: relative;

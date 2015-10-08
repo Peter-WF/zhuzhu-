@@ -65,7 +65,7 @@ $fis_data = array(
                     "designername" => "王斐",
                     "comeFrom" => "百度 网页设计",
                     "designer-number" => 0,
-                    "type" => "s",
+                    "type" => "g",
                     "state" => "空闲",
                     "designerWorks" => array(
                         array(
@@ -89,7 +89,7 @@ $fis_data = array(
                     "designername" => "王斐",
                     "comeFrom" => "百度 网页设计",
                     "designer-number" => 0,
-                    "type" => "s",
+                    "type" => "p",
                     "state" => "空闲",
                     "designerWorks" => array(
                         array(
@@ -189,7 +189,8 @@ $fis_data = array(
                     "designsType" => "作品类型",
                     "author" => array(
                         "id" => 110,
-                        "name" => "王斐"
+                        "name" => "王斐",
+                        "type"=>"s"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -199,7 +200,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"g"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -209,7 +211,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"p"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -219,7 +222,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"g"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -229,7 +233,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"g"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -239,7 +244,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"g"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -249,7 +255,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"g"
                     )),
                 array("designsId" => 111,
                     "designsTitle" => "设计阿基米德定力A波车的",
@@ -259,7 +266,8 @@ $fis_data = array(
                     "designsType" => "网页设计 - 电子商务/商城",
                     "author" => array(
                         "id" => 110,
-                        "name" => "天朋王"
+                        "name" => "天朋王",
+                        "type"=>"s"
                     ))
             ),
             "QrCode" => "../img/qr-code.png",

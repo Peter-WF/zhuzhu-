@@ -2,6 +2,12 @@
   height: 26px;
   background-color: #363131;
   position: relative;
+  min-width: 1190px;
+}
+@media screen and (min-width: 1310px) {
+  .header {
+    width: auto;
+  }
 }
 .zbj-grid {
   padding-bottom: 5px;

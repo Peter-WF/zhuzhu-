@@ -1,4 +1,3 @@
-
 /*Éè¼ÆÊ¦ÈÝÆ÷*/
 .designer-container {
   background-color: rgb(238, 238, 238);
@@ -7,21 +6,16 @@
   position: relative;
 }
 
-.designer-container .designer-container-row {
+.designer-container-row {
   position: relative;
   /*zoom: 1;*/
 }
 
-.designer-container .designer-container-row .designer-container-title {
+.designer-container-title {
   font-size: 24px;
   color: rgb(74, 74, 74);
   margin-bottom: 42px;
   font-weight: normal;
-}
-
-.designer-container .designer-container-row .designer-list {
-  margin-left: -5px;
-  margin-right: -5px;
 }
 
 .more-box {
@@ -29,8 +23,8 @@
   height: 25px;
   position: absolute;
   float: right;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   line-height: 25px;
   font-size: 10px;
   color: white;
@@ -44,29 +38,21 @@
   background-color: rgb(232, 65, 60);
 }
 
-/*.designer-container .more-box.red-box {
-    background-color: rgb(232, 65, 60);
-    top: -28px;
+.designer-list {
+  margin-left: -10px;
 }
 
-.designer-container .more-box.gray-box {
-    top: -1px;
-    background-color: rgb(140, 140, 140);
-}*/
-
-.designer-container .single-designer-box {
+.single-designer-box {
   background-color: white;
   width: 350px;
   height: 182px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
   margin-bottom: 30px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 30px;
   padding-bottom: 28px;
   float: left;
-
   /*-webkit-box-sizing: border-box;*/
   /*-moz-box-sizing: border-box;*/
   /*box-sizing: border-box;*/
@@ -86,13 +72,15 @@
   height: 70px;
   margin-right: 19px;
 }
-.designer-img{
+
+.designer-img {
   width: 70px;
   height: 70px;
 }
-.single-designer-box .designer-box-top .circle .blue-box {
+
+.designer-box-top .circle .blue-box {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   text-align: center;
   background-color: rgb(82, 190, 246);
   opacity: 0.902;
@@ -102,9 +90,9 @@
   font-size: 12px;
 }
 
-.single-designer-box .designer-box-top .circle .red-box {
+.designer-box-top .circle .red-box {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   text-align: center;
   background-color: rgb(232, 65, 60);
   opacity: 0.902;
@@ -114,7 +102,9 @@
   font-size: 12px;
 }
 
-.single-designer-box .designer-box-top .s-sm {
+.designer-box-top .super-designer-sm,
+.designer-box-top .good-designer-sm,
+.designer-box-top .general-designer-sm {
   position: absolute;
   right: 0px;
   top: 0px;
@@ -122,7 +112,6 @@
 
 .single-designer-box .designer-box-top .designer-name {
   font-size: 13.663px;
-  font-family: "Microsoft YaHei";
   color: rgb(127, 136, 155);
   line-height: 2.635;
   text-align: left;
@@ -132,9 +121,7 @@
 }
 
 .single-designer-box .designer-box-top .designer-from {
-
   font-size: 12px;
-  font-family: "Microsoft YaHei";
   color: rgb(140, 140, 140);
   text-transform: uppercase;
   line-height: 1.5;
@@ -142,7 +129,6 @@
 
 .single-designer-box .designer-box-top .designer-number {
   font-size: 12px;
-  font-family: "Microsoft YaHei";
   color: rgb(140, 140, 140);
   text-transform: uppercase;
   line-height: 1.5;
@@ -154,7 +140,7 @@
 }
 
 .single-designer-box .designer-work-list {
-  font-size: 0px;
+  font-size: 0;
   margin: 0 -3.5px;
 }
 

@@ -104,8 +104,7 @@
 }
 .top-container .top-designers {
   /*zoom: 1;*/
-  margin-left: -5px;
-  margin-right: -5px;
+  margin-left: -10px;
 }
 .top-container .top-designers .top-designers-item {
   background: white;
@@ -113,8 +112,7 @@
   width: 390px;
   float: left;
   position: relative;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
 }
 .top-container .top-designers .top-designers-item .designer-pic {
   position: absolute;

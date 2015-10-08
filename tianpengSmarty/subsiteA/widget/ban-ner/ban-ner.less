@@ -5,12 +5,14 @@
   padding-bottom: @all;
   padding-left: @all;
 }
+
 .padding-wf(@vertical,@horizontal ) {
   padding-top: @vertical;
   padding-right: @horizontal;
   padding-bottom: @vertical;
   padding-left: @horizontal;
 }
+
 .padding-wf(@top,@right,@bottom,@left ) {
   padding-top: @top;
   padding-right: @right;
@@ -22,33 +24,38 @@
   background: url("img/ban-ner.png") center top no-repeat;
   background-size: cover;
   height: 480px;
-  width: 100%;
   padding-top: 30px;;
   position: relative;
-  .menu-top {
-    padding-left: 60px;
-    overflow: hidden;
-    .logo-img {
-      position: absolute;
-      display: inline-block;
-      background: url("img/logo.png?__sprite");
-      width: 120px;
-      height: 40px;
-    }
-    .menu-top-ul {
-      /* height: 40px; */
-      line-height: 40px;
-      margin-top: 70px;
-      .menu-top-li {
-        color: rgb(160, 160, 160);
-        font-size: 13px;
-        display: block;
-        text-align: right;
-        margin-left: 40px;
-        float: none;
-        margin-right: 80px;
-      }
-    }
+
+}
+
+
+.menu-top {
+  padding-left: 60px;
+  overflow: hidden;
+
+}
+
+.logo-img {
+  position: absolute;
+  display: inline-block;
+  background: url("img/logo.png?__sprite");
+  width: 120px;
+  height: 40px;
+}
+
+.menu-top-ul {
+  /* height: 40px; */
+  line-height: 40px;
+  margin-top: 70px;
+  .menu-top-li {
+    color: rgb(160, 160, 160);
+    font-size: 13px;
+    display: block;
+    text-align: right;
+    margin-left: 40px;
+    float: none;
+    margin-right: 80px;
   }
 }
 
@@ -63,7 +70,7 @@
   //padding-bottom: 14px;
   //padding-left: 15px;
   //padding-right: 15px;
-  .padding-wf(12px,15px,14px,15px);
+  .padding-wf(12px, 15px, 14px, 15px);
   color: white;
   font-weight: bold;
   background-color: rgb(232, 65, 60);

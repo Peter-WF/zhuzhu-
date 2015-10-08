@@ -5,27 +5,23 @@
   padding-bottom: 12px;
   position: relative;
 }
-.designer-container .designer-container-row {
+.designer-container-row {
   position: relative;
   /*zoom: 1;*/
 }
-.designer-container .designer-container-row .designer-container-title {
+.designer-container-title {
   font-size: 24px;
   color: #4a4a4a;
   margin-bottom: 42px;
   font-weight: normal;
-}
-.designer-container .designer-container-row .designer-list {
-  margin-left: -5px;
-  margin-right: -5px;
 }
 .more-box {
   width: 80px;
   height: 25px;
   position: absolute;
   float: right;
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 0;
   line-height: 25px;
   font-size: 10px;
   color: white;
@@ -37,21 +33,14 @@
 .more-box:hover {
   background-color: #e8413c;
 }
-/*.designer-container .more-box.red-box {
-    background-color: rgb(232, 65, 60);
-    top: -28px;
+.designer-list {
+  margin-left: -10px;
 }
-
-.designer-container .more-box.gray-box {
-    top: -1px;
-    background-color: rgb(140, 140, 140);
-}*/
-.designer-container .single-designer-box {
+.single-designer-box {
   background-color: white;
   width: 350px;
   height: 182px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
   margin-bottom: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -79,9 +68,9 @@
   width: 70px;
   height: 70px;
 }
-.single-designer-box .designer-box-top .circle .blue-box {
+.designer-box-top .circle .blue-box {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   text-align: center;
   background-color: #52bef6;
   opacity: 0.902;
@@ -90,9 +79,9 @@
   line-height: 23px;
   font-size: 12px;
 }
-.single-designer-box .designer-box-top .circle .red-box {
+.designer-box-top .circle .red-box {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   text-align: center;
   background-color: #e8413c;
   opacity: 0.902;
@@ -101,14 +90,15 @@
   line-height: 23px;
   font-size: 12px;
 }
-.single-designer-box .designer-box-top .s-sm {
+.designer-box-top .super-designer-sm,
+.designer-box-top .good-designer-sm,
+.designer-box-top .general-designer-sm {
   position: absolute;
   right: 0px;
   top: 0px;
 }
 .single-designer-box .designer-box-top .designer-name {
   font-size: 13.663px;
-  font-family: "Microsoft YaHei";
   color: #7f889b;
   line-height: 2.635;
   text-align: left;
@@ -118,14 +108,12 @@
 }
 .single-designer-box .designer-box-top .designer-from {
   font-size: 12px;
-  font-family: "Microsoft YaHei";
   color: #8c8c8c;
   text-transform: uppercase;
   line-height: 1.5;
 }
 .single-designer-box .designer-box-top .designer-number {
   font-size: 12px;
-  font-family: "Microsoft YaHei";
   color: #8c8c8c;
   text-transform: uppercase;
   line-height: 1.5;
@@ -135,7 +123,7 @@
   margin-top: 30px;
 }
 .single-designer-box .designer-work-list {
-  font-size: 0px;
+  font-size: 0;
   margin: 0 -3.5px;
 }
 .single-designer-box .designer-work-list .designer-work {

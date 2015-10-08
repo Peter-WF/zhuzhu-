@@ -40,7 +40,13 @@
 
                     <p class="name-design-item fl" id="" id="author-name">{%$design.author.name%}</p>
 
-                    <div title="超级用户" class="fr s-sm"></div>
+                    {%if $design.author.type eq 's'%}
+                        <div class="super-designer-sm fr" title="超级用户"></div>
+                    {%else if $design.author.type eq 'g'%}
+                        <div class="good-designer-sm fr" title="高级用户"></div>
+                    {%else if $design.author.type eq 'p'%}
+                        <div class="general-designer-sm fr" title="超级用户"></div>
+                    {%/if%}
                 </div>
                 <div class="mid-line clearfix">
                     <a href="#" id="">{%$design.designsType%}</a>

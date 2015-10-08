@@ -11,10 +11,15 @@
                     <div class="designer-box-top clearfix">
                         <a href="#" class="circle designer-circle fl">
                             <img class="designer-img" src="img/girl.png" alt="">
+
                             <div class="blue-box"><span class="white-font">{%$designer.state%}</span></div>
                         </a>
                         {%if $designer.type eq 's'%}
-                        <div class="s-sm" title="超级用户"></div>
+                            <div class="super-designer-sm" title="超级用户"></div>
+                        {%else if $designer.type eq 'g'%}
+                            <div class="good-designer-sm" title="高级用户"></div>
+                        {%else if $designer.type eq 'p'%}
+                            <div class="general-designer-sm" title="超级用户"></div>
                         {%/if%}
                         <div class="fl">
                             <p class="designer-name">{%$designer.designername%}</p>
@@ -27,9 +32,10 @@
                     <div class="designer-box-bottom">
                         <ul class="designer-work-list">
                             {%foreach $designer.designerWorks as $designerWork%}
-                            <li class="designer-work">
-                                <img class="designer-work-pic" src="img/test-img1.png" alt="{%$designerWork.detail%}"/>
-                            </li>
+                                <li class="designer-work">
+                                    <img class="designer-work-pic" src="img/test-img1.png"
+                                         alt="{%$designerWork.detail%}"/>
+                                </li>
                             {%/foreach%}
                         </ul>
                     </div>
