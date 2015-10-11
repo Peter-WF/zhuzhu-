@@ -65,7 +65,8 @@
 .ban-ner .ban-ner-phone {
   position: absolute;
   top: 392px;
-  left: 863px;
+  left: 50%;
+  margin-left: -87px;
   font-size: 33px;
   /*font-family: "ArialNarrow";*/
   color: #ffffff;
@@ -74,7 +75,8 @@
 .ban-ner .more {
   position: absolute;
   bottom: 31px;
-  left: 959px;
+  left: 50%;
+  margin-left: -11px;
   width: 22px;
   height: 13px;
   display: block;
@@ -500,6 +502,7 @@
 .logo-desigin-container-5 .slider {
   font-size: 0px;
   width: 980px;
+  height: 102px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
