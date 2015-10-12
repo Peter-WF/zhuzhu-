@@ -8,6 +8,7 @@
   }
   a {
     text-decoration: none;
+    outline-color: rgba(255, 255, 255, 0);
     &:hover {
       text-decoration: none;
     }
@@ -19,6 +20,10 @@
   ul, ol {
     padding: 0;
     margin: 0;
+  }
+  img{
+    zoom:1; /*同样是IE 下触发 hasLayout*/
+    *display:inline; /*一旦IE 下触发了 hasLayout，设置 block 元素为 inline 会使 display:inline 效果与 display:inline-block 相似*/
   }
   dt, dd, dl {
     margin: 0;
@@ -118,6 +123,7 @@
   }
   .feature-content-list {
     float: left;
+    display: block;
     .clearfix();
     .feature-item {
       margin-bottom: 42px;
@@ -304,6 +310,7 @@
     width: 176px;
     height: 29px;
     color: white;
+    display: block;
     text-align: center;
     line-height: 29px;
     margin-top: 16px;
