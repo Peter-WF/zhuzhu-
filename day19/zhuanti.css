@@ -7,6 +7,7 @@
 }
 .logo-desigin-page a {
   text-decoration: none;
+  outline-color: rgba(255, 255, 255, 0);
 }
 .logo-desigin-page a:hover {
   text-decoration: none;
@@ -21,6 +22,12 @@
 .logo-desigin-page ol {
   padding: 0;
   margin: 0;
+}
+.logo-desigin-page img {
+  zoom: 1;
+  /*同样是IE 下触发 hasLayout*/
+  *display: inline;
+  /*一旦IE 下触发了 hasLayout，设置 block 元素为 inline 会使 display:inline 效果与 display:inline-block 相似*/
 }
 .logo-desigin-page dt,
 .logo-desigin-page dd,
@@ -104,6 +111,7 @@
 }
 .logo-desigin-container-1 .feature-content-list {
   float: left;
+  display: block;
   *zoom: 1;
   /*zoom: 1;*/
   /* for ie6 & ie7 */
@@ -346,6 +354,7 @@
   width: 176px;
   height: 29px;
   color: white;
+  display: block;
   text-align: center;
   line-height: 29px;
   margin-top: 16px;
@@ -526,6 +535,7 @@
   right: 0;
   top: 24px;
   display: block;
+  cursor: pointer;
 }
 .logo-desigin-container-5 .triangle-left {
   display: block;
