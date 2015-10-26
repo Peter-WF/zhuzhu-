@@ -399,7 +399,7 @@
             //xhr.responseType = data.returnType;//data.returnType
 
             // open方式用于指定HTTP请求方式、请求的地址、是否异步
-            xhr.open('get', data.url, data.async);
+            xhr.open(data.type ? data.type : 'get', data.url, data.async);
 
             // 发送HTTP请求，只有POST才能发送数据
             xhr.send();

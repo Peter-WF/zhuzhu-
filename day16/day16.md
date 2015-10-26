@@ -1,7 +1,7 @@
-# �������:
+# 亮哥你好:
 
-##### ��������Ҫѧ���������⼸��
-1. ��smarty����rewrite�����þ�̬�ļ���·������ajax���ʵ�json, ���Ǿ�̬ͼƬ��Դ����������
-2. �����ĵ�ʵ����nodejs��·�ɹ���, ���ؾ�̬html�ļ�. ���ǵ���������js�Ⱦ�̬��Դʱ, jsҲ������·�ɹ���
-3. ѧϰ��MVVM MVC, �˽���һЩǰ�˿��
+##### 今天我主要学到了下面这几点
+1. 在smarty中用rewrite来配置静态文件的路径用于ajax访问的json, 但是静态图片资源还是有问题
+2. 根据文档实现了nodejs的路由管理, 加载静态html文件. 但是当遇到加载js等静态资源时, js也会请求路由管理
+3. 学习了MVVM MVC, 了解了一些前端框架
 

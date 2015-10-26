@@ -1,0 +1,47 @@
+
+{
+  "success": true,
+  "data": {
+    "designsList": [
+      {
+        "designsId": 111,
+        "designsTitle": "设计阿基米德定力A波车的",
+        "img": "img/test-img3.png",
+        "like": 772,
+        "loadTime": "三小时前",
+        "designsType": "网页设计 - 电子商务/商城",
+        "author": {
+          "id": 110,
+          "name": "天朋王",
+          "img":"img/boy-img.png"
+        }
+      },
+      {
+        "designsId": 111,
+        "designsTitle": "设计阿基米德定力A波车的",
+        "img": "img/test-img3.png",
+        "like": 772,
+        "loadTime": "三小时前",
+        "designsType": "网页设计 - 电子商务/商城",
+        "author": {
+          "id": 110,
+          "name": "天朋王",
+          "img":"img/boy-img.png"
+        }
+      },
+      {
+        "designsId": 111,
+        "designsTitle": "设计阿基米德定力A波车的",
+        "img": "img/test-img3.png",
+        "like": 772,
+        "loadTime": "三小时前",
+        "designsType": "网页设计 - 电子商务/商城",
+        "author": {
+          "id": 110,
+          "name": "天朋王",
+          "img":"img/boy-img.png"
+        }
+      }
+    ]
+  }
+}
