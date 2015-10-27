@@ -140,6 +140,9 @@
   font-size: 12px;
   color: white;
 }
+.trading-push .trading-item {
+  display: block;
+}
 .banner-center .trading-push .emphasis {
   color: #e8413c;
   margin-left: 3px;
