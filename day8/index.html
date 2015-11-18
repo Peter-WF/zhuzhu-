@@ -37,7 +37,9 @@
 //        var alpha = event.alpha;
 //        var beta = event.beta;
 //        var gamma = event.gamma;
-        compassElement.style.webkitTransform="rotate("+Math.round(event.alpha)+"deg)";
+        if(event.alpha){
+            compassElement.style.webkitTransform="rotate("+Math.round(event.alpha)+"deg)";
+        }
 //        console.innerHTML = "alpha: " + alpha;
     }
     /* 简版的防反跳函数
@@ -58,7 +60,7 @@
 
             //生成委托
             if(!handler){
-                handler = function(){
+                handler = function(e){
                     func.apply(scope, arguments);
                 };
             }
