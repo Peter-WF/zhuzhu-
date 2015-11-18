@@ -222,5 +222,20 @@
         slider.sliderInit();
 
     }
+
+    function testAjax() {
+        Utils.myAjax({
+            url: "ajax.json",
+            async: true,
+            returnType: "json",
+            type: "post",
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (data) {
+
+            }
+        });
+    }
 </script>
 </html>

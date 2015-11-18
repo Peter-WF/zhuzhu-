@@ -356,7 +356,8 @@
                     }
                 }
             });
-        }, createXMLHttpRequest: function () {
+        },
+        createXMLHttpRequest: function () {
 
             if (window.ActiveXObject) {
                 return xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
@@ -365,8 +366,8 @@
                 return xmlHttp = new XMLHttpRequest();
             }
 
-        }
-        , myAjax: function (data) {
+        },
+        myAjax: function (data) {
             // 新建一个XMLHttpRequest实例对象
 
             var xhr = this.createXMLHttpRequest();
@@ -399,10 +400,56 @@
             //xhr.responseType = data.returnType;//data.returnType
 
             // open方式用于指定HTTP请求方式、请求的地址、是否异步
-            xhr.open('get', data.url, data.async);
+            xhr.open(data.type ? data.type : 'get', data.url, data.async);
 
             // 发送HTTP请求，只有POST才能发送数据
             xhr.send();
+        },
+
+        /**
+         * 函数去抖（debounce）:  空闲控制 返回函数连续调用时，空闲时间必须大于或等于 idle，action 才会执行
+         * @param cb    回调函数:  请求关联函数，实际应用需要调用的函数
+         * @param delay 延迟执行:   空闲时间，单位毫秒
+         * @returns {Function}  返回客户调用函数
+         */
+        debounce: function (cb, delay) {
+            //var _this;
+            var timer;
+            var handler;
+            return function () {
+                var _this = this;
+                var args=arguments;
+                //生成委托
+                if (!handler) {
+                    handler = function () {
+                        cb.apply(_this, args);
+                    }
+                }
+                //重新计时
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(delay, handler)
+            }
+        },
+
+        /**
+         * 函数节流（throttle）
+         * @param cb 回调函数
+         * @param delay 延迟执行
+         */
+        throttle: function (cb, delay) {
+            var _this;
+            var time;
+            var lastTime = 0;//上次
+            return function () {
+                var now = +new Date();//获得当前时间
+                //如果距离上次时间差大于时间间隔，那么执行回调函数
+                if (now - startTime > delay) {
+                    cb();
+                    startTime = now;
+                }
+            }
         }
     }
 
