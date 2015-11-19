@@ -72,6 +72,9 @@
         <i class="iconfont">&#x3464;</i>
     </a>
 </div>
+<button onclick="testDebounce();">testDebounce</button>
+<button onclick="testThrottle();">testThrottle</button>
+
 </body>
 <script type="text/javascript" src="jquery-1.11.3.js" charset="UTF-8">
 
@@ -236,6 +239,16 @@
 
             }
         });
+    }
+    function testDebounce() {
+        testDebounce=Utils.debounce(function () {
+            console.log("here is testDebounce")
+        }, 3000);
+    }
+    function testThrottle() {
+        testThrottle= Utils.throttle(function () {
+            console.log("here is testThrottle");
+        }, 3000);
     }
 </script>
 </html>

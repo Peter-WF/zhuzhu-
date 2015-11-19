@@ -429,7 +429,7 @@
                 if (timer) {
                     clearTimeout(timer);
                 }
-                timer = setTimeout(delay, handler)
+                timer = setTimeout( handler,delay)
             }
         },
 
@@ -444,10 +444,11 @@
             var lastTime = 0;//上次
             return function () {
                 var now = +new Date();//获得当前时间
+                console.log(now);
                 //如果距离上次时间差大于时间间隔，那么执行回调函数
-                if (now - startTime > delay) {
+                if (now - lastTime > delay) {
                     cb();
-                    startTime = now;
+                    lastTime = now;
                 }
             }
         }
