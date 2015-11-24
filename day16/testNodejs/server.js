@@ -6,11 +6,11 @@ var url = require("url");
 function start(route, config) {
     function onRequest(request, response) {
         var pathname = url.parse(request.url).pathname;
-        console.log("½ÓÊÕÍ·À´×ÔÓÚ: " + pathname + " received.");
+        console.log("æ¥æ”¶å¤´æ¥è‡ªäº: " + pathname + " received.");
         route(config,pathname, response, request);
     }
 
     http.createServer(onRequest).listen(8888);
-    console.log("·şÎñ¿ªÆô³É¹¦");
+    console.log("æœåŠ¡å¼€å¯æˆåŠŸ");
 }
 exports.start = start;

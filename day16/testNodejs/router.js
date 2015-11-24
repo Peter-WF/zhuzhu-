@@ -15,8 +15,14 @@ function route(config, pathname, response, request) {
             controllerUrl += "/" + tempArray[i];
         }
     }
-    //去掉action名字
-    var actionName = tempArray[tempArray.length - 1];
+    //获取action名字
+    var actionName ="";
+    for(var i=tempArray.length - 1;i>0;i--){
+        actionName=tempArray[tempArray.length - 1];
+        if(actionName){
+            break;
+        }
+    }
 
     console.log("当前路由请求的是: " + controllerUrl + " controller中的 " + actionName + " action !");
 
@@ -26,8 +32,10 @@ function route(config, pathname, response, request) {
         controller[actionName](request, response);
     } else {
         console.log("No request handler found for " + pathname);
-        response.writeHead(404, {"Content-Type": "text/html"});
-        response.write("404 Not found");
+        response.writeHead(302, {
+            'Location': 'common/_404'
+            //add other headers here...
+        });
         response.end();
     }
 }
