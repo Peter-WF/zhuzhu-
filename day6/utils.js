@@ -459,13 +459,13 @@
             // 延迟执行函数
             var later = function() {
                 // 若设定了开始边界不执行选项，上次执行时间始终为0
-                previous = options.leading === false ? 0 : _.now();
+                previous = options.leading === false ? 0 : Date.now();
                 timeout = null;
                 result = func.apply(context, args);
                 if (!timeout) context = args = null;
             };
             return function() {
-                var now = _.now();
+                var now = Date.now();
                 // 首次执行时，如果设定了开始边界不执行选项，将上次执行时间设定为当前时间。
                 if (!previous && options.leading === false) previous = now;
                 // 延迟执行时间间隔

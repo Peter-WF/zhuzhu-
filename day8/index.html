@@ -28,8 +28,9 @@
     <img src="compass.png" id="J-compass" alt="指南针"/>
     <!--<a id="J-console"></a>-->
 </div>
+<script src="../day6/utils.js"></script>
 <script>
-    window.addEventListener("deviceorientation", debouce(handleOrientation,500), true);
+    window.addEventListener("deviceorientation", Utils.throttle(handleOrientation,500), true);
     var compassElement = document.getElementById("J-compass");//指南针盘
 //    var console = document.getElementById("J-console");//控制台
     function handleOrientation(event) {
@@ -41,37 +42,6 @@
             compassElement.style.webkitTransform="rotate("+Math.round(event.alpha)+"deg)";
         }
 //        console.innerHTML = "alpha: " + alpha;
-    }
-    /* 简版的防反跳函数
-
-     * @param  {function}           func        包裹的方法
-
-     * @param  {int}                delay       阀值
-
-     * @return {function}                       防反跳函数
-
-     */
-
-    function debouce(func,delay){
-        var timer, handler, scope;
-
-        return function(){
-            scope = this;
-
-            //生成委托
-            if(!handler){
-                handler = function(e){
-                    func.apply(scope, arguments);
-                };
-            }
-
-            //清除定时器
-            if(timer){
-                clearTimeout(timer);
-            }
-
-            timer = setTimeout(handler, delay);
-        }
     }
 </script>
 </body>
