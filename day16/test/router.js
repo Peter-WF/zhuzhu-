@@ -1,8 +1,8 @@
 function route(handle, pathname,parameter) {
     console.log("About to route a request for : " + pathname);
     if (typeof handle[pathname] === 'function') {
-        //Ö´ĞĞÔ¶³ÌÇëÇó
-        //ÕâÀïÍ¨¹ıÀûÓÃÁËÀàÊı×é, Ê¡È¥ÁË²»±ØÒªµÄÑ­»·
+        //æ‰§è¡Œè¿œç¨‹è¯·æ±‚
+        //è¿™é‡Œé€šè¿‡åˆ©ç”¨äº†ç±»æ•°ç»„, çœå»äº†ä¸å¿…è¦çš„å¾ªç¯
         return handle[pathname](parameter);
     } else {
         console.log("No request handler found for " + pathname);

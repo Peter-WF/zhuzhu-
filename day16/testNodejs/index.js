@@ -3,6 +3,6 @@ var router = require("./router");
 var handle = {} ;
 var controller="";
 var config={
-    controllerRoot:"./controller"
+    controllerRoot:"./Controllers"
 }
 server.start(router.route,config);
