@@ -1,16 +1,16 @@
 
-;//ÓÃÓÚ·ÀÖ¹Ö®Ç°ÎÄ¼þ½áÎ²Ã»ÓÐ¼Ó;µ¼ÖÂ±¨´í
+;//ç”¨äºŽé˜²æ­¢ä¹‹å‰æ–‡ä»¶ç»“å°¾æ²¡æœ‰åŠ ;å¯¼è‡´æŠ¥é”™
 (function () {
     function getAllPalindrome(num) {
         if (num < 0) {
-            return {"palindromeString": "ÇëÊäÈë´óÓÚ0µÄÕûÊý" };
+            return {"palindromeString": "è¯·è¾“å…¥å¤§äºŽ0çš„æ•´æ•°" };
         } else if (Object.prototype.toString.call(num) != "[object Number]") {
-            return {"palindromeString": "ÇëÊäÈë´óÓÚ0µÄÕûÊý" };
+            return {"palindromeString": "è¯·è¾“å…¥å¤§äºŽ0çš„æ•´æ•°" };
         }
-        num = parseInt(num, 10);//ÕâÀï×îºÃÉèÖÃÉÏ¶àÉÙ½øÖ¹Êý,±ÜÃâÒòÎª¹æ·¶²»Í¬µ¼ÖÂ²îÒì
+        num = parseInt(num, 10);//è¿™é‡Œæœ€å¥½è®¾ç½®ä¸Šå¤šå°‘è¿›æ­¢æ•°,é¿å…å› ä¸ºè§„èŒƒä¸åŒå¯¼è‡´å·®å¼‚
         var palindromeList = [];
         var palindromeString = "";
-        for (var i = 0; i <= num; i++) {//ÕâÀïÓÃÁËi<=num¿¼ÂÇµ½¿ÉÄÜ°üº¬num
+        for (var i = 0; i <= num; i++) {//è¿™é‡Œç”¨äº†i<=numè€ƒè™‘åˆ°å¯èƒ½åŒ…å«num
             if (isPalindrome(i)) {
                 palindromeList.push(i);
                 palindromeString = palindromeString + " " + i;

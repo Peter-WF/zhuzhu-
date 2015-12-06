@@ -49,7 +49,7 @@ Promise.prototype._handleThen = function () {
             var thenPromise = this.thenables[i].promise;
             var returnedVal;
             try {
-                // 运行回调函数
+                // 杩愯鍥炶皟鍑芥暟
                 switch (this.state) {
                     case 'fulfilled':
                         if (this.thenables[i].fulfill) {
