@@ -418,7 +418,7 @@
             var handler;
             return function () {
                 var _this = this;
-                var args=arguments;
+                var args = arguments;
                 //生成委托
                 if (!handler) {
                     handler = function () {
@@ -429,7 +429,7 @@
                 if (timer) {
                     clearTimeout(timer);
                 }
-                timer = setTimeout( handler,delay)
+                timer = setTimeout(handler, delay)
             }
         },
 
@@ -457,14 +457,14 @@
             var previous = 0;
             if (!options) options = {};
             // 延迟执行函数
-            var later = function() {
+            var later = function () {
                 // 若设定了开始边界不执行选项，上次执行时间始终为0
                 previous = options.leading === false ? 0 : Date.now();
                 timeout = null;
                 result = func.apply(context, args);
                 if (!timeout) context = args = null;
             };
-            return function() {
+            return function () {
                 var now = Date.now();
                 // 首次执行时，如果设定了开始边界不执行选项，将上次执行时间设定为当前时间。
                 if (!previous && options.leading === false) previous = now;
@@ -486,6 +486,28 @@
                 }
                 return result;
             };
+        }
+        //封装JQ defer deferred对象就是jQuery的回调函数解决方案
+        /** 可以看看阮一峰这篇文章 [jQuery的deferred对象详解](http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html)
+         *
+         * @param longFunction 可能需要比较久被执行的函数
+         * @param successFunc 成功
+         * @param failureFunc
+         */
+        , defer: function (longFunction, successFunc, failureFunc) {
+            var dtd = $.Deferred(); // 新建一个deferred对象
+            function wait(dtd) {
+                longFunction(dtd);
+
+                //return dtd;//这个返回引用必须有  // $.when()的参数只能是deferred对象
+
+                return dtd.promise(); // 返回promise对象() 它的作用是，在原来的deferred对象上返回另一个deferred对象，
+                // 后者只开放与改变执行状态无关的方法（比如done()方法和fail()方法），屏蔽与改变执行状态有关的方法（比如resolve()方法和
+                // reject()方法），从而使得执行状态不能被改变。
+
+            }
+
+            $.when(wait(dtd)).then(successFunc, failureFunc);
         }
     }
 

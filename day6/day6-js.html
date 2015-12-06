@@ -241,14 +241,21 @@
         });
     }
     function testDebounce() {
-        testDebounce=Utils.debounce(function () {
+        testDebounce = Utils.debounce(function () {
             console.log("here is testDebounce")
         }, 3000);
     }
     function testThrottle() {
-        testThrottle= Utils.throttle(function () {
+        testThrottle = Utils.throttle(function () {
             console.log("here is testThrottle");
         }, 3000);
+    }
+    //测试setTimeout不设置时间会如何,(秒执行)
+    function testSetTimeout() {
+        setTimeout(function () {
+            console.log("wf");
+            testSlider();
+        });
     }
 </script>
 </html>
