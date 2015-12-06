@@ -509,6 +509,34 @@
 
             $.when(wait(dtd)).then(successFunc, failureFunc);
         }
+        , stringFormate:function(str,args){
+        if (arguments.length > 1) {
+            var result = str;
+            //当只传两个参数时args是对象{arg1:"aaa","arg2":"bbb"}时
+            if (arguments.length == 2 && typeof (args) == "object") {
+                for (var key in args) {
+                    var reg = new RegExp("({" + key + "})", "g");
+                    result = result.replace(reg, args[key]);
+                }
+            }
+            else {
+                //第一个参数是str,所以这里改为1
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] === undefined) {
+                        return "";
+                    }
+                    else {
+                        var reg = new RegExp("({[" + (i-1) + "]})", "g");
+                        result = result.replace(reg, arguments[i]);
+                    }
+                }
+            }
+            return result;
+        }
+        else {
+            return str;
+        }
+    }
     }
 
     window.Utils = Utils;

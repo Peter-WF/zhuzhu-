@@ -10,7 +10,7 @@ module.exports = {
         var utils = require("../lib/utils")(request, response);
         utils.getData(function(data){
             //var rows = utils.query('select * from list');
-            var sql="insert into list(name,sex,password) values ({name},{sex},{password});";
+            var sql="insert into list(name,sex,password) values ('{name}','{sex}','{password}');";
             console.log(data);
             sql=utils.stringFormate(sql,data);
             console.log("aaa:"+sql);

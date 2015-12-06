@@ -98,7 +98,7 @@ module.exports = function (request, response) {
             if (request.method == "GET") {
                 params = [];
                 params = url.parse(request.url, true).query;
-                cb(JSON.stringify(params));
+                cb(params);
             } else {
                 var postdata = "";
                 request.addListener("data", function (postchunk) {
@@ -107,7 +107,7 @@ module.exports = function (request, response) {
 
                 request.addListener("end", function () {
                     params = query.parse(postdata);
-                    cb(JSON.stringify(params));
+                    cb(params);
                 });
             }
         },
@@ -124,7 +124,7 @@ module.exports = function (request, response) {
                 else {
                     //第一个参数是str,所以这里改为1
                     for (var i = 1; i < arguments.length; i++) {
-                        if (arguments[i] == undefined) {
+                        if (arguments[i] === undefined) {
                             return "";
                         }
                         else {
