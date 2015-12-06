@@ -69,6 +69,26 @@ module.exports = function (request, response) {
                 return 'application/msword';
             else
                 return 'text/plain';
+        },
+        query:function(sql,cb){
+            var mysql = require('mysql');
+            var connection = mysql.createConnection({
+                host: 'localhost',
+                user: 'root',
+                password: '',
+                database: 'test'
+            });
+
+            connection.connect();
+            connection.query(sql, function (err, rows, fields) {
+                if (err) throw err;
+                //console.log('The solution is: ', rows[0].solution);
+                console.log("rows:"+rows);
+                console.log("fields:"+fields);
+                cb(rows);
+            });
+
+            connection.end();
         }
     }
 }
