@@ -1,8 +1,11 @@
 var fs = require('fs');
+var mysql = require('mysql');
+var url = require("url");            //解析GET请求
+var query = require("querystring");    //解析POST请求
 
 module.exports = function (request, response) {
     return {
-        _this_:this,
+        _this_: this,
         removeNullObject: function (array) {
             var result = [];
             for (var i = 0; i < array.length; i++) {
@@ -38,7 +41,7 @@ module.exports = function (request, response) {
         //处理静态资源
         staticResHandler: function (localPath, ext, response) {
             console.log(localPath);
-            var _this_=this;
+            var _this_ = this;
             fs.readFile(localPath, "binary", function (error, file) {
                 if (error) {
                     response.writeHead(500, {"Content-Type": "text/plain"});
@@ -70,8 +73,7 @@ module.exports = function (request, response) {
             else
                 return 'text/plain';
         },
-        query:function(sql,cb){
-            var mysql = require('mysql');
+        query: function (sql, cb) {
             var connection = mysql.createConnection({
                 host: 'localhost',
                 user: 'root',
@@ -83,12 +85,59 @@ module.exports = function (request, response) {
             connection.query(sql, function (err, rows, fields) {
                 if (err) throw err;
                 //console.log('The solution is: ', rows[0].solution);
-                console.log("rows:"+rows);
-                console.log("fields:"+fields);
+                console.log("rows:" + rows);
+                console.log("fields:" + fields);
                 cb(rows);
             });
 
             connection.end();
+        },
+        getData: function (cb) {
+            var params;
+            //判断是GET/POST请求
+            if (request.method == "GET") {
+                params = [];
+                params = url.parse(request.url, true).query;
+                cb(JSON.stringify(params));
+            } else {
+                var postdata = "";
+                request.addListener("data", function (postchunk) {
+                    postdata += postchunk;
+                });
+
+                request.addListener("end", function () {
+                    params = query.parse(postdata);
+                    cb(JSON.stringify(params));
+                });
+            }
+        },
+        stringFormate:function(str,args){
+            if (arguments.length > 1) {
+                var result = str;
+                //当只传两个参数时args是对象{arg1:"aaa","arg2":"bbb"}时
+                if (arguments.length == 2 && typeof (args) == "object") {
+                    for (var key in args) {
+                        var reg = new RegExp("({" + key + "})", "g");
+                        result = result.replace(reg, args[key]);
+                    }
+                }
+                else {
+                    //第一个参数是str,所以这里改为1
+                    for (var i = 1; i < arguments.length; i++) {
+                        if (arguments[i] == undefined) {
+                            return "";
+                        }
+                        else {
+                            var reg = new RegExp("({[" + (i-1) + "]})", "g");
+                            result = result.replace(reg, arguments[i]);
+                        }
+                    }
+                }
+                return result;
+            }
+            else {
+                return str;
+            }
         }
     }
 }
