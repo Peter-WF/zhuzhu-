@@ -1,6 +1,8 @@
 /**
  * Created by Peter on 2015/11/19.
  */
+var query = require("../lib/mysql.js");
+
 module.exports = {
     index: function (request, response) {
         var utils = require("../lib/utils")(request, response);
@@ -8,13 +10,18 @@ module.exports = {
     }
     , add: function (request, response) {
         var utils = require("../lib/utils")(request, response);
-        utils.getData(function(data){
+        utils.getData(function (data) {
             //var rows = utils.query('select * from list');
+            var sql = "insert into list(name,sex,password) values (?,?,?);";
+
+            /*//自己的写的传参方法 不能防止SQL注入
             var sql="insert into list(name,sex,password) values ('{name}','{sex}','{password}');";
             console.log(data);
             sql=utils.stringFormate(sql,data);
             console.log("aaa:"+sql);
-            utils.query(sql,function(rows){
+            utils.query(sql, function (rows) {});
+            */
+            query(sql,[data.name,data.sex,data.password], function (rows) {
                 //utils.query('select * from list', function (rows) {
                 rows = JSON.stringify(rows);
                 //console.log(rows);
