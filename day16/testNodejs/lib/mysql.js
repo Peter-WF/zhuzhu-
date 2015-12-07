@@ -1,7 +1,7 @@
 /**
- * ǰ��,�����������ڲ�ѯ����ʱ������ȴ�����ʱ�䣬һ�㲻�Ƽ���node�п���һ�����Ӻ�ȫ����ѯ����������Ӳ��Ҳ��رգ���Ϊ�������˾�֪��Ϊʲô��
+ * 前言,如果不想程序在查询数据时卡死或等待过长时间，一般不推荐在node中开启一个连接后全部查询都用这个链接并且不关闭，因为，你试了就知道为什么了
  *
- * Node.js mysql���ӳ�ģ��
+ * Node.js mysql连接池模块
  */
 var mysql = require("mysql");
 var pool = mysql.createPool({
@@ -17,9 +17,9 @@ var query = function (sql, data, callback) {
             callback(err, null, null);
         } else {
             conn.query(sql, data, function (err, rows, fields) {
-                //�ͷ�����  
+                //释放连接  
                 conn.release();
-                //�¼������ص�  
+                //事件驱动回调  
                 callback(err, rows, fields);
             });
         }
