@@ -1,4 +1,4 @@
-/*¶¨Òå»ù±¾¿é*/
+/*å®šä¹‰åŸºæœ¬å—*/
 .first-box {
     width: 200px;
     height: 40px;
@@ -117,7 +117,7 @@
     margin-right: auto;
 }
 
-/*Çå³ı¸¡¶¯*/
+/*æ¸…é™¤æµ®åŠ¨*/
 .clearfix:after {
     display: table;
     content: "";
