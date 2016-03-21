@@ -403,6 +403,89 @@
 
             // 发送HTTP请求，只有POST才能发送数据
             xhr.send();
+        },
+
+
+        /**
+         * 函数去抖（debounce）:  空闲控制 返回函数连续调用时，空闲时间必须大于或等于 idle，action 才会执行
+         * @param cb    回调函数:  请求关联函数，实际应用需要调用的函数
+         * @param delay 延迟执行:   空闲时间，单位毫秒
+         * @returns {Function}  返回客户调用函数
+         */
+        debounce: function (cb, delay) {
+            //var _this;
+            var timer;
+            var handler;
+            return function () {
+                var _this = this;
+                var args=arguments;
+                //生成委托
+                if (!handler) {
+                    handler = function () {
+                        cb.apply(_this, args);
+                    }
+                }
+                //重新计时
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout( handler,delay)
+            }
+        },
+
+        /**
+         * 函数节流（throttle）
+         * @param cb 回调函数
+         * @param delay 延迟执行
+         */
+        throttle: function (func, wait, options) {
+            //var _this;
+            //var time;
+            //var lastTime = 0;//上次
+            //return function () {
+            //    var now = +new Date();//获得当前时间
+            //    console.log(now);
+            //    //如果距离上次时间差大于时间间隔，那么执行回调函数
+            //    if (now - lastTime > delay) {
+            //        cb();
+            //        lastTime = now;
+            //    }
+            //}
+            var context, args, result;
+            var timeout = null;
+            // 上次执行时间点
+            var previous = 0;
+            if (!options) options = {};
+            // 延迟执行函数
+            var later = function() {
+                // 若设定了开始边界不执行选项，上次执行时间始终为0
+                previous = options.leading === false ? 0 : Date.now();
+                timeout = null;
+                result = func.apply(context, args);
+                if (!timeout) context = args = null;
+            };
+            return function() {
+                var now = Date.now();
+                // 首次执行时，如果设定了开始边界不执行选项，将上次执行时间设定为当前时间。
+                if (!previous && options.leading === false) previous = now;
+                // 延迟执行时间间隔
+                var remaining = wait - (now - previous);
+                context = this;
+                args = arguments;
+                // 延迟时间间隔remaining小于等于0，表示上次执行至此所间隔时间已经超过一个时间窗口
+                // remaining大于时间窗口wait，表示客户端系统时间被调整过
+                if (remaining <= 0 || remaining > wait) {
+                    clearTimeout(timeout);
+                    timeout = null;
+                    previous = now;
+                    result = func.apply(context, args);
+                    if (!timeout) context = args = null;
+                    //如果延迟执行不存在，且没有设定结尾边界不执行选项
+                } else if (!timeout && options.trailing !== false) {
+                    timeout = setTimeout(later, remaining);
+                }
+                return result;
+            };
         }
     }
 
