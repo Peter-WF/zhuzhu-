@@ -1,31 +1,31 @@
 require('fis3-smarty')(fis);
 fis.set('namespace', 'tianpeng');
 
-// ÆôÓÃ fis-spriter-csssprites ²å¼ş
+// å¯ç”¨ fis-spriter-csssprites æ’ä»¶
 fis.match('::package', {
     spriter: fis.plugin('csssprites')
 })
 
-// ¶Ô CSS ½øĞĞÍ¼Æ¬ºÏ²¢
+// å¯¹ CSS è¿›è¡Œå›¾ç‰‡åˆå¹¶
 fis.match('*.less', {
-    // ¸øÆ¥Åäµ½µÄÎÄ¼ş·ÖÅäÊôĞÔ `useSprite`
+    // ç»™åŒ¹é…åˆ°çš„æ–‡ä»¶åˆ†é…å±æ€§ `useSprite`
     useSprite: true
 });
 fis.match('*.css', {
-    // ¸øÆ¥Åäµ½µÄÎÄ¼ş·ÖÅäÊôĞÔ `useSprite`
+    // ç»™åŒ¹é…åˆ°çš„æ–‡ä»¶åˆ†é…å±æ€§ `useSprite`
     useSprite: true
 });
 
 //fis-conf.js
 fis.config.set('pack', {
-    //´ò°üËùÓĞstaticÄ¿Â¼ÏÂµÄJSÎÄ¼ş
+    //æ‰“åŒ…æ‰€æœ‰staticç›®å½•ä¸‹çš„JSæ–‡ä»¶
     //'pkg/aio.js' : /^\/static\/(.*\.js)$/i,
     //'pkg/widget.js' : [
     //    /^\/widget\/ui\/(.*\.js)$/i,
     //    '/widget/menu/menu.js'
     //],
-    //´ò°üËùÓĞµÄcssÎÄ¼ş
-    //½«ÄÚÈİÊä³öÎªstatic/pkg/aio.cssÎÄ¼ş
+    //æ‰“åŒ…æ‰€æœ‰çš„cssæ–‡ä»¶
+    //å°†å†…å®¹è¾“å‡ºä¸ºstatic/pkg/aio.cssæ–‡ä»¶
     'pkg/aio.css' : ['**.css',
         '**.less']
 });
